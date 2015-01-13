@@ -1,0 +1,17 @@
+{
+  "name": "AppName",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Author",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.8.2",
+    "express": "^4.9.3",
+    "http-server": "^0.7.1",
+    "mongoose": "^3.8.17"
+  }
+}
