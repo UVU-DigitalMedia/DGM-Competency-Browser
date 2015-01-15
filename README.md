@@ -41,10 +41,6 @@ Start the Mongo server (sudo maybe required.)
     mongod
 
 
-Seed the database with default data. (sudo maybe required.)
-
-    node seedDatabase.js
-
 Start the server:
 (using Nodemon)
 
