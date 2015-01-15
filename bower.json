@@ -14,8 +14,11 @@
     "tests"
   ],
   "dependencies": {
-    "angular": "~1.2.25",
-    "bootstrap": "~3.2.0",
-    "angular-resource": "~1.2.26"
+    "angular": "latest",
+    "bootstrap": "latest",
+    "angular-resource": "latest"
+  },
+  "resolutions": {
+    "angular": "1.3.9"
   }
 }
