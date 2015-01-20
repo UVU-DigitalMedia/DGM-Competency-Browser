@@ -21,4 +21,4 @@ module.exports = function(grunt) {
   grunt.registerTask('default', ['jshint']);
 
 };
-// #2 changing stuff
+
