@@ -13,5 +13,4 @@ angular.module('CompBrowser', ['ui.router', 'CompBrowser.controllers'])
     })
 
     $urlRouterProvider.otherwise('/');
-
 });
