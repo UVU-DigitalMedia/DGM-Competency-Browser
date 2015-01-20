@@ -3,5 +3,5 @@
 angular.module('CompBrowser.controllers', [])
 
 .controller('MainCtrl', function($scope) {
-    $scope.message = 'APP';
+    $scope.message = 'APP BASE';
 });
