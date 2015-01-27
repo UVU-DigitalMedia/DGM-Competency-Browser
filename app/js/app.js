@@ -16,6 +16,9 @@ angular.module('CompBrowser', ['ui.router', 'CompBrowser.controllers'])
          templateUrl: "templates/tracks.html",
          controller: 'TrackCtrl'
     })
-
+	.state('courses', {
+        url: "/about",
+        templateUrl: "templates/courses.html"
+    })
     $urlRouterProvider.otherwise('/');
 });
