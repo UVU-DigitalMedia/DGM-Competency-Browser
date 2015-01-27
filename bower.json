@@ -16,7 +16,8 @@
   "dependencies": {
     "angular": "latest",
     "bootstrap": "latest",
-    "angular-resource": "latest"
+    "angular-resource": "latest",
+    "angular-ui-router": "~0.2.13"
   },
   "resolutions": {
     "angular": "1.3.9"

@@ -23,5 +23,3 @@ module.exports = function(grunt) {
   //grunt.registerTask('default', ['jshint', 'qunit', 'concat', 'uglify']);
 
 };
-
-// Adding stuff to concat JS
