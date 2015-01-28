@@ -18,7 +18,7 @@ module.exports = function(grunt) {
           src: [
           'js/*.js' //All javascript
           ],
-          dest: 'js/build/production.ss',
+          dest: 'js/build/production.js',
         }
     }
 
