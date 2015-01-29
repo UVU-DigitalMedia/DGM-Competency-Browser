@@ -8,22 +8,17 @@ module.exports = function(grunt) {
       dist: {
           src: [
           'css/*.css', // All CSS in the libs folder
-          ],
-          dest: 'css/build/production.css',
-        }
-    }
-
-    concat: {
-      dist: {
-          src: [
           'js/*.js' //All javascript
           ],
-          dest: 'js/build/production.js',
+          dest:[
+          'css/build/production.css',
+           'js/build/production.js'
+           ]
         }
-    }
+    },
 
     jshint: {
-      files: ['Gruntfile.js', 'src/**/*.js', 'test/**/*.js'],
+      files: ['Gruntfile.js', 'app/js/*.js'],
       options: {
         globals: {
           jQuery: true
@@ -38,7 +33,7 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-watch');
-
+  // Default task(s).
   grunt.registerTask('default', ['jshint']);
 
 };
