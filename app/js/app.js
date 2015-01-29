@@ -11,6 +11,11 @@ angular.module('CompBrowser', ['ui.router', 'CompBrowser.controllers'])
         url: "/about",
         templateUrl: "templates/about.html"
     })
+    .state('tracks', {
+         url: "/tracks",
+         templateUrl: "templates/tracks.html",
+         controller: 'TrackCtrl'
+    })
 	.state('courses', {
         url: "/about",
         templateUrl: "templates/courses.html"
