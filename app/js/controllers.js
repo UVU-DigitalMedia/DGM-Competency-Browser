@@ -7,12 +7,6 @@ angular.module('CompBrowser.controllers', [])
 })
 
 .controller('TrackCtrl', function ($scope) {
-
-
-})
-
-
-.controller('TrackCtrl', function ($scope) {
     $scope.tracks = [
          {'semester': 'Spring 2015',
              'note': 'Generals',
@@ -47,4 +41,40 @@ angular.module('CompBrowser.controllers', [])
     ];
 
     $scope.orderProp = 'order';
-});
+})
+
+.controller('SkillsCtrl', function($scope) {
+  $scope.skills = [
+       {
+         'title': 'Skill Name One'
+       },
+       {
+        'title': 'Skill Name Two'
+      },
+      {
+        'title': 'Skill Name Three'
+      },
+      {
+        'title': 'Skill Name Four'
+      },
+      {
+        'title': 'Skill Name Five'
+      }
+  ];
+
+  $scope.employers = [
+    {
+      'name': 'Adobe'
+    },
+    {
+      'name': 'At Task'
+    },
+    {
+      'name': 'Domo'
+    },
+    {
+      'name': 'LDS Church'
+    }
+  ];
+
+})
