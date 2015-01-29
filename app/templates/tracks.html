@@ -1,0 +1,24 @@
+<div class="starter-template">
+    <h1>Tracks</h1>
+    <p class="lead">See all your tracks here.</p>
+
+    Search: <input ng-model="search"> <br />
+
+    <button><i class="fa fa-plus-square"></i>Add New Semester</button><br />
+
+    Filter By Tracks:
+    <select ng-model="search.track">
+        <option value="recommended">Recommended</option>
+        <option value="custom1">Custom 1</option>
+        <option value="custom2">Custom 2</option>
+    </select>
+
+
+    <ul>
+        <li ng-repeat="track in tracks | filter:search | orderBy:orderProp">
+            <span>{{track.semester}}</span>
+            <p>{{track.note}}</p>
+        </li>
+    </ul>
+
+</div>
