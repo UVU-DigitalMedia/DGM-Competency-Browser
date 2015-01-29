@@ -6,12 +6,6 @@ angular.module('CompBrowser.controllers', [])
     $scope.message = 'APP BASE';
 })
 
-
-
-
-
-
-
 .controller('TrackCtrl', function ($scope) {
     $scope.tracks = [
          {'semester': 'Spring 2015',
