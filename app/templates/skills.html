@@ -6,28 +6,10 @@
   <div class="employers">
 
     <h4>Employers</h4>
-    <div class="checkbox">
+    <div class="checkbox" ng-repeat="emp in employers">
       <label>
         <input type="checkbox" value="">
-        Adobe
-      </label>
-    </div>
-    <div class="checkbox">
-      <label>
-        <input type="checkbox" value="">
-        At Task
-      </label>
-    </div>
-    <div class="checkbox">
-      <label>
-        <input type="checkbox" value="">
-        Domo
-      </label>
-    </div>
-    <div class="checkbox">
-      <label>
-        <input type="checkbox" value="">
-        LDS Church
+        {{emp.name}}
       </label>
     </div>
 
@@ -37,8 +19,15 @@
           <i class="glyphicon glyphicon-search"></i>
           <input type="search"
           class="form-control"
-          placeholder="Start Typing" />
+          placeholder="Start Typing"
+          ng-model="search" />
         </div>
+
+        <ul>
+            <li ng-repeat="skill in skills | filter:search">
+                <span>{{skill.title}}</span>
+            </li>
+        </ul>
 
   </div>
 </div>
