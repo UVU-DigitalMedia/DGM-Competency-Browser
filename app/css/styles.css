@@ -5,3 +5,51 @@ body {
   padding: 40px 15px;
   text-align: center;
 }
+
+/**************** Top Nav ****************/
+.top-nav {
+  border-top:4px solid green;
+  border-bottom:4px solid green;
+}
+.top-nav ul {
+  margin:0;
+}
+.top-nav ul li a {
+  color:green;
+  border:none;
+}
+.top-nav ul li a:hover {
+  background-color:green;
+  color:#fff;
+  border-radius:0;
+  -webkit-border-radius:0;
+}
+
+/******** Skills *********/
+.filter-bar {
+  height:50px;
+  margin:10px 0;
+  padding:15px;
+  background-color:green;
+}
+.filter-bar a {
+  color:#fff;
+  text-decoration:none;
+}
+.employers h4 {
+  color:green;
+  border-bottom:1px solid green;
+}
+
+.right-inner-addon {
+  position: relative;
+}
+.right-inner-addon input {
+  padding-right: 30px;
+}
+.right-inner-addon i {
+  position: absolute;
+  right: 0px;
+  padding: 10px 12px;
+  pointer-events: none;
+}
