@@ -7,10 +7,18 @@ module.exports = function(grunt) {
     concat: {
       dist: {
           src: [
-          'css/*.css', // All JS in the libs folder
-
+          'css/*.css', // All CSS in the libs folder
           ],
           dest: 'css/build/production.css',
+        }
+    }
+
+    concat: {
+      dist: {
+          src: [
+          'js/*.js' //All javascript
+          ],
+          dest: 'js/build/production.js',
         }
     }
 
