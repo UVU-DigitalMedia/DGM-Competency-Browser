@@ -24,6 +24,6 @@ angular.module('CompBrowser', ['ui.router', 'CompBrowser.controllers'])
         url: "/skills",
         templateUrl: "templates/skills.html",
         controller: 'SkillsCtrl'
-    })
+    });
     $urlRouterProvider.otherwise('/');
 });
