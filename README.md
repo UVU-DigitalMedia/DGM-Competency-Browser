@@ -14,7 +14,7 @@ We have decided aginst using the express router to serve the front end for the s
 The frontend uses Angular.js and Bootstrap.
 
 ###Backend
-The back uses Node with the Express framework to serve static files, and provide back end API. The backend will also use MongoDB with Mongoose for data object modeling. 
+The back uses Node with the Express framework to serve static files, and provide back end API. The backend will also use MongoDB with Mongoose for data object modeling.
 
 ##Getting Started
 Node is required.
@@ -25,7 +25,7 @@ MongoDB is required. Goto www.mongodb.org to install and find instructions to ge
 Backend dependancies:
 
     npm install
-    
+
 Frontend dependancies:
 
     bower install
@@ -45,18 +45,18 @@ Start the server:
 (using Nodemon)
 
     nodemon server.js
- 
-    
+
+
 (or without Nodemon)
 
     node server.js
-    
 
-    
+
+
 Then open a web browser to http://localhost:8080/ to see magic.
 
 ##GitHub Workflow
-![Github Workflow](http://i.imgur.com/uYWHTN2.png?1)
+![Github Workflow](http://imgur.com/7Qg4Tiu)
 
 The Above workflow outlines the Git strategy for the RIA2 Class, and also works for most open source projects.
 
@@ -69,11 +69,15 @@ Here are the basics. You will have 2 remotes set up on your local machine, one n
 Whenever you would like to get the latest code from the main branch you will do a
 
     $ git fetch upstream
-    
+
 A git pull is a shortcut command that combines a git fetch with a git merge. A git fetch operation never changes any of your own local branches under refs/heads, and is safe to do without changing your working copy. Therefore, if you would like to merge the code you got with git fetch upstream you then need to do a
 
     $ get merge upstream/master
-    
+
 Note, you can merge into a different branch than master if you would like. Just make sure whatever branch you would like the upsream master branch to merge into, that is the branch you currently have checked out on your local machine.
 
 After you have merged the main repo code on your local machine. If you would like that on your github repo, a git push is required. Most likely you will work on code first, then push, then pull-request.
+
+### Sycing to other forks
+
+Additionaly, you can sync to other users forks. Just follow the the steps above to set up additional remotes that point to the other forks on github.
