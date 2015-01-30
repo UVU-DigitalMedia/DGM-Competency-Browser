@@ -1,5 +1,3 @@
-'use strict';
-
 angular.module('CompBrowser.controllers', [])
 
 .controller('MainCtrl', function($scope) {
@@ -77,4 +75,4 @@ angular.module('CompBrowser.controllers', [])
     }
   ];
 
-})
+});
