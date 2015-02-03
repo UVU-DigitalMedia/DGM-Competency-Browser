@@ -23,7 +23,7 @@ angular.module('CompBrowser', ['ui.router', 'CompBrowser.controllers'])
     .state('skills', {
         url: "/skills",
         templateUrl: "templates/skills.html",
-        controller: 'SkillsCtrl'
+        controller: 'ThorCtrl'
     });
     $urlRouterProvider.otherwise('/');
 });
