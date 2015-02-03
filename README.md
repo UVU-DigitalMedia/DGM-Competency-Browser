@@ -1,4 +1,4 @@
-DGM-Competency-Browser [![Build Status](https://travis-ci.org/UVU-DigitalMedia/DGM-Competency-Browser.svg?branch=master)](https://travis-ci.org/UVU-DigitalMedia/DGM-Competency-Browser)
+Competency-Browser [![Build Status](https://travis-ci.org/UVU-DigitalMedia/DGM-Competency-Browser.svg?branch=master)](https://travis-ci.org/UVU-DigitalMedia/DGM-Competency-Browser)
 ======================
 
 This project allows students, faculty, and employers to see the connection between courses and specific competencies.
