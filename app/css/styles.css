@@ -72,7 +72,7 @@ body {
 }
 
 
-input[type=radio], input[type=checkbox] {
+input[type=checkbox] {
   display:none;
 }
 .checkbox label {

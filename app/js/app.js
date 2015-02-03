@@ -1,4 +1,4 @@
-angular.module('CompBrowser', ['ui.router', 'CompBrowser.controllers'])
+angular.module('CompBrowser', ['ui.router', 'CompBrowser.controllers', 'skillsCtrl'])
 
 .config(function($stateProvider, $urlRouterProvider) {
     $stateProvider
@@ -18,7 +18,8 @@ angular.module('CompBrowser', ['ui.router', 'CompBrowser.controllers'])
     })
     .state('courses', {
         url: "/courses",
-        templateUrl: "templates/courses.html"
+        templateUrl: "templates/courses.html",
+        controller: 'CourseCtrl'
     })
     .state('skills', {
         url: "/skills",

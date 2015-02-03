@@ -1,4 +1,4 @@
-angular.module('CompBrowser.controllers', [])
+angular.module('skillsCtrl', [])
 
 .controller('SkillsCtrl', function($scope) {
 
