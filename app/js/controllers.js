@@ -42,36 +42,23 @@ angular.module('CompBrowser.controllers', [])
 })
 
 .controller('SkillsCtrl', function($scope) {
-  $scope.skills = [
-       {
-         'title': 'Skill Name One'
-       },
-       {
-        'title': 'Skill Name Two'
-      },
-      {
-        'title': 'Skill Name Three'
-      },
-      {
-        'title': 'Skill Name Four'
-      },
-      {
-        'title': 'Skill Name Five'
-      }
-  ];
 
   $scope.employers = [
     {
-      'name': 'Adobe'
+      'name': 'Adobe',
+      'skill': '2-D Packages'
     },
     {
-      'name': 'At Task'
+      'name': 'At Task',
+      'skill': 'Game Scripting'
     },
     {
-      'name': 'Domo'
+      'name': 'Domo',
+      'skill': 'Advanced Game Scripting'
     },
     {
-      'name': 'LDS Church'
+      'name': 'LDS Church',
+      'skill': 'Character Development'
     }
   ];
 
