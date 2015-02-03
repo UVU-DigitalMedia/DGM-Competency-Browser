@@ -1,4 +1,4 @@
-DGM-Competency-Browser
+DGM-Competency-Browser [![Build Status](https://travis-ci.org/UVU-DigitalMedia/DGM-Competency-Browser.svg?branch=master)](https://travis-ci.org/UVU-DigitalMedia/DGM-Competency-Browser)
 ======================
 
 This project allows students, faculty, and employers to see the connection between courses and specific competencies.
@@ -56,7 +56,7 @@ Start the server:
 Then open a web browser to http://localhost:8080/ to see magic.
 
 ##GitHub Workflow
-![Github Workflow](http://imgur.com/7Qg4Tiu)
+![Github Workflow](http://i.imgur.com/7Qg4Tiu.png?1)
 
 The Above workflow outlines the Git strategy for the RIA2 Class, and also works for most open source projects.
 
