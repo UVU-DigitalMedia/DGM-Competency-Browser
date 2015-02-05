@@ -25,15 +25,28 @@ module.exports = function(grunt) {
         }
       }
     },
+
+    sass: {
+       dist: {
+         files: [{
+           expand: true,
+           src: ['app/css/*.scss'],
+           dest: '',
+           ext: '.css'
+         }]
+       }
+     },
+
     watch: {
-      files: ['<%= jshint.files %>', 'app/css/*.css' ],
-      tasks: ['jshint', 'concat']
+      files: ['<%= jshint.files %>', 'app/css/*.scss' ],
+      tasks: ['sass', 'concat', 'jshint']
     }
   });
 
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-sass');
 
   // Default task(s).
   grunt.registerTask('default', ['jshint']);
