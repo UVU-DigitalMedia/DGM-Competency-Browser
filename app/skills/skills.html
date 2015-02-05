@@ -1,0 +1,47 @@
+<div class="filter-bar" data-toggle="collapse" data-target="#collapseSkills" aria-expanded="false" aria-controls="collapseSkills">
+  <h4><a href="#"><span class="caret"></span> Filters</a></h4>
+</div>
+
+<div class="collapse" id="collapseSkills">
+    <div class="skills">
+        <div class="row employers">
+            <div class="col-xs-12">
+              <h4>Employers</h4>
+              <div class="checkbox" ng-repeat="emp in employers">
+                <input type="checkbox" id="{{emp.name}}" name="cb" value="">
+                <label for="{{emp.name}}">{{emp.name}}</label>
+              </div>
+            </div>
+        </div>
+
+        <div class="row jobs">
+            <div class="col-xs-12">
+              <h4>Jobs</h4>
+                <label>Job Title</label>
+                  <div class="right-inner-addon">
+                    <i class="glyphicon glyphicon-search"></i>
+                    <input type="search"
+                            class="form-control"
+                            placeholder="Start Typing"
+                            ng-model="search" />
+                  </div>
+            </div>
+        </div>
+
+        <div class="row ind-skills">
+            <div class="col-xs-12">
+                <div class="filter-bar">
+                    <h4>Skills</h4>
+                </div>
+
+                <ul>
+                    <li class="" ng-repeat="emp in employers | filter:search">
+                        <a href="" class="col-xs-12">{{emp.skill}}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+      </div>
+    </div>
+</div>
