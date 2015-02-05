@@ -1,4 +1,5 @@
 module.exports = function(grunt) {
+'use strict';
 
   grunt.initConfig({
 
@@ -18,6 +19,7 @@ module.exports = function(grunt) {
     jshint: {
       files: ['Gruntfile.js', 'app/js/*.js'],
       options: {
+        jshintrc: true,
         globals: {
           jQuery: true
         }
