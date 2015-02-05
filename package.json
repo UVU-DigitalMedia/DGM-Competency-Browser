@@ -4,7 +4,8 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "grunt"
+    "test": "grunt",
+    "watch": "grunt watch"
   },
   "author": "Author",
   "license": "ISC",
