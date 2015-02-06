@@ -6,15 +6,13 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
 
     concat: {
-      dist: {
-          src: [
-          'css/*.css', // All CSS in the libs folder
-          'js/*.js' //All javascript
-          ],
-          dest:[
-          'css/build/production.css',
-           'js/build/production.js'
-           ]
+      distJS: {
+          src: 'app/js/*.js', //All javascript
+          dest: 'app/prod/js/production.js'
+        },
+      distCSS: {
+          src: 'app/css/*.css', // All CSS in the libs folder,
+          dest: 'app/prod/css/production.css'
         }
     },
 
@@ -27,14 +25,29 @@ module.exports = function(grunt) {
         }
       }
     },
+
+    sass: {
+       dist: {
+         files: [{
+           expand: true,
+           src: ['app/css/*.scss'],
+           dest: '',
+           ext: '.css'
+         }]
+       }
+     },
+
     watch: {
-      files: ['<%= jshint.files %>'],
-      tasks: ['jshint']
+      files: ['<%= jshint.files %>', 'app/css/*.scss' ],
+      tasks: ['sass', 'concat', 'jshint']
     }
   });
 
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-sass');
+
   // Default task(s).
   grunt.registerTask('default', ['jshint']);
 
