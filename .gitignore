@@ -134,3 +134,10 @@ dist/
 
 # Grunt usually preprocesses files such as coffeescript, compass... inside the .tmp directory
 .tmp/
+
+#ignore the sass cache
+.sass-cache/
+
+app/prod
+app/css/*.css
+app/css/*.map
