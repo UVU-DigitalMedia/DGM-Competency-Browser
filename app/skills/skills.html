@@ -8,7 +8,7 @@
             <div class="col-xs-12">
               <h4>Employers</h4>
               <div class="checkbox" ng-repeat="emp in employers">
-                <input type="checkbox" id="{{emp.name}}" name="cb" value="">
+                <input type="checkbox" id="{{emp.name}}" name="cb">
                 <label for="{{emp.name}}">{{emp.name}}</label>
               </div>
             </div>
@@ -35,8 +35,8 @@
                 </div>
 
                 <ul>
-                    <li class="" ng-repeat="emp in employers | filter:search">
-                        <a href="" class="col-xs-12">{{emp.skill}}</a>
+                    <li class="" ng-repeat="skillset in employers">
+                        <a href="" class="col-xs-12" ng-repeat="indSkill in skillset.skill | filter:search">{{indSkill}}</a>
                     </li>
                 </ul>
             </div>
