@@ -1,10 +1,12 @@
 angular.module('CompBrowser.controllers', [])
 
 .controller('MainCtrl', function($scope) {
+    'use strict';
     $scope.message = 'APP BASE';
 })
 
 .controller('TrackCtrl', function ($scope) {
+    'use strict';
     $scope.tracks = [
          {'semester': 'Spring 2015',
              'note': 'Generals',
