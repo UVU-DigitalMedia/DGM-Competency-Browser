@@ -15,7 +15,7 @@
   "maxcomplexity" : 7,        // forces functions to have less complex paths
   "maxdepth"      : 3,        // forces nested blocks to only be a certain number of blocks deep
   "maxerr"        : 50,       // maximum number of errors jshint will report before giving up
-  "maxlen"        : 80,       // maximum line length
+  "maxlen"        : 130,       // maximum line length
   "maxparams"     : 5,        // forces functions to have a maximum number of parameters
   "maxstatements" : 12,       // maximum number of statements in a function
   "newcap"        : true,     // must use capitalized constructors with the `new` keyword
@@ -55,5 +55,6 @@
   "validthis"     : false,    // Don't use "this" incorrectly
   "withstmt"      : false,    // Don't use with
 
-  "node"          : true     // Node env
+  "node"          : true,     // Node env
+  "predef"        : ["angular"]
 }

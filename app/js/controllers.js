@@ -1,10 +1,12 @@
 angular.module('CompBrowser.controllers', [])
 
 .controller('MainCtrl', function($scope) {
+    'use strict';
     $scope.message = 'APP BASE';
 })
 
 .controller('TrackCtrl', function ($scope) {
+    'use strict';
     $scope.tracks = [
          {'semester': 'Spring 2015',
              'note': 'Generals',
@@ -23,17 +25,17 @@ angular.module('CompBrowser.controllers', [])
          },
         {'semester': 'Fall 2016',
             'note': 'Undergraduate Classes',
-            'order': 3,
+            'order': 4,
             'track':'custom1'
         },
         {'semester': 'Spring 2017',
             'note': 'Upper Division Classes',
-            'order': 3,
+            'order': 5,
             'track':'custom2'
         },
         {'semester': 'Fall 2017',
             'note': 'Upper Division Classes',
-            'order': 3,
+            'order': 6,
             'track':'custom2'
         }
     ];
