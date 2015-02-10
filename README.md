@@ -80,4 +80,4 @@ After you have merged the main repo code on your local machine. If you would lik
 
 ### Sycing to other forks
 
-Additionaly, you can sync to other users forks. Just follow the the steps above to set up additional remotes that point to the other forks on github.
+Additionally, you can sync to other users forks. Just follow the the steps above to set up additional remotes that point to the other forks on github.

@@ -56,5 +56,5 @@
   "withstmt"      : false,    // Don't use with
 
   "node"          : true,     // Node env
-  "predef"        : ["angular"]
+  "predef"        : ["angular", "jQuery", "$", "document"]
 }
