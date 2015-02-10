@@ -26,9 +26,24 @@ module.exports = function(grunt) {
       }
     },
     
+    csslint: {
+      strict: {
+        options: {
+          import: 2
+        },
+        src: ['app/css/*.css']
+      },
+      lax: {
+        options: {
+          import: false
+        },
+        src: ['app/css/*.css']
+      }
+    },
+
     // Copy Files
     copy: {
-        
+
         // Copy Only Needed Bootstrap Files
         bootstrap: {
             expand: true,
@@ -42,7 +57,7 @@ module.exports = function(grunt) {
             flatten: true,
             filter: 'isFile'
         },
-        
+
         // Copy Bootstrap Mixins
         bootstrapMixins: {
             expand: true,
@@ -52,7 +67,7 @@ module.exports = function(grunt) {
             flatten: true,
             filter: 'isFile'
         },
-        
+
         // Copy Font Awesome Fonts
         fonts: {
             expand: true,
@@ -62,7 +77,7 @@ module.exports = function(grunt) {
             flatten: true,
             filter: 'isFile'
         },
-        
+
         // Copy Font Awesome SASS
         fontawesomeSASS: {
             expand: true,
@@ -72,7 +87,7 @@ module.exports = function(grunt) {
             flatten: true,
             filter: 'isFile'
         }
-        
+
     },
 
     sass: {
@@ -88,7 +103,8 @@ module.exports = function(grunt) {
 
     watch: {
       files: ['<%= jshint.files %>', 'app/css/*.scss' ],
-      tasks: ['sass', 'concat', 'jshint']
+      tasks: ['sass', 'concat', 'jshint', 'csslint']
+
     }
   });
 
@@ -96,6 +112,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.loadNpmTasks('grunt-contrib-csslint');
   grunt.loadNpmTasks('grunt-contrib-copy');
 
   // Default task(s).
