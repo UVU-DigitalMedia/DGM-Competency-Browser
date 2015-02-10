@@ -1,0 +1,35 @@
+/* ---------------------------------------- Base Styles */
+
+// Foundation
+body {background: $gray-high; @include typography(14px, 0.5px, 200); overflow: hidden;}
+.app-wrapper {display: block; width: 100%; height: 100%;}
+.app-wrapper.open {margin-left: -$header-nav-width;}
+
+// Text
+p {margin: 5px 0px 7px 0px;}
+h1 {@include typography(32px, 1px, 500); margin: 5px 0px 10px 0px;}
+h2 {@include typography(30px, 1px, 500); margin: 5px 0px 10px 0px;}
+h3 {@include typography(28px, 1px, 400); margin: 5px 0px 10px 0px;}
+h4 {@include typography(26px, 1px, 400); margin: 5px 0px 10px 0px;}
+h5 {@include typography(24px, 1px, 300); margin: 5px 0px 10px 0px;}
+h6 {@include typography(22px, 1px, 300); margin: 5px 0px 10px 0px;}
+
+// Lists
+ul {}
+ol {}
+
+// Links
+a {color: $red; text-decoration: none; @include animate(200ms);}
+a:hover {color: $red-lowest;}
+
+// Buttons 
+a.button-red {
+    padding: 10px 20px;
+    color: white;
+    background: $red;
+    border-bottom: 3px solid $red-low;
+    font-weight: 600;
+    @include rounded-corners(5px, 5px, 5px, 5px);
+}
+a.button-red i.fa {margin-right: 10px;}
+a.button-red:hover {background: $red-lowest; border-color: $red-lowest;}
