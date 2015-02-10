@@ -4,7 +4,10 @@
 
     Search: <input ng-model="search"> <br />
 
-    <button><i class="fa fa-plus-square"></i>Add New Semester</button><br />
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#addNewSemester">
+        Add New Semester
+    </button><br />
 
     Filter By Tracks:
     <select ng-model="search.track">
@@ -16,9 +19,114 @@
 
     <ul>
         <li ng-repeat="track in tracks | filter:search | orderBy:orderProp">
-            <span>{{track.semester}}</span>
+
+            <button style="width: 100%;" class="btn btn-success" type="button" data-toggle="collapse" data-target="#{{track.order}}" aria-expanded="false" aria-controls="collapseExample">
+                {{track.semester}}
+            </button>
+            <div class="collapse" id="{{track.order}}">
+
+                <button type="button" class="btn btn-warning btn-lg" data-toggle="modal" data-target="#addNewCourse">
+                    Add New Course
+                </button><br />
+
             <p>{{track.note}}</p>
+
+
+
+            </div>
         </li>
     </ul>
 
+    <!-- Modals -->
+    <div class="modal fade" id="addNewSemester" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Add New Semester</h4>
+                </div>
+                <div class="modal-body">
+
+                    <form class="form-horizontal" action="" method="post">
+                        <fieldset>
+
+                            <!-- Name input-->
+                            <div class="form-group">
+                                <label class="col-md-3 control-label" for="name">Name</label>
+                                <div class="col-md-9">
+                                    <input id="name" name="name" type="text" placeholder="{{administrator.firstName}}{{administrator.lastName}}" class="form-control">
+                                </div>
+                            </div>
+
+                            <!-- Star Date input-->
+                            <div class="form-group">
+                                <label class="col-md-3 control-label" for="email">Start Date</label>
+                                <div class="col-md-9">
+                                    <input id="email" name="startDate" type="text" placeholder="" class="form-control">
+                                </div>
+                            </div>
+
+                            <!-- End Date body -->
+                            <div class="form-group">
+                                <label class="col-md-3 control-label" for="email">End Date</label>
+                                <div class="col-md-9">
+                                    <input id="email" name="endDate" type="text" placeholder="" class="form-control">
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-warning">Add Semester</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="modal fade" id="addNewCourse" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Add New Course</h4>
+                </div>
+                <div class="modal-body">
+
+                    <form class="form-horizontal" action="" method="post">
+                        <fieldset>
+
+                            <!-- Name input-->
+                            <div class="form-group">
+                                <label class="col-md-3 control-label" for="name">Name</label>
+                                <div class="col-md-9">
+                                    <input id="name" name="name" type="text" placeholder="{{administrator.firstName}}{{administrator.lastName}}" class="form-control">
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-warning">Add Course</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
 </div>
+
+
