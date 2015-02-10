@@ -1,12 +1,12 @@
-'use strict';
-
 angular.module('CompBrowser.controllers', [])
 
 .controller('MainCtrl', function($scope) {
+    'use strict';
     $scope.message = 'APP BASE';
 })
 
 .controller('TrackCtrl', function ($scope) {
+    'use strict';
     $scope.tracks = [
          {'semester': 'Spring 2015',
              'note': 'Generals',
@@ -25,56 +25,20 @@ angular.module('CompBrowser.controllers', [])
          },
         {'semester': 'Fall 2016',
             'note': 'Undergraduate Classes',
-            'order': 3,
+            'order': 4,
             'track':'custom1'
         },
         {'semester': 'Spring 2017',
             'note': 'Upper Division Classes',
-            'order': 3,
+            'order': 5,
             'track':'custom2'
         },
         {'semester': 'Fall 2017',
             'note': 'Upper Division Classes',
-            'order': 3,
+            'order': 6,
             'track':'custom2'
         }
     ];
 
     $scope.orderProp = 'order';
-})
-
-.controller('SkillsCtrl', function($scope) {
-  $scope.skills = [
-       {
-         'title': 'Skill Name One'
-       },
-       {
-        'title': 'Skill Name Two'
-      },
-      {
-        'title': 'Skill Name Three'
-      },
-      {
-        'title': 'Skill Name Four'
-      },
-      {
-        'title': 'Skill Name Five'
-      }
-  ];
-
-  $scope.employers = [
-    {
-      'name': 'Adobe'
-    },
-    {
-      'name': 'At Task'
-    },
-    {
-      'name': 'Domo'
-    },
-    {
-      'name': 'LDS Church'
-    }
-  ];
-
-})
+});
