@@ -1,56 +1,86 @@
-/* ---------------------------------------- SASS Variables */
+/* ====================
+    Variables
+==================== */
 
-// Colors
-$gray: #84868c;
-$gray-mid: lighten($gray, 20%);
-$gray-high: lighten($gray, 40%);
-$black-blue: #383c40;
-$black-blue-mid: lighten($black-blue, 5%);
-$black-blue-high: lighten($black-blue, 10%);
-$green: #3f643f;
-$green-mid: #548454;
-$green-high: #71ad7a;
-$blue: #4d82b2;
-$red: #e86e38;
-$red-low: darken($red, 15%);
-$red-lowest: darken($red, 20%);
+// -------- Colors
 
-// Header
-$header-height: 100px;
-$header-nav-width: 80%;
-$header-user-avatar-size: 200px;
+    // Gray
+    $gray: #84868c;
+    $gray-mid: lighten($gray, 20%);
+    $gray-high: lighten($gray, 40%);
+    
+    // Blue
+    $blue: #4d82b2;
+    
+    // Green
+    $green: #3f643f;
+    $green-mid: #548454;
+    $green-high: #71ad7a;
+    
+    // Red  
+    $red: #e86e38;
+    $red-low: darken($red, 15%);
+    $red-lowest: darken($red, 20%);
+    
+    // Black
+    $black-blue: #383c40;
+    $black-blue-mid: lighten($black-blue, 5%);
+    $black-blue-high: lighten($black-blue, 10%);
+    
+// -------- Media Queries
 
-/* ---------------------------------------- SASS Mixins */
+    // Default
+    $tablet: "screen and (min-width: 970px)";
+    $desktop: "screen and (min-width: 1200px)";
 
-// Typography
-@mixin typography($font-size, $letter-spacing, $font-weight){
-    font-family: "Helvetica Neue", Helvetica, Arial;;
-    color: #333333;
-    letter-spacing: $letter-spacing;
-    line-height: $font-size + 12px;
-    font-weight: $font-weight;
-    font-size: $font-size;
-}
+// -------- Header
 
-// Display
-@mixin rounded-corners($top-left, $top-right, $bottom-right, $bottom-left){
-    border-top-left-radius: $top-left;
-    border-top-right-radius: $top-right;
-    border-bottom-left-radius: $bottom-left;
-    border-bottom-right-radius: $bottom-right;
-    -webkit-border-top-left-radius: $top-left;
-    -webkit-border-top-right-radius: $top-right;
-    -webkit-border-bottom-left-radius: $bottom-left;
-    -webkit-border-bottom-right-radius: $bottom-right;
-    -moz-border-top-left-radius: $top-left;
-    -moz-border-top-right-radius: $top-right;
-    -moz-border-bottom-left-radius: $bottom-left;
-    -moz-border-bottom-right-radius: $bottom-right;
-}
+    // Sizes
+    $header-height: 100px;
+    $header-nav-width: 80%;
+    
+// -------- Footer
 
-// Animations
-@mixin animate($speed){
-    transition: all $speed linear;
-	-moz-transition: all $speed linear;
-	-webkit-transition: all $speed linear;
-}
+    // Sizes
+    $footer-height: 100px;
+
+/* ====================
+    Mixins
+==================== */
+
+// -------- Display 
+
+    // Text
+    @mixin typography($font-size, $letter-spacing, $font-weight){
+        font-family: "Helvetica Neue", Helvetica, Arial;;
+        color: #333333;
+        letter-spacing: $letter-spacing;
+        line-height: $font-size + 12px;
+        font-weight: $font-weight;
+        font-size: $font-size;
+    }
+
+    // Rounded Corners
+    @mixin rounded-corners($top-left, $top-right, $bottom-right, $bottom-left){
+        border-top-left-radius: $top-left;
+        border-top-right-radius: $top-right;
+        border-bottom-left-radius: $bottom-left;
+        border-bottom-right-radius: $bottom-right;
+        -webkit-border-top-left-radius: $top-left;
+        -webkit-border-top-right-radius: $top-right;
+        -webkit-border-bottom-left-radius: $bottom-left;
+        -webkit-border-bottom-right-radius: $bottom-right;
+        -moz-border-top-left-radius: $top-left;
+        -moz-border-top-right-radius: $top-right;
+        -moz-border-bottom-left-radius: $bottom-left;
+        -moz-border-bottom-right-radius: $bottom-right;
+    }
+
+// -------- Animations
+
+    // General
+    @mixin animate($speed){
+        transition: all $speed linear;
+    	-moz-transition: all $speed linear;
+    	-webkit-transition: all $speed linear;
+    }

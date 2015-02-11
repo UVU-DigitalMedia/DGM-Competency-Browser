@@ -43,48 +43,59 @@
                     <!-- Row -->
                     <div class="row">
                         
-                        <!-- Column Logo -->
-                        <div class="col-xs-6 logo">
-                            <h1><a href="#/">Comp<strong>Browser</strong></a></h1>
+                        <!-- Logo -->
+                        <div class="col-xs-8 col-md-6 logo">
+                            <a href="#/">
+                                <h1><i class="fa fa-check-square-o"></i>Comp<strong>Browser</strong></h1>
+                            </a>
                         </div>
                         
-                        <!-- Column Nav -->
-                        <div class="col-xs-6 nav">
+                        <!-- Menu -->
+                        <div class="col-xs-4 col-md-6 menu">
                             
                             <!-- Drawer -->
                             <div class="drawer"><i class="fa fa-navicon"></i></div>
                             
-                            <!-- Navigation -->
-                            <nav>
-                                
-                                <!-- User -->
-                                <div class="user">
+                                <!-- Navigation -->
+                                <nav>
                                     
-                                    <!-- Logged In -->
-                                    <div class="logged-in">
+                                    <!-- User -->
+                                    <div class="user">
                                         
-                                        <!-- Name -->
-                                        <h1>Hello, John Smith</h1>
-                                        <p>You have <strong>20 Skills</strong> and <strong>10 Classes</strong> planned.</p>
-                                        
-                                        <!-- Log Out -->
-                                        <a class="button-red" href="#"><i class="fa fa-close"></i>Log Out</a>
+                                        <!-- Logged In -->
+                                        <div class="logged-in">
+                                            
+                                            <!-- Name -->
+                                            <h1>Hello, John Smith</h1>
+                                            
+                                            <!-- Extra -->
+                                            <div class="extra">
+                                                
+                                                <p>You have <strong>20 Skills</strong> and <strong>10 Classes</strong> planned.</p>
+                                                
+                                                <!-- Log Out -->                 
+                                                <a class="button-red" href="#"><i class="fa fa-close"></i>Log Out</a>
+                                                
+                                            </div>
+                                            
+                                        </div>
                                         
                                     </div>
                                     
-                                </div>
-                                
-                                <!-- Items -->
-                                <ul>
-                                    <li><a href="#/">Home</a></li>
-                                    <li><a href="#courses">Courses</a></li>
-                                    <li><a href="#about">About</a></li>
-                                    <li><a href="#tracks">Tracks</a></li>
-                                    <li><a href="#skills">Skills</a></li>
-                                </ul>
-                                
-                            </nav>
-                            
+                                    <!-- Clear Fix -->
+                                    <div class="sep"></div>
+                                    
+                                    <!-- Items -->
+                                    <ul>
+                                        <li><a href="#/">Home</a></li>
+                                        <li><a href="#courses">Courses</a></li>
+                                        <li><a href="#about">About</a></li>
+                                        <li><a href="#tracks">Tracks</a></li>
+                                        <li><a href="#skills">Skills</a></li>
+                                    </ul>
+                                    
+                                </nav>
+ 
                         </div>
                         
                     </div>
@@ -98,11 +109,12 @@
                 <div ui-view></div>
             </div>
             
+        </div>
+            
             <!-- Footer -->
             <footer>
+                <p>Copyright &copy; 2015 Utah Valley University.</p>
             </footer>
-            
-        </div>
         
         <!-- Load Scripts -->
         <script src="lib/jquery/dist/jquery.min.js"></script>
