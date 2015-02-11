@@ -1,97 +1,28 @@
-body {
-  padding-top: 51px;
-}
-.starter-template {
-  padding: 40px 15px;
-  text-align: center;
-}
+/* --------------------------------------
+    Digital Media Competency Browser
+-------------------------------------- */
 
+/* Reset & Bootstrap */
+@import "partials/reset";
+@import "partials/bootstrap/mixins";
+@import "partials/bootstrap/variables";
+@import "partials/bootstrap/grid";
 
+/* Font Awesome */
+@import "partials/fontawesome/variables";
+@import "partials/fontawesome/mixins";
+@import "partials/fontawesome/path";
+@import "partials/fontawesome/core";
+@import "partials/fontawesome/larger";
+@import "partials/fontawesome/fixed-width";
+@import "partials/fontawesome/list";
+@import "partials/fontawesome/bordered-pulled";
+@import "partials/fontawesome/animated";
+@import "partials/fontawesome/rotated-flipped";
+@import "partials/fontawesome/stacked";
+@import "partials/fontawesome/icons";
 
-
-
-
-
-
-/******** Skills *********/
-.filter-bar {
-  height:45px;
-  margin:10px 0;
-  padding:5px 0px 5px 10px;
-  background-color:green;
-  color:#fff;
-}
-.filter-bar a, .filter-bar h4 {
-  color:#fff !important;
-  text-decoration:none;
-}
-.skills h4 {
-  color:green;
-  border-bottom:1px solid green;
-}
-.skills {
-  margin-top:20px;
-}
-.skills ul {
-  padding:0;
-}
-.skills ul li {
-  list-style-type:none;
-}
-.skills ul li a {
-  margin:5px 0;
-  display: inline-block;
-  padding: 8px;
-
-  color: #000;
-  border: 3px solid green;
-  text-align: center;
-  outline: none;
-  text-decoration: none;
-  font-size:1.2em;
-  transition: background-color 0.2s ease-out,
-              color 0.2s ease-out;
-}
-.skills ul li a:hover {
-  background-color: green;
-  color: #fff;
-}
-
-.right-inner-addon {
-  position: relative;
-}
-.right-inner-addon input {
-  padding-right: 30px;
-}
-.right-inner-addon i {
-  position: absolute;
-  right: 0px;
-  padding: 10px 12px;
-  pointer-events: none;
-  color:green;
-}
-
-
-input[type=checkbox] {
-  display:none;
-}
-.checkbox label {
-  padding-left:0;
-}
-input[type=checkbox] + label:before {
-  content: "";
-  display: inline-block;
-  margin-left:0;
-  width: 25px;
-  height: 25px;
-  vertical-align:middle;
-  margin-right: 8px;
-  border:2px solid #add8e6;
-}
-input[type=checkbox]:checked + label:before {
-  content:"\2714";
-  font-size:1.2em;
-  color:green;
-  text-align:center;
-  line-height:25px;
-}
+/* Site */
+@import "partials/variables";
+@import "partials/base";
+@import "partials/header";

@@ -33,6 +33,14 @@ Frontend dependancies:
 Install nodemon. If you are working on the server nodemon will restart the server when you save the files. Otherwise, nodemon isn't needed. See [Nodemon,](https://github.com/remy/nodemon) for more info
 
     npm install -g nodemon
+    
+Install Grunt:
+    
+    npm install -g grunt-cli
+
+Install Sass
+
+    sudo su -c "gem install sass"
 
 ####Do the Database things and start the server
 
@@ -54,6 +62,15 @@ Start the server:
 
 
 Then open a web browser to http://localhost:8080/ to see magic.
+
+##Running Grunt
+
+Tasks will be run automatically when you run Grunt, such as concatenation and minification. 
+
+    grunt
+    grunt watch
+
+
 
 ##GitHub Workflow
 ![Github Workflow](http://i.imgur.com/7Qg4Tiu.png?1)
@@ -80,4 +97,4 @@ After you have merged the main repo code on your local machine. If you would lik
 
 ### Sycing to other forks
 
-Additionaly, you can sync to other users forks. Just follow the the steps above to set up additional remotes that point to the other forks on github.
+Additionally, you can sync to other users forks. Just follow the the steps above to set up additional remotes that point to the other forks on github.
