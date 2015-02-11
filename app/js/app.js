@@ -19,7 +19,7 @@ angular.module('CompBrowser', ['ui.router', 'CompBrowser.controllers', 'skillsCt
     })
     .state('courses', {
         url: '/courses',
-        templateUrl: 'templates/courses.html',
+        templateUrl: 'courses/courses.html',
         controller: 'CourseCtrl'
     })
     .state('skills', {
