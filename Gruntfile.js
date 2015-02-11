@@ -25,7 +25,6 @@ module.exports = function(grunt) {
         }
       }
     },
-    
     csslint: {
       strict: {
         options: {
@@ -102,9 +101,8 @@ module.exports = function(grunt) {
      },
 
     watch: {
-      files: ['<%= jshint.files %>', 'app/css/**/*.scss' ],
+      files: ['<%= jshint.files %>', 'app/css/*.scss' ],
       tasks: ['sass', 'concat', 'jshint', 'csslint']
-
     }
   });
 
@@ -114,6 +112,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-csslint');
   grunt.loadNpmTasks('grunt-contrib-copy');
+
 
   // Default task(s).
   grunt.registerTask('default', ['jshint']);
