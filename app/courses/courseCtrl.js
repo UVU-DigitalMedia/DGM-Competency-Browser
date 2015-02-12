@@ -21,8 +21,8 @@ angular.module("courseCtrl", [])
 			"fav": false,
 			"crhours": 3,
 			"fallsem": true,
-			"springsem": true,
-			"summersem": false,
+			"springsem": false,
+			"summersem": true,
 			"prereq": "DGM 1090",
 			"recommended": true,
 			"crdesc": "Teaches basic scripting for games. Topics in this course include: understanding the writing process; writing effective sentences, paragraphs, and short essays; patterns of organization; rhetorical modes and purposes; audience analysis; the composing process; and editing."
@@ -32,9 +32,9 @@ angular.module("courseCtrl", [])
 			"crtitle": "Game Languages 3",
 			"fav": true,
 			"crhours": 3,
-			"fallsem": true,
+			"fallsem": false,
 			"springsem": true,
-			"summersem": false,
+			"summersem": true,
 			"prereq": "DGM 2190",
 			"recommended": true,
 			"crdesc": "Teaches basic scripting for games. Topics in this course include: understanding the writing process; writing effective sentences, paragraphs, and short essays; patterns of organization; rhetorical modes and purposes; audience analysis; the composing process; and editing."

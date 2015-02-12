@@ -1,4 +1,4 @@
-angular.module('CompBrowser', ['ui.router', 'CompBrowser.controllers', 'skillsCtrl'])
+angular.module('CompBrowser', ['ui.router', 'CompBrowser.controllers', 'skillsCtrl', 'courseCtrl'])
 
 .config(function($stateProvider, $urlRouterProvider) {
     'use strict';
