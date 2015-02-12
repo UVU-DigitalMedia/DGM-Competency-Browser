@@ -8,15 +8,13 @@ footer {
     color: white;
     text-align: center;
     height: $footer-height;
-    position: absolute;
-    bottom: 0;
     width: 100%;
     
     p {
         
         height: inherit;
         line-height: $footer-height;
-        margin: 0px;
+        margin: 0px !important;
         
     }
     
