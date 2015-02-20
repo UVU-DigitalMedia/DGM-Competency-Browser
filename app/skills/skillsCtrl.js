@@ -1,33 +1,36 @@
-angular.module('skillsCtrl', [])
-
-.controller('SkillsCtrl', function($scope, employerResource) {
-    var vm = this;
+(function () {
+    'use strict';
     
-    employerResource.query(function(data) {
-        vm.employers = data;
-    });
+    angular.module('skillsCtrl', [])
 
-    // Array to store skill values
-    $scope.selected = [];
+    .controller('SkillsCtrl', function($scope, empResource) {
+        
+        // Query to fake httpBackend service for testing purposes
+        empResource.query(function(data) {
+            $scope.employers = data;
+        });
 
-    // Function to push values into array
-    $scope.check = function(e) {
-        var i = $.inArray(e, $scope.selected);
-        if (i > -1) {
-            $scope.selected.splice(i, 1);
-        } else {
-            $scope.selected.push(e);
-        }
-    };
+        // Array to store skill values
+        $scope.selected = [];
 
-    // Custom function to filter value for checkboxes
-    // Determines if value is included within array and if so, returns it
-    $scope.searchSkills = function(employers) {
-        if ($scope.selected.length > 0) {
-            if ($.inArray(employers.skill, $scope.selected) < 0)
-            return;
-        }
-            return employers;
+        // Function to push values into array
+        $scope.check = function(e) {
+            var i = $.inArray(e, $scope.selected);
+            if (i > -1) {
+                $scope.selected.splice(i, 1);
+            } else {
+                $scope.selected.push(e);
+            }
         };
 
-});
+        // Custom function to filter value for checkboxes
+        // Determines if value is included within array and if so, returns it
+        $scope.searchSkills = function(employers) {
+            if ($scope.selected.length > 0) {
+                if ($.inArray(employers.skill, $scope.selected) < 0)
+                return;
+            }
+                return employers;
+            };
+    });
+}());

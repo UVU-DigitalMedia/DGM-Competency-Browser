@@ -1,4 +1,4 @@
-angular.module('CompBrowser', ['common.services', 'ui.router', 'CompBrowser.controllers', 'skillsCtrl', 'courseCtrl', 'productResourceMock', 'employerResourceMock'])
+angular.module('CompBrowser', ['common.services', 'ui.router', 'CompBrowser.controllers', 'skillsCtrl', 'courseCtrl', 'empResourceMock'])
 
 .config(function($stateProvider, $urlRouterProvider) {
     'use strict';
@@ -26,12 +26,6 @@ angular.module('CompBrowser', ['common.services', 'ui.router', 'CompBrowser.cont
         url: '/skills',
         templateUrl: 'skills/skills.html',
         controller: 'SkillsCtrl'
-    })
-    // Products
-    .state('products', {
-        url: '/products',
-        templateUrl: 'products/productListView.html',
-        controller: 'ProductListCtrl as vm'
     });
     $urlRouterProvider.otherwise('/');
 });

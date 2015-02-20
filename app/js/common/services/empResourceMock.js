@@ -1,11 +1,10 @@
 (function () {
     'use strict';
 
-    var app = angular
-                .module('employerResourceMock',
-                        ['ngMockE2E']);
+    var app = angular.module('empResourceMock', ['ngMockE2E']);
 
     app.run(function ($httpBackend) {
+               
         var employers = [
             {
                 "employerId": 1,
@@ -51,7 +50,7 @@
         var employerUrl = '/api/employers';
         $httpBackend.whenGET(employerUrl).respond(employers);
        
-        // Pass through any requests for application files
+        // Pass through any requests for other files
         $httpBackend.whenGET(/.*/).passThrough();
 
 
