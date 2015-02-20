@@ -1,4 +1,4 @@
-angular.module('CompBrowser.controllers', [])
+angular.module('CompBrowserControllers', [])
 
 .controller('MainCtrl', function($scope) {
     'use strict';
@@ -41,4 +41,26 @@ angular.module('CompBrowser.controllers', [])
     ];
 
     $scope.orderProp = 'order';
+})
+
+//example controller for testing - THIS ISN" USED
+.controller('PasswordController', function PasswordController($scope) {
+  'use strict';
+
+  $scope.password = '';
+  $scope.grade = function() {
+    var size = $scope.password.length;
+    if (size > 8) {
+      $scope.strength = 'strong';
+    } else if (size > 3) {
+      $scope.strength = 'medium';
+    } else {
+      $scope.strength = 'weak';
+    }
+  };
+
+  $scope.message = function(){
+    return 'I am awesome';
+  };
+
 });

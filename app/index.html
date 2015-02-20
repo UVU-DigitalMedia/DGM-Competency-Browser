@@ -1,90 +1,90 @@
 <!doctype html>
 <html lang="en">
-    
+
     <!-- Head Data -->
     <head>
-        
+
         <!-- Meta -->
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description" content="" />
         <meta name ="author" content="" />
-        
+
         <!-- Favicon -->
         <link rel="icon" href="../../favicon.ico" />
-        
+
         <!-- Title -->
         <title>Competency Browser</title>
-        
+
         <!-- CSS Styles -->
         <link href="css/styles.css" rel="stylesheet" />
-        
+
         <!-- HTML5 Support Media Queries -->
         <!--[if lt IE 9]>
           <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
           <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
-        
+
     </head>
-    
+
     <!-- Body -->
     <body ng-app="CompBrowser">
-        
+
         <!-- App Wrapper -->
         <div class="app-wrapper">
-        
+
             <!-- Header -->
             <header>
-                
+
                 <!-- Container -->
                 <div class="container-fluid">
-                    
+
                     <!-- Row -->
                     <div class="row">
-                        
+
                         <!-- Logo -->
                         <div class="col-xs-8 col-md-6 logo">
                             <a href="#/">
                                 <h1><i class="fa fa-check-square-o"></i>Comp<strong>Browser</strong></h1>
                             </a>
                         </div>
-                        
+
                         <!-- Menu -->
                         <div class="col-xs-4 col-md-6 menu">
-                            
+
                             <!-- Drawer -->
                             <div class="drawer"><i class="fa fa-navicon"></i></div>
-                            
+
                                 <!-- Navigation -->
                                 <nav>
-                                    
+
                                     <!-- User -->
                                     <div class="user">
-                                        
+
                                         <!-- Logged In -->
                                         <div class="logged-in">
-                                            
+
                                             <!-- Name -->
                                             <h1>Hello, John Smith</h1>
-                                            
+
                                             <!-- Extra -->
                                             <div class="extra">
-                                                
+
                                                 <p>You have <strong>20 Skills</strong> and <strong>10 Classes</strong> planned.</p>
-                                                
-                                                <!-- Log Out -->                 
+
+                                                <!-- Log Out -->
                                                 <a class="button-red" href="#"><i class="fa fa-close"></i>Log Out</a>
-                                                
+
                                             </div>
-                                            
+
                                         </div>
-                                        
+
                                     </div>
-                                    
+
                                     <!-- Clear Fix -->
                                     <div class="sep"></div>
-                                    
+
                                     <!-- Items -->
                                     <ul>
                                         <li><a href="#/">Home</a></li>
@@ -93,34 +93,34 @@
                                         <li><a href="#tracks">Tracks</a></li>
                                         <li><a href="#skills">Skills</a></li>
                                     </ul>
-                                    
+
                                 </nav>
- 
+
                         </div>
-                        
+
                     </div>
-                    
+
                 </div>
-                
+
             </header>
-            
+
             <!-- Content -->
-            <div class="app-wrapper">
+            <div class="contentWrapper">
                 <div ui-view></div>
-            </div>
-            
+            </div><!--end .contentWrapper -->
+
         </div>
-            
+
             <!-- Footer -->
             <footer>
                 <p>Copyright &copy; 2015 Utah Valley University.</p>
             </footer>
-        
+
         <!-- Load Scripts -->
         <script src="lib/jquery/dist/jquery.min.js"></script>
         <script src="lib/jquery-ui/jquery-ui.min.js"></script>
         <script src="lib/angular/angular.js"></script>
-        <script src="js/angular-mocks.js"></script>
+        <script src="lib/angular-mocks/angular-mocks.js"></script>
         <script src="lib/angular-resource/angular-resource.min.js"></script>
         <script src="lib/angular-ui-router/release/angular-ui-router.min.js"></script>
         <script src="js/app.js"></script>
@@ -140,5 +140,3 @@
     </body>
     
 </html>
-
-
