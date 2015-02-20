@@ -1,0 +1,21 @@
+/* ---------------------------------------- Skills Page ---*/
+.skillList{
+  @include clear();
+}
+.filter-bar{
+  @include clear();
+}
+.skillList{
+  @include clear();
+}
+.skillItem{
+  padding:$pad;
+  @include radius();
+  @include clear();
+  margin-bottom:5px;
+  background:$green;
+
+  .skill{
+    color:$white;
+  }
+}

@@ -3,30 +3,39 @@
 ==================== */
 
 // -------- Colors
+    //white
+    $white:#fff;
 
     // Gray
     $gray: #84868c;
     $gray-mid: lighten($gray, 20%);
     $gray-high: lighten($gray, 40%);
-    
+
     // Blue
     $blue: #4d82b2;
-    
+
     // Green
     $green: #3f643f;
     $green-mid: #548454;
     $green-high: #71ad7a;
-    
-    // Red  
+
+    // Red
     $red: #e86e38;
     $red-low: darken($red, 15%);
     $red-lowest: darken($red, 20%);
-    
+
     // Black
     $black-blue: #383c40;
     $black-blue-mid: lighten($black-blue, 5%);
     $black-blue-high: lighten($black-blue, 10%);
-    
+
+    // -------- Padding
+    $pad:10px;
+    $pad-sm:$pad/2;
+    $pad-md:$pad*2;
+    $pad-lg:$pad*4;
+
+
 // -------- Media Queries
 
     // Default
@@ -38,7 +47,7 @@
     // Sizes
     $header-height: 100px;
     $header-nav-width: 80%;
-    
+
 // -------- Footer
 
     // Sizes
@@ -47,8 +56,33 @@
 /* ====================
     Mixins
 ==================== */
+$prefixes: ("-webkit-","-moz-", "-ms-", "-o-", "");
 
-// -------- Display 
+@mixin prefix($property, $value) {
+  @each $prefix in $prefixes {
+    #{$prefix}#{$property}: #{$value};
+  }
+}
+
+@mixin clear() {
+  &:before, &:after {
+    content: "\0020";
+    display: block;
+    height: 0;
+    overflow: hidden;
+  }
+  &:after {
+    clear: both;
+  }//after
+}//clear
+
+@mixin transition($property: all, $timing: 200ms, $method: ease-in-out){
+  $value: $property $timing $method;
+  @include prefix(transition, $value);
+}
+
+
+// -------- Display
 
     // Text
     @mixin typography($font-size, $letter-spacing, $font-weight){
@@ -61,6 +95,10 @@
     }
 
     // Rounded Corners
+    @mixin radius($value:4px){
+      @include prefix(border-radius, $value);
+    }
+
     @mixin rounded-corners($top-left, $top-right, $bottom-right, $bottom-left){
         border-top-left-radius: $top-left;
         border-top-right-radius: $top-right;
@@ -75,7 +113,6 @@
         -moz-border-bottom-left-radius: $bottom-left;
         -moz-border-bottom-right-radius: $bottom-right;
     }
-
 // -------- Animations
 
     // General
