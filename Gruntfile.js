@@ -30,7 +30,7 @@ module.exports = function(grunt) {
         options: {
           import: 2
         },
-        src: ['app/css/*.css']
+        src: ['app/css/partials/_variables.scss']
       },
       lax: {
         options: {
@@ -87,23 +87,23 @@ module.exports = function(grunt) {
             filter: 'isFile'
         }
 
-    },
+      },
 
-    sass: {
-       dist: {
-         files: [{
-           expand: true,
-           src: ['app/css/*.scss'],
-           dest: '',
-           ext: '.css'
-         }]
-       }
-     },
+      sass: {
+         dist: {
+           files: [{
+             expand: true,
+             src: ['app/css/*.scss'],
+             dest: '',
+             ext: '.css'
+           }]
+         }
+       },
 
-    watch: {
-      files: ['<%= jshint.files %>', 'app/css/*.scss' ],
-      tasks: ['sass', 'concat', 'jshint', 'csslint']
-    }
+      watch: {
+        files: ['<%= jshint.files %>', 'app/css/*.scss' ],
+        tasks: ['sass', 'concat', 'jshint', 'csslint']
+      }
   });
 
   grunt.loadNpmTasks('grunt-contrib-jshint');
