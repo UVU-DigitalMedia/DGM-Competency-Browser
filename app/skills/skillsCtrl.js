@@ -1,44 +1,11 @@
 angular.module('skillsCtrl', [])
 
-.controller('SkillsCtrl', function($scope) {
-
-    $scope.employers = [
-        {
-            "name": "Adobe",
-            "skill": [
-                "2-D Packages",
-                "3-D Packages",
-                "Integrating Game Assets",
-                "Requirements Gathering",
-                "Identifying Art Problems"
-            ]
-        },
-        {
-            "name": "At Task",
-            "skill": [
-                "Game Scripting",
-                "Advanced Game Scripting",
-                "Identifying Art Problems"
-            ]
-        },
-        {
-            "name": "Domo",
-            "skill": [
-                "Advanced Game Scripting",
-                "3-D Packages"
-            ]
-        },
-        {
-            "name": "LDS Church",
-            "skill": [
-                "Character Development",
-                "Character Modeling",
-                "Rendering Skills",
-                "Prototyping",
-                "Identifying Art Problems"
-            ]
-        }
-    ];
+.controller('SkillsCtrl', function($scope, employerResource) {
+    var vm = this;
+    
+    employerResource.query(function(data) {
+        vm.employers = data;
+    });
 
     // Array to store skill values
     $scope.selected = [];

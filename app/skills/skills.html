@@ -1,8 +1,4 @@
-<div class="filter-bar" data-toggle="collapse" data-target="#collapseSkills" aria-expanded="false" aria-controls="collapseSkills">
-  <h4><a href="#"><span class="caret"></span> Filters</a></h4>
-</div>
-
-<div class="collapse" id="collapseSkills">
+<div class="container-fluid">
     <div class="skills">
         <div class="row employers">
             <div class="col-xs-12">
@@ -14,15 +10,7 @@
                 <label for="{{emp.name}}">{{emp.name}}</label>
               </div>
             </div>
-
-            <!-- Test select box for filtering...this can be removed if wanted -->
-            <div class="col-xs-12">
-                <select ng-model="searchSkills" class="col-xs-12">
-                    <option value="">All</option>
-                    <option ng-repeat="emp in employers" value="{{emp.name}}">{{emp.name}}</option>
-                </select>
-            </div>
-        </div>
+        </div><!-- end .employers -->
 
         <div class="row jobs">
             <div class="col-xs-12">
@@ -31,12 +19,12 @@
                   <div class="right-inner-addon">
                     <i class="glyphicon glyphicon-search"></i>
                     <input type="search"
-                            class="form-control"
+                            class="form-control col-xs-12"
                             placeholder="Start Typing"
                             ng-model="search" />
                   </div>
             </div>
-        </div>
+        </div><!-- end .jobs -->
 
         <div class="row ind-skills">
             <div class="col-xs-12">
@@ -50,8 +38,7 @@
                     </li>
                 </ul>
             </div>
-        </div>
+        </div><!-- end .ind-skills -->
+    </div><!-- end .skills -->
 
-      </div>
-    </div>
-</div>
+</div><!-- end .container-fluid -->
