@@ -1,5 +1,7 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
+var SkillsSchema = require('./skills.js');
+var CategorySchema = require('./categories.js');
 
 var JobsSchema = new Schema({
 
