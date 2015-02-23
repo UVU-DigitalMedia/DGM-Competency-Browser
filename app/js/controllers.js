@@ -19,12 +19,12 @@ angular.module('CompBrowserControllers', [])
         var userData = new Firebase(FBURL+'/users/'+authData.uid);
 
         // Attach an asynchronous callback to read the data at our posts reference
-        userData.on("value", function(snapshot) {
+        userData.on('value', function(snapshot) {
           console.log(snapshot.val());
         }, function (errorObject) {
-          console.log("The read failed: " + errorObject.code);
+          console.log('The read failed: ' + errorObject.code);
         });
-        
+
     } else {
         console.log('User is logged out');
     }
@@ -39,7 +39,7 @@ angular.module('CompBrowserControllers', [])
             password: $scope.person.password
 
         }).then(function(userData) {
-            console.log("User " + userData.uid + " created successfully!");
+            console.log('User ' + userData.uid + ' created successfully!');
             return $scope.authObj.$authWithPassword({
 
                 email: $scope.person.email,
@@ -47,9 +47,9 @@ angular.module('CompBrowserControllers', [])
 
             });
         }).then(function(authData) {
-            console.log("Logged in as:", authData.uid);
+            console.log('Logged in as:', authData.uid);
 
-            ref.child("users").child(authData.uid).set({
+            ref.child('users').child(authData.uid).set({
 
                 provider: authData.provider,
                 name: '',
@@ -58,7 +58,7 @@ angular.module('CompBrowserControllers', [])
 
             });
         }).catch(function(error) {
-            console.error("Error: ", error);
+            console.error('Error: ', error);
         });
 
     };
