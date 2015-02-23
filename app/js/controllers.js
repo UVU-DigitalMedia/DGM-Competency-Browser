@@ -5,6 +5,65 @@ angular.module('CompBrowserControllers', [])
     $scope.message = 'APP BASE';
 })
 
+.controller('RegisterCtrl', function($scope, $firebase, $firebaseAuth, FBURL) {
+    'use strict';
+
+    //collect name and other needed info for profile??
+    var userRef = new Firebase(FBURL + '/users');
+    var ref = new Firebase(FBURL);
+    $scope.authObj = $firebaseAuth(ref);
+
+    var authData = userRef.getAuth();
+    if (authData) {
+        console.log('User ' + authData.uid + ' is logged in with ' + authData.provider);
+        var userData = new Firebase(FBURL+'/users/'+authData.uid);
+
+        // Attach an asynchronous callback to read the data at our posts reference
+        userData.on('value', function(snapshot) {
+          console.log(snapshot.val());
+        }, function (errorObject) {
+          console.log('The read failed: ' + errorObject.code);
+        });
+
+    } else {
+        console.log('User is logged out');
+    }
+
+
+
+
+    $scope.registerUser = function() {
+        $scope.authObj.$createUser({
+
+            email: $scope.person.email,
+            password: $scope.person.password
+
+        }).then(function(userData) {
+            console.log('User ' + userData.uid + ' created successfully!');
+            return $scope.authObj.$authWithPassword({
+
+                email: $scope.person.email,
+                password: $scope.person.password
+
+            });
+        }).then(function(authData) {
+            console.log('Logged in as:', authData.uid);
+
+            ref.child('users').child(authData.uid).set({
+
+                provider: authData.provider,
+                name: '',
+                email: $scope.person.email,
+                password: $scope.person.password
+
+            });
+        }).catch(function(error) {
+            console.error('Error: ', error);
+        });
+
+    };
+})
+
 .controller('TrackCtrl', function ($scope) {
     'use strict';
     $scope.tracks = [
