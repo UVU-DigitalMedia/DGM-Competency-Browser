@@ -2,9 +2,21 @@
     Variables
 ==================== */
 
+// -------- App
+
+    // Fixes
+    $prefixes: ("-webkit-","-moz-", "-ms-", "-o-", "");
+    
+    // Padding
+    $pad: 10px;
+    $pad-sm: $pad / 2;
+    $pad-md: $pad * 2;
+    $pad-lg: $pad * 4;
+
 // -------- Colors
-    //white
-    $white:#fff;
+
+    // White
+    $white: #FFF;
 
     // Gray
     $gray: #84868c;
@@ -29,12 +41,6 @@
     $black-blue-mid: lighten($black-blue, 5%);
     $black-blue-high: lighten($black-blue, 10%);
 
-    // -------- Padding
-    $pad:10px;
-    $pad-sm:$pad/2;
-    $pad-md:$pad*2;
-    $pad-lg:$pad*4;
-
 
 // -------- Media Queries
 
@@ -45,7 +51,7 @@
 // -------- Header
 
     // Sizes
-    $header-height: 100px;
+    $header-height: 75px;
     $header-nav-width: 80%;
 
 // -------- Footer
@@ -56,38 +62,29 @@
 /* ====================
     Mixins
 ==================== */
-$prefixes: ("-webkit-","-moz-", "-ms-", "-o-", "");
-
-@mixin prefix($property, $value) {
-  @each $prefix in $prefixes {
-    #{$prefix}#{$property}: #{$value};
-  }
-}
-
-@mixin clear() {
-  &:before, &:after {
-    content: "\0020";
-    display: block;
-    height: 0;
-    overflow: hidden;
-  }
-  &:after {
-    clear: both;
-  }//after
-}//clear
-
-@mixin transition($property: all, $timing: 200ms, $method: ease-in-out){
-  $value: $property $timing $method;
-  @include prefix(transition, $value);
-}
-
 
 // -------- Display
+
+    // Fixes
+    @mixin prefix($property, $value){
+        @each $prefix in $prefixes {
+            #{$prefix}#{$property}: #{$value};
+        }
+    }
+    @mixin clear(){
+        &:before, &:after {
+            content: "\0020";
+            display: block;
+            height: 0;
+            overflow: hidden;
+        }
+        &:after {clear: both;}
+    }
 
     // Text
     @mixin typography($font-size, $letter-spacing, $font-weight){
         font-family: "Helvetica Neue", Helvetica, Arial;;
-        color: #333333;
+        color: #666666;
         letter-spacing: $letter-spacing;
         line-height: $font-size + 12px;
         font-weight: $font-weight;
@@ -95,29 +92,15 @@ $prefixes: ("-webkit-","-moz-", "-ms-", "-o-", "");
     }
 
     // Rounded Corners
-    @mixin radius($value:4px){
-      @include prefix(border-radius, $value);
+    @mixin radius($value: 5px){@include prefix(border-radius, $value);}
+    @mixin radius-specify($top-left: 5px, $top-right: 5px, $bottom-right: 5px, $bottom-left: 5px){
+        @include prefix(border-top-left-radius, $top-left);
+        @include prefix(border-top-right-radius, $top-right);
+        @include prefix(border-bottom-left-radius, $bottom-left);
+        @include prefix(border-bottom-right-radius, $bottom-right);
     }
-
-    @mixin rounded-corners($top-left, $top-right, $bottom-right, $bottom-left){
-        border-top-left-radius: $top-left;
-        border-top-right-radius: $top-right;
-        border-bottom-left-radius: $bottom-left;
-        border-bottom-right-radius: $bottom-right;
-        -webkit-border-top-left-radius: $top-left;
-        -webkit-border-top-right-radius: $top-right;
-        -webkit-border-bottom-left-radius: $bottom-left;
-        -webkit-border-bottom-right-radius: $bottom-right;
-        -moz-border-top-left-radius: $top-left;
-        -moz-border-top-right-radius: $top-right;
-        -moz-border-bottom-left-radius: $bottom-left;
-        -moz-border-bottom-right-radius: $bottom-right;
-    }
+   
 // -------- Animations
 
     // General
-    @mixin animate($speed){
-        transition: all $speed linear;
-    	-moz-transition: all $speed linear;
-    	-webkit-transition: all $speed linear;
-    }
+    @mixin animate($speed){@include prefix(transition, all $speed linear);}
