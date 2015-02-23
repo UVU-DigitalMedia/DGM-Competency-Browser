@@ -4,14 +4,11 @@
 jQuery(document).ready(function(){
     
     // Call Functions
-    toggle_class('header .menu .drawer', 'header .menu nav');
-    toggle_class('header .menu nav ul li a', 'header .menu nav');
-    toggle_class('header .menu .drawer', '.app-wrapper');
-    toggle_class('header .menu nav ul li a', '.app-wrapper');
-    toggle_class('header .menu .drawer', 'footer');
-    toggle_class('header .menu nav ul li a', 'footer');
-    toggle_class('header .menu .user', 'header .menu .user .extra');
-    toggle_class('header .menu .user', 'header .menu .user');
+    toggle_class('.drawer', '.drawer i.fa'); /* */ toggle_class('nav ul li', '.drawer i.fa');
+    toggle_class('.drawer', 'nav'); /* */ toggle_class('nav ul li', 'nav');
+    toggle_class('.drawer', '.app-wrapper'); /* */ toggle_class('nav ul li', '.app-wrapper');
+    toggle_class('nav li.sign-in', '.user-login'); /* */ toggle_class('.user-login .close i.fa', '.user-login');
+    
     
     // Toggle Class
     function toggle_class(trigger, target){
