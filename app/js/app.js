@@ -2,7 +2,7 @@ angular.module('CompBrowser', ['common.services',
                                'ui.router',
                                'CompBrowserControllers',
                                'skillsCtrl',
-                               'courseCtrl',
+                               'courseCtrl','trackResourceMock',
                                'empResourceMock',
                                'firebase'])
 
@@ -25,7 +25,7 @@ angular.module('CompBrowser', ['common.services',
     })
     .state('tracks', {
         url: '/tracks',
-        templateUrl: 'templates/tracks.html',
+        templateUrl: '../tracks/tracks.html',
         controller: 'TrackCtrl'
     })
     .state('courses', {

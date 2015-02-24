@@ -64,43 +64,72 @@ angular.module('CompBrowserControllers', [])
     };
 })
 
-.controller('TrackCtrl', function ($scope) {
-    'use strict';
-    $scope.tracks = [
-         {'semester': 'Spring 2015',
-             'note': 'Generals',
-             'order': 1,
-             'track': 'recommended'
-         },
-         {'semester': 'Fall 2015',
-              'note': 'Undergraduate Classes',
-              'order': 2,
-              'track': 'recommended'
-         },
-         {'semester': 'Spring 2016',
-             'note': 'Undergraduate Classes',
-             'order': 3,
-             'track':'custom1'
-         },
-        {'semester': 'Fall 2016',
-            'note': 'Undergraduate Classes',
-            'order': 4,
-            'track':'custom1'
-        },
-        {'semester': 'Spring 2017',
-            'note': 'Upper Division Classes',
-            'order': 5,
-            'track':'custom2'
-        },
-        {'semester': 'Fall 2017',
-            'note': 'Upper Division Classes',
-            'order': 6,
-            'track':'custom2'
-        }
-    ];
+    .controller('TrackCtrl', function ($scope, trackResource) {
+        'use strict';
 
-    $scope.orderProp = 'order';
-})
+        // Query to fake httpBackend service for testing purposes
+        trackResource.query(function(data) {
+            $scope.tracks = data;
+        });
+
+        $scope.tracks = [
+            {'semester': 'Spring 2015',
+                'note': 'Generals',
+                'order': 1,
+                'track': 'recommended'
+            },
+            {'semester': 'Fall 2015',
+                'note': 'Undergraduate Classes',
+                'order': 2,
+                'track': 'recommended'
+            },
+            {'semester': 'Spring 2016',
+                'note': 'Undergraduate Classes',
+                'order': 3,
+                'track':'custom1'
+            },
+            {'semester': 'Fall 2016',
+                'note': 'Undergraduate Classes',
+                'order': 4,
+                'track':'custom1'
+            },
+            {'semester': 'Spring 2017',
+                'note': 'Upper Division Classes',
+                'order': 5,
+                'track':'custom2'
+            },
+            {'semester': 'Fall 2017',
+                'note': 'Upper Division Classes',
+                'order': 6,
+                'track':'custom2'
+            }
+        ];
+
+        $scope.orderProp = 'order';
+
+
+        // Array to store skill values
+        $scope.trackIncludes = [];
+
+        $scope.includesTracks = function(tracks) {
+            var i = $.inArray(tracks, $scope.trackIncludes);
+            if (i > -1) {
+                $scope.trackIncludes.splice(i, 1);
+            } else {
+                $scope.trackIncludes.push(tracks);
+            }
+        };
+
+        $scope.trackFilter = function(tracks) {
+            if ($scope.trackIncludes.length > 0) {
+                if ($.inArray(tracks.track, $scope.trackIncludes) < 0){
+                    return;}
+
+            }
+
+            return tracks;
+        };
+    })
 
 //example controller for testing - THIS ISN" USED
 .controller('PasswordController', function PasswordController($scope) {
