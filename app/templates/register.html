@@ -1,8 +1,9 @@
-<div class="">
-  <input type="text" ng-model="person.fname" placeholder="First Name" class="radius">
-  <input type="text" ng-model="person.lname" placeholder="Last Name"  class="radius">
-  <input type="text" ng-model="person.email" placeholder="Email" class="radius">
-  <input type="text" ng-model="person.emailComf" placeholder="Email Confirmation" class="radius">
-  <input type="password" ng-model="person.password" placeholder="Password" class="radius">
+<form name="registerForm">
+  <span>{{errors}}</span><br>
+  <input type="text" ng-model="person.fname" placeholder="First Name" required><br>
+  <input type="text" ng-model="person.lname" placeholder="Last Name" required><br>
+  <input type="text" ng-model="person.email" placeholder="Email" required><br>
+  <input type="text" ng-model="person.emailConf" placeholder="Email Confirmation" required><br>
+  <input type="password" ng-model="person.password" placeholder="Password" required><br>
   <button label="Register" ng-click="registerUser()" class="button tiny right radius">Submit</button>
-</div>
+</form>

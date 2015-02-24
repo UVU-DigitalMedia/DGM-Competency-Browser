@@ -8,9 +8,13 @@ angular.module('CompBrowserControllers', [])
 .controller('RegisterCtrl', function($scope, $firebase, $firebaseAuth, FBURL) {
     'use strict';
 
-    //collect name and other needed info for profile??
+    $scope.errors = '';
+
+    //Define Firebase URL endpoints
     var userRef = new Firebase(FBURL + '/users');
     var ref = new Firebase(FBURL);
+
+
     $scope.authObj = $firebaseAuth(ref);
 
     var authData = userRef.getAuth();
@@ -20,7 +24,9 @@ angular.module('CompBrowserControllers', [])
 
         // Attach an asynchronous callback to read the data at our posts reference
         userData.on('value', function(snapshot) {
-          console.log(snapshot.val());
+          var userObj = snapshot.val();
+          console.log(userObj);
+
         }, function (errorObject) {
           console.log('The read failed: ' + errorObject.code);
         });
@@ -33,33 +39,49 @@ angular.module('CompBrowserControllers', [])
 
 
     $scope.registerUser = function() {
-        $scope.authObj.$createUser({
 
-            email: $scope.person.email,
-            password: $scope.person.password
+      if($scope.person.email !== $scope.person.emailConf || $scope.person.email !== '' ) {
+        $scope.errors = 'The email addresses do not match, please make sure they match';
+      } else {
+        $scope.errors = '';
+      }
 
-        }).then(function(userData) {
-            console.log('User ' + userData.uid + ' created successfully!');
-            return $scope.authObj.$authWithPassword({
+      if($scope.errors !== '') {
+        //Fix errors before submitting the form
+        console.log('There were errors');
 
-                email: $scope.person.email,
-                password: $scope.person.password
+      } else {
+        //Create the user in firebase
+          $scope.authObj.$createUser({
 
-            });
-        }).then(function(authData) {
-            console.log('Logged in as:', authData.uid);
+              email: $scope.person.email,
+              password: $scope.person.password
 
-            ref.child('users').child(authData.uid).set({
+          }).then(function(userData) {
+              console.log('User ' + userData.uid + ' created successfully!');
+              return $scope.authObj.$authWithPassword({
 
-                provider: authData.provider,
-                name: '',
-                email: $scope.person.email,
-                password: $scope.person.password
+                  email: $scope.person.email,
+                  password: $scope.person.password
 
-            });
-        }).catch(function(error) {
-            console.error('Error: ', error);
-        });
+              });
+        //Log user in
+          }).then(function(authData) {
+              console.log('Logged in as:', authData.uid);
+
+              ref.child('users').child(authData.uid).set({
+
+                  fName: $scope.person.fname,
+                  lName: $scope.person.lname,
+                  email: $scope.person.email,
+                  password: $scope.person.password
+
+              });
+        // Show any errors
+          }).catch(function(error) {
+              console.error('Error: ', error);
+          });
+      }
 
     };
 })
