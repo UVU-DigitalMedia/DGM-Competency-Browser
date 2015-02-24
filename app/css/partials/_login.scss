@@ -1,0 +1,102 @@
+/* ---------------------------------------- Login Styles */
+
+// Foundation
+.user-login {
+    
+    background: darken($gray-high, 10%);
+    position: absolute;
+    margin: -500px auto 0px auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    width: 70%;
+    @include radius();
+    
+    // Tablet
+    @media #{$tablet}{max-width: 300px;}
+    
+    // Open
+    &.open {margin-top: 150px;}
+    
+    // Header
+    .header {
+        
+        padding: 0px;
+    
+        h2 {
+            
+            color: $blue;
+            margin: 0px 0px 25px 0px;
+            font-size: 24px;
+            text-transform: uppercase;
+            
+            // Icon
+            i.fa {
+                
+                margin-right: 15px;
+                font-size: 30px;
+                
+            }
+            
+        }
+        
+    }
+    
+    // Close
+    .close {
+        
+        padding: 0px;
+        text-align: right;
+        
+        i.fa {
+            
+            background: $gray;
+            color: white;
+            font-size: 18px;
+            height: 30px;
+            width: 30px;
+            text-align: center;
+            line-height: 30px;
+            cursor: pointer;
+            @include radius(30px);
+            @include animate(200ms);
+            
+            // Hover
+            &:hover {background: $red;}
+            
+        }
+        
+    }
+    
+    // Login Form
+    form {
+        
+        input {
+            
+            display: block;
+            padding: 10px;
+            border: 0px;
+            width: 100%;
+            font-size: 16px;
+            margin-bottom: 15px;
+            background: $gray-high;
+            border: 2px solid $gray-high;
+            @include radius();
+            
+            // Last Input
+            &:last-child {margin: 30px 0px 0px 0px;}
+            
+            // Focus
+            &:focus {
+                
+                outline: none;
+                border-color: $green-mid;
+                
+            }
+            
+        }
+        
+    }
+    
+}

@@ -6,10 +6,12 @@ var bodyParser = require('body-parser');
 
 // connect to database
 var mongoose   = require('mongoose');
-mongoose.connect('mongodb://localhost/Competency-Browser'); 
+mongoose.connect('mongodb://localhost/Competency-Browser');
 
 //include the models
-var Model = require('./models/modelFile');
+var Category = require('./models/categories');
+var Skills = require('./models/skills');
+var Jobs = require('./models/jobs');
 
 // configure app to use bodyParser()
 // to get data from a POST
@@ -35,7 +37,7 @@ router.use(function(req, res, next) {
 
 // test route (accessed at GET http://localhost:8080/api)
 router.get('/', function(req, res) {
-	res.json({ message: 'Sweet. We have an API!' });	
+	res.json({ message: 'Sweet. We have an API!' });
 });
 
 // API Routes
@@ -46,11 +48,11 @@ router.route('/models')
 	//get all models (accessed at GET http://localhost:8080/api/models)
 	//******************************************************
 	.get(function(req, res) {
-		Model.find(function(err, models) {
+		Jobs.find(function(err, jobs) {
 			if (err)
 				res.send(err);
 
-			res.json(models);
+			res.json(jobs);
 		});
 	});
 

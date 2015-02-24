@@ -1,4 +1,10 @@
-angular.module('CompBrowser', ['ui.router', 'CompBrowser.controllers', 'skillsCtrl'])
+angular.module('CompBrowser', ['common.services',
+                               'ui.router',
+                               'CompBrowserControllers',
+                               'skillsCtrl',
+                               'courseCtrl','trackResourceMock',
+                               'empResourceMock',
+                               'firebase'])
 
 .config(function($stateProvider, $urlRouterProvider) {
     'use strict';
@@ -12,9 +18,14 @@ angular.module('CompBrowser', ['ui.router', 'CompBrowser.controllers', 'skillsCt
         url: '/about',
         templateUrl: 'templates/about.html'
     })
+    .state('register', {
+        url: '/register',
+        templateUrl: 'templates/register.html',
+        controller: 'RegisterCtrl'
+    })
     .state('tracks', {
         url: '/tracks',
-        templateUrl: 'templates/tracks.html',
+        templateUrl: '../tracks/tracks.html',
         controller: 'TrackCtrl'
     })
     .state('courses', {
@@ -28,4 +39,7 @@ angular.module('CompBrowser', ['ui.router', 'CompBrowser.controllers', 'skillsCt
         controller: 'SkillsCtrl'
     });
     $urlRouterProvider.otherwise('/');
-});
+})
+
+// your Firebase URL goes here
+.constant('FBURL', 'https://competency-browser.firebaseio.com/');

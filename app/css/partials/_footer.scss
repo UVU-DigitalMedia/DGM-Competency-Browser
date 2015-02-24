@@ -1,32 +1,37 @@
 /* ---------------------------------------- Footer Styles */
 
+// Sticky Footer Push
+.sticky-footer-push {
+    
+    min-height: 100%;
+    margin-bottom: -$footer-height;
+    
+    // After
+    &:after {
+        
+        content: "";
+        display: block;
+        height: $footer-height;
+        
+    }
+    
+}
+
 // Footer
 footer {
     
-    // Foundation
     background: $blue;
     color: white;
     text-align: center;
     height: $footer-height;
-    position: absolute;
-    bottom: 0;
     width: 100%;
     
     p {
         
         height: inherit;
         line-height: $footer-height;
-        margin: 0px;
+        margin: 0px !important;
         
     }
-    
-}
-
-// Open Footer Styles
-footer.open {
-    
-    margin-left: -$header-nav-width;
-    
-    @media #{$tablet}{margin-left: 0px;}
     
 }
