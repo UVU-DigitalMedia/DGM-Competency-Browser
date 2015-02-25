@@ -8,7 +8,6 @@
         // Query to fake httpBackend service for testing purposes
         empResource.query(function(data) {
             $scope.employers = data;
-            console.log(employers);
         });
 
         // Array to store skill values
