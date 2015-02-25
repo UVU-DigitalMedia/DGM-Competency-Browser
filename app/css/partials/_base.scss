@@ -80,6 +80,12 @@ html {
             border: 0px !important;
             border-bottom: 3px solid $gray !important;
             cursor: pointer;
+            display: block;
+            max-width: 200px;
+            text-align: center;
+            font-weight: 400;
+            text-transform: uppercase;
+            @include radius();
             @include animate(200ms);
             
             // Icon
