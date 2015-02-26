@@ -2,8 +2,9 @@ angular.module('CompBrowser', ['common.services',
                                'ui.router',
                                'CompBrowserControllers',
                                'skillsCtrl',
-                               'courseCtrl','trackResourceMock',
+                               'courseCtrl',
                                'empResourceMock',
+                               'trackResourceMock',
                                'firebase'])
 
 .config(function($stateProvider, $urlRouterProvider) {
