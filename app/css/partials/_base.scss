@@ -1,17 +1,7 @@
 /* ---------------------------------------- Base Styles */
 
-
-
-/*====================
-please do NOT bloat this file with unnecesary nesting
-====================*/
-
-
-
-html {
-    height: 100%;
-}
-
+// Foundation
+html {height: 100%;}
 body {
     height: inherit;
     background: $gray-high;
@@ -19,25 +9,33 @@ body {
     @include typography(14px, 0.5px, 200);
 }
 
+// App Wrapper
 .app-wrapper {
+    
     display: block;
     width: 100%;
     height: inherit;
+    
     // Open
     &.open {
+            
         margin-left: -$header-nav-width;
+                
+        // Tablet
         @media #{$tablet}{margin-left: 0px;}
-    }//end .open
-}//end .app-wrapper
+        
+    }
+    
+}
 
+// Container
 .container-fluid {
+    
     // Desktop
     @media #{$desktop}{max-width: 1200px;}
+    
 }
-
-.content-wrapper {
-    padding: $pad-md;
-}
+.content-wrapper {padding: $pad-md;}
 
 
 // Typography
@@ -63,25 +61,46 @@ a {
 
 // Buttons
 .button {
+    
     padding: 20px;
     color: white !important;
     background: $gray-mid !important;
     border: 0px !important;
     border-bottom: 3px solid $gray !important;
     cursor: pointer;
+    display: block;
+    max-width: 200px;
+    text-align: center;
+    font-weight: 400;
+    text-transform: uppercase;
+    @include radius();
     @include animate(200ms);
+    
+    // Icon
     i.fa {margin-right: 10px;}
+    
     &:hover {background: $gray !important;}
+    
+    // Red
     &.red {
+        
         background: $red !important;
         border-color: $red-low !important;
+        
+        // Hover
         &:hover {background: $red-low !important;}
-    }//end .red
+        
+    }
+    
+    // Green
     &.green {
+        
         background: $green-mid !important;
         border-color: $green !important;
-
+        
         // Hover
         &:hover {background: $green !important;}
-    }//end.green
-}//end .button
+        
+    }
+    
+}
