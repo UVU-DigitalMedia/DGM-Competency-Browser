@@ -7,7 +7,8 @@
     "watch": "grunt watch",
     "test": "grunt",
     "cover": "istanbul cover --dir reports/coverage node_modules/argg tests/*.js",
-    "plato": "plato -d reports/plato index.js"
+    "plato": "plato -d reports/plato index.js",
+    "production": "grunt production"
   },
   "author": "Author",
   "license": "ISC",
@@ -29,6 +30,8 @@
     "grunt-contrib-jshint": "^0.11.0",
     "grunt-contrib-sass": "^0.8.1",
     "grunt-contrib-watch": "^0.6.1",
+    "grunt-rename": "^0.1.4",
+    "grunt-scss-lint": "^0.3.4",
     "jasmine-core": "^2.2.0",
     "karma": "^0.12.31",
     "karma-chrome-launcher": "^0.1.7",
@@ -36,7 +39,7 @@
     "karma-ie-launcher": "^0.1.5",
     "karma-jasmine": "^0.3.5",
     "karma-phantomjs-launcher": "^0.1.4",
-    "protractor": "^1.6.1",
-    "phantomjs": "1.9.15"
+    "phantomjs": "1.9.15",
+    "protractor": "^1.6.1"
   }
 }

@@ -11,8 +11,8 @@ module.exports = function(grunt) {
           dest: 'app/prod/js/production.js'
         },
       distCSS: {
-          src: 'app/css/*.css', // All CSS in the libs folder,
-          dest: 'app/prod/css/production.css'
+          src: 'app/css/*.scss', // All CSS in the libs folder,
+          dest: 'app/prod/css/production.scss'
         }
     },
 
@@ -103,6 +103,17 @@ module.exports = function(grunt) {
       watch: {
         files: ['<%= jshint.files %>', 'app/css/*.scss' ],
         tasks: ['sass', 'concat', 'jshint', 'csslint']
+      },
+
+      rename: {
+        moveJS: {
+            src: 'app/prod/js/production.js',
+            dest: 'production/prod.js'
+        },
+        moveCSS: {
+            src: 'app/prod/css/production.scss',
+            dest: 'production/prod.css',
+        }
       }
   });
 
@@ -112,9 +123,11 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-csslint');
   grunt.loadNpmTasks('grunt-contrib-copy');
-
+  grunt.loadNpmTasks('grunt-scss-lint');
+  grunt.loadNpmTasks('grunt-rename');
 
   // Default task(s).
   grunt.registerTask('default', ['jshint']);
+  grunt.registerTask('production', ['concat', 'rename']);
 
 };
