@@ -113,8 +113,7 @@ module.exports = function(grunt) {
         moveCSS: {
             src: 'app/prod/css/production.scss',
             dest: 'production/prod.css',
-        },
-        moveH
+        }
       }
   });
 
