@@ -30,43 +30,43 @@
 
     <!-- Body -->
     <body ng-app="CompBrowser">
-        
+
         <!-- App Wrapper -->
         <div class="app-wrapper">
-            
+
             <!-- Sticky Footer Push -->
             <div class="sticky-footer-push">
-                
+
                 <!-- Header -->
                 <header>
-                    
+
                     <!-- Container -->
                     <div class="container-fluid">
-                        
+
                         <!-- Row -->
                         <div class="row">
-                            
+
                             <!-- Logo -->
                             <div class="logo col-xs-8 col-sm-5 col-md-5">
                                 <a href="#/"><i class="fa fa-check-square-o"></i>Skill<strong>Chckr</strong></a>
                             </div>
-                            
+
                             <!-- Menu -->
                             <div class="menu col-xs-4 col-sm-7 col-md-7">
-                                
+
                                 <!-- Drawer -->
                                 <div class="drawer"><i class="fa fa-navicon"></i></div>
-                                
+
                                 <!-- Menu -->
                                 <nav>
-                                  
+
                                    <!-- Logged Out -->
                                     <ul class="logged-out hide">
                                         <li><a href="#/"><i class="fa fa-home"></i>Home</a></li>
                                         <li><a href="#about"><i class="fa fa-mortar-board"></i>About</a></li>
                                         <li class="no-link sign-in"><i class="fa fa-user"></i>Sign In</li>
                                     </ul>
-                                   
+
                                     <!-- Logged In -->
                                     <ul class="logged-in">
                                         <li><a href="#/"><i class="fa fa-dashboard"></i>Dashboard</a></li>
@@ -75,50 +75,50 @@
                                         <li><a href="#skills"><i class="fa fa-check-square-o"></i>Skills</a></li>
                                         <li class="no-link"><i class="fa fa-close"></i>Log Out</li>
                                     </ul>
-                                  
+
                                 </nav>
-                                
+
                             </div>
-                            
+
                         </div>
-                        
+
                     </div>
-                    
+
                 </header>
-                
+
                 <!-- Content -->
-                <div class="content-wrappers">
+                <div class="content-wrapper">
                     <div ui-view></div>
                 </div>
-            
+
             </div> <!-- End Sticky Footer Push -->
-            
+
             <!-- Footer -->
             <footer>
                 <p>Copyright &copy; 2015 Utah Valley University.</p>
-            </footer> 
-            
+            </footer>
+
             <!-- User Login -->
             <div class="user-login">
-                
+
                 <!-- Container -->
                 <div class="container-fluid">
-                    
+
                     <!-- Row -->
                     <div class="row">
-                        
+
                         <!-- Header -->
                         <div class="header col-xs-8">
                             <h2><i class="fa fa-user"></i>Log In</h2>
                         </div>
-                        
+
                         <!-- Close -->
                         <div class="close col-xs-4">
                             <i class="fa fa-close"></i>
                         </div>
-                        
+
                     </div>
-                    
+
                     <!-- Row -->
                     <div class="row">
                          <form method="post" enctype="multipart/form-data">
@@ -127,13 +127,13 @@
                             <input class="button green" type="submit" value="Submit"/>
                         </form>
                     </div>
-                    
+
                 </div>
-                
+
             </div>
-            
+
         </div>
-            
+
         <!-- Load Scripts -->
         <script src="lib/jquery/dist/jquery.min.js"></script>
         <script src="lib/jquery-ui/jquery-ui.min.js"></script>

@@ -6,36 +6,27 @@ body {
     height: inherit;
     background: $gray-high;
     overflow-x: hidden;
-    @include typography(14px, 0.5px, 200);
+    @include typography(16px, 0.5px, 200);
 }
-
-// App Wrapper
 .app-wrapper {
-    
     display: block;
     width: 100%;
     height: inherit;
-    
     // Open
     &.open {
-            
         margin-left: -$header-nav-width;
-                
         // Tablet
         @media #{$tablet}{margin-left: 0px;}
-        
-    }
-    
-}
+    }//end .open
+}//end .app-wrapper
 
 // Container
 .container-fluid {
-    
-    // Desktop
     @media #{$desktop}{max-width: 1200px;}
-    
 }
-.content-wrapper {padding: $pad-md;}
+.content-wrapper {
+  padding: $pad-md;
+}
 
 
 // Typography
@@ -61,7 +52,6 @@ a {
 
 // Buttons
 .button {
-    
     padding: 20px;
     color: white !important;
     background: $gray-mid !important;
@@ -75,32 +65,75 @@ a {
     text-transform: uppercase;
     @include radius();
     @include animate(200ms);
-    
+
     // Icon
     i.fa {margin-right: 10px;}
-    
+
     &:hover {background: $gray !important;}
-    
-    // Red
+
     &.red {
-        
         background: $red !important;
         border-color: $red-low !important;
-        
         // Hover
         &:hover {background: $red-low !important;}
-        
-    }
-    
-    // Green
+    }//end .red
+
     &.green {
-        
         background: $green-mid !important;
         border-color: $green !important;
-        
-        // Hover
         &:hover {background: $green !important;}
-        
-    }
-    
+    }//end .green
+}//end .button
+
+// =====   content Sets (filters skills tracks courses)   ===== \\
+.titleContainer{
+    background:$green;
+    margin-right:-$pad;
+    margin-left:-$pad;
+    @include clear();
+    .setTitle{
+        color:$white;
+        font-size:1.5em;
+        padding-left:$pad-sm;
+        .fa{
+          float:right;
+          margin-top:.2em;
+          margin-right:.5em;
+        }//end .fa(down-carrot icon)
+    }//end .toggleTitle
+}//end .toggler
+
+.contentSet{
+  border:solid 1px $green;
+  background:$gray-high;
+  padding:0 $pad $pad;
+  @include radius();
+  overflow:hidden;
+  margin-bottom:2em;
+
+  .subTitle{
+    font-size:1em;
+    color:$gray;
+    line-height:130%;
+    font-weight:200;
+    margin:10px 0 0;
+  }//end .subTitle
+
+  input.search{
+    width:100%;
+  }//search
+}//end .filters
+
+.labelContainer{
+  @include clear();
+}
+
+.filterLabel{
+  font-size:1em;
+  background:$white;
+  padding-top:$pad-sm;
+  padding-bottom:$pad-sm;
+  margin:3px 0;
+  display:block;
+  @include radius();
 }
