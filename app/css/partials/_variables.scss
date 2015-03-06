@@ -6,11 +6,11 @@
 
     // Fixes
     $prefixes: ("-webkit-","-moz-", "-ms-", "-o-", "");
-    
+
     // Padding
     $pad: 10px;
     $pad-sm: $pad / 2;
-    $pad-md: $pad * 2;
+    $pad-md: $pad * 1.5;
     $pad-lg: $pad * 4;
 
 // -------- Colors
@@ -85,7 +85,7 @@
     // Text
     @mixin typography($font-size, $letter-spacing, $font-weight){
         font-family: "Helvetica Neue", Helvetica, Arial;;
-        color: #666666;
+        color: #444;
         letter-spacing: $letter-spacing;
         line-height: $font-size + 12px;
         font-weight: $font-weight;
@@ -100,7 +100,7 @@
         @include prefix(border-bottom-left-radius, $bottom-left);
         @include prefix(border-bottom-right-radius, $bottom-right);
     }
-   
+
 // -------- Animations
 
     // General

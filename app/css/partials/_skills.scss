@@ -1,21 +1,39 @@
 /* ---------------------------------------- Skills Page ---*/
-.skillList{
-  @include clear();
+//filters
+body{
+  background:$white;
 }
-.filter-bar{
+
+.contentSet.skills{
+  .titleContainer{
+    margin-bottom:$pad;
+  }
+}
+
+.skillList{
   @include clear();
 }
 .skillList{
   @include clear();
 }
 .skillItem{
-  padding:$pad;
   @include radius();
   @include clear();
-  margin-bottom:5px;
-  background:$green;
+  margin-top:6px;
+  background:$white;
 
   .skill{
-    color:$white;
+    padding:$pad;
+  }
+
+  .favorite{
+    padding:$pad-md;
+  }
+  .fa{
+    float:right;
+  }
+
+  .skill{
+    color:$green;
   }
 }
