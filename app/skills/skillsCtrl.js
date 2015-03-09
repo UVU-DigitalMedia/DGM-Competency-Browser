@@ -1,10 +1,11 @@
 (function () {
     'use strict';
-    
-    angular.module('skillsCtrl', [])
+
+    angular.module('skillsCtrl', ['ui.bootstrap'])
 
     .controller('SkillsCtrl', function($scope, empResource) {
-        
+        $scope.isCollapsed = false;
+
         // Query to fake httpBackend service for testing purposes
         empResource.query(function(data) {
             $scope.employers = data;

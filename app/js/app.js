@@ -1,5 +1,6 @@
 angular.module('CompBrowser', ['common.services',
                                'ui.router',
+                               'ui.bootstrap',
                                'CompBrowserControllers',
                                'skillsCtrl',
                                'courseCtrl',
