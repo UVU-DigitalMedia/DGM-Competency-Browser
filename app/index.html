@@ -18,6 +18,7 @@
         <title>Competency Browser</title>
 
         <!-- CSS Styles -->
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
         <link href="css/styles.css" rel="stylesheet" />
 
         <!-- HTML5 Support Media Queries -->
@@ -61,14 +62,14 @@
                                 <nav>
 
                                    <!-- Logged Out -->
-                                    <ul class="logged-out hide">
+                                    <ul class="logged-out">
                                         <li><a href="#/"><i class="fa fa-home"></i>Home</a></li>
                                         <li><a href="#about"><i class="fa fa-mortar-board"></i>About</a></li>
                                         <li class="no-link sign-in"><i class="fa fa-user"></i>Sign In</li>
                                     </ul>
 
                                     <!-- Logged In -->
-                                    <ul class="logged-in">
+                                    <ul class="logged-in hide">
                                         <li><a href="#/"><i class="fa fa-dashboard"></i>Dashboard</a></li>
                                         <li><a href="#courses"><i class="fa fa-database"></i>Courses</a></li>
                                         <li><a href="#tracks"><i class="fa fa-calendar"></i>Tracks</a></li>
@@ -122,9 +123,9 @@
                     <!-- Row -->
                     <div class="row">
                          <form method="post" enctype="multipart/form-data">
-                            <input type="text" placeholder="Username" required />
-                            <input type="password" placeholder="Password" required />
-                            <input class="button green" type="submit" value="Submit"/>
+                            <input type="text" ng-model="email" placeholder="Username" required />
+                            <input type="password" ng-model="password" placeholder="Password" required />
+                            <input class="button green" type="submit" value="Submit" ng-click="login()"/>
                         </form>
                     </div>
 
@@ -141,6 +142,7 @@
         <script src="lib/angular-mocks/angular-mocks.js"></script>
         <script src="lib/angular-resource/angular-resource.min.js"></script>
         <script src="lib/angular-ui-router/release/angular-ui-router.min.js"></script>
+        <script src="lib/angular-bootstrap/ui-bootstrap.js"></script>
         <script src="js/app.js"></script>
         <script src="js/animations.js"></script>
         <script src="js/controllers.js"></script>

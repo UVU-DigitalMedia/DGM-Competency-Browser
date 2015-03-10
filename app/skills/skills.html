@@ -1,9 +1,9 @@
 <div class="contentSet">
     <div class="titleContainer" data-toggle="collapse" data-target="#collapseSkills" aria-expanded="false" aria-controls="collapseSkills">
-        <h4 class="setTitle">Filters</span><i class="fa fa-caret-down"></i></h4>
+        <h4 class="setTitle" ng-click="isCollapsed = !isCollapsed">Filters</span><i class="fa fa-caret-down"></i></h4>
     </div><!--end .setTitle-->
 
-    <div class="collapse" id="collapseFilters">
+    <div collapse="isCollapsed">
         <div class="row title">
             <h4 class="subTitle col-sm-12">Employers</h4>
         </div><!--end .row title-->
@@ -42,7 +42,7 @@
     <div class="titleContainer">
       <h4 class="setTitle">Skills</h4>
     </div><!--end titleContainer-->
-    <div class="collapse" id="collapseSkills">
+    <div >
         <ul class="skillList" ng-repeat="skillset in employers | filter:searchSkills">
             <li class="skillItem" ng-repeat="indSkill in skillset.skill | filter:search">
                 <div class="skill col-xs-10">{{indSkill}}</div>
