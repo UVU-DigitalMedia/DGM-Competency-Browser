@@ -3,6 +3,37 @@ angular.module('CompBrowserControllers', [])
 .controller('MainCtrl', function($scope) {
     'use strict';
     $scope.message = 'APP BASE';
+
+})
+
+.controller('LoginCtrl', function($scope, $rootScope, $firebase, $firebaseAuth, FBURL, $window) {
+    'use strict';
+
+    //Check if user is logged in
+    $rootScope.checkSession();
+
+    if($rootScope.isLoggedIn === true) {
+      $window.location.href = '#/';
+    }
+
+      var ref = new Firebase(FBURL);
+
+      //LOGIN
+      $scope.login = function () {
+          ref.authWithPassword({
+
+              email    : $scope.email,
+              password : $scope.password
+
+          }, function(error, authData) {
+              if (error) {
+                  console.log('Login Failed!', error);
+              } else {
+                  console.log('Authenticated successfully with payload:', authData);
+                  $window.location.href = '#/';
+              }
+          });
+      };
 })
 
 .controller('RegisterCtrl', function($scope, $firebase, $firebaseAuth, FBURL) {
