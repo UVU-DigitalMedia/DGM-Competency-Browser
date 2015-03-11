@@ -55,9 +55,7 @@ router.route('/skills')
 
 			res.json(skills);
 		});
-	});
-
-	router.route('/skills')
+	})
 
 			// create a skill (accessed at POST http://localhost:8080/api/skills)
 			.post(function(req, res) {
@@ -148,9 +146,7 @@ router.route('/categories')
 
 			res.json(categories);
 		});
-	});
-
-	router.route('/categories')
+	})
 
 			// create a category (accessed at POST http://localhost:8080/api/categorys)
 			.post(function(req, res) {
@@ -243,10 +239,7 @@ router.route('/jobs')
 
 			res.json(jobs);
 		});
-	});
-
-
-	router.route('/jobs')
+	})
 
 			// create a job (accessed at POST http://localhost:8080/api/jobs)
 			.post(function(req, res) {
