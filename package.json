@@ -4,6 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
+    "start":"nodemon server.js & grunt browserSync",
     "watch": "grunt watch",
     "test": "grunt",
     "cover": "istanbul cover --dir reports/coverage node_modules/argg tests/*.js",
@@ -23,6 +24,7 @@
   },
   "devDependencies": {
     "grunt": "^0.4.5",
+    "grunt-browser-sync": "^2.0.0",
     "grunt-cli": "^0.1.13",
     "grunt-contrib-concat": "^0.5.0",
     "grunt-contrib-copy": "^0.7.0",

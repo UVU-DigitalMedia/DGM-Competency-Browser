@@ -114,7 +114,18 @@ module.exports = function(grunt) {
             src: 'app/prod/css/production.scss',
             dest: 'production/prod.css',
         }
-      }
+      },
+
+      browserSync: {
+    dev: {
+        bsFiles: {
+            src : 'app/**/*'
+        },
+        options: {
+            proxy: "localhost:8080"
+        }
+    }
+}
   });
 
   grunt.loadNpmTasks('grunt-contrib-jshint');
@@ -125,9 +136,11 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-scss-lint');
   grunt.loadNpmTasks('grunt-rename');
+grunt.loadNpmTasks('grunt-browser-sync');
 
   // Default task(s).
   grunt.registerTask('default', ['jshint']);
   grunt.registerTask('production', ['concat', 'rename']);
+  grunt.registerTask('watch', ['browserSync']);
 
 };
