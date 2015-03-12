@@ -18,7 +18,7 @@
         <title>Competency Browser</title>
 
         <!-- CSS Styles -->
-        <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+        <!-- <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet"> -->
         <link href="css/styles.css" rel="stylesheet" />
 
         <!-- HTML5 Support Media Queries -->
@@ -62,14 +62,14 @@
                                 <nav>
 
                                    <!-- Logged Out -->
-                                    <ul class="logged-out">
+                                    <ul class="logged-out hide">
                                         <li><a href="#/"><i class="fa fa-home"></i>Home</a></li>
                                         <li><a href="#about"><i class="fa fa-mortar-board"></i>About</a></li>
                                         <li class="no-link sign-in"><i class="fa fa-user"></i>Sign In</li>
                                     </ul>
 
                                     <!-- Logged In -->
-                                    <ul class="logged-in hide">
+                                    <ul class="logged-in">
                                         <li><a href="#/"><i class="fa fa-dashboard"></i>Dashboard</a></li>
                                         <li><a href="#courses"><i class="fa fa-database"></i>Courses</a></li>
                                         <li><a href="#tracks"><i class="fa fa-calendar"></i>Tracks</a></li>
@@ -86,7 +86,13 @@
                     </div>
 
                 </header>
-
+                
+                <!-- Breaddrumbs -->
+                <div class="breadcrumbs">
+                    <div class="icon"><i class="fa fa-ellipsis-v"></i></div>
+                    <div ncy-breadcrumb></div>
+                </div>
+                
                 <!-- Content -->
                 <div class="content-wrapper">
                     <div ui-view></div>
@@ -139,10 +145,12 @@
         <script src="lib/jquery/dist/jquery.min.js"></script>
         <script src="lib/jquery-ui/jquery-ui.min.js"></script>
         <script src="lib/angular/angular.js"></script>
+        <script src="lib/angular-sanitize/angular-sanitize.min.js"></script>
         <script src="lib/angular-mocks/angular-mocks.js"></script>
         <script src="lib/angular-resource/angular-resource.min.js"></script>
         <script src="lib/angular-ui-router/release/angular-ui-router.min.js"></script>
         <script src="lib/angular-bootstrap/ui-bootstrap.js"></script>
+        <script src="lib/angular-breadcrumb/dist/angular-breadcrumb.min.js"></script>
         <script src="js/app.js"></script>
         <script src="js/animations.js"></script>
         <script src="js/controllers.js"></script>
