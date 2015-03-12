@@ -122,7 +122,7 @@ module.exports = function(grunt) {
             src : 'app/**/*'
         },
         options: {
-            proxy: "localhost:8080"
+            proxy: 'localhost:8080'
         }
     }
 }
