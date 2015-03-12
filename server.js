@@ -31,21 +31,206 @@ var router = express.Router();
 // Use this for validation and error logging
 router.use(function(req, res, next) {
 	// do logging
-	console.log('Something is happening.');
+	console.log('Stuff is happening right now.');
 	next(); // make sure we go to the next routes and don't stop here
 });
 
 // test route (accessed at GET http://localhost:8080/api)
 router.get('/', function(req, res) {
-	res.json({ message: 'Sweet. We have an API!' });
+	res.json({ message: 'Sweet. We have an API! Go team!' });
 });
 
+
 // API Routes
-router.route('/models')
+router.route('/skills')
 
 	//******************************************************
 	//GET ALL
-	//get all models (accessed at GET http://localhost:8080/api/models)
+	//get all skills (accessed at GET http://localhost:8080/api/skills)
+	//******************************************************
+	.get(function(req, res) {
+		Skills.find(function(err, skills) {
+			if (err)
+				res.send(err);
+
+			res.json(skills);
+		});
+	})
+
+			// create a skill (accessed at POST http://localhost:8080/api/skills)
+			.post(function(req, res) {
+
+					var skill = new Skills();      // create a new instance of the Skill model
+					skill.name = req.body.name;  // set the skills name (comes from the request)
+
+					// save the skill and check for errors
+					skill.save(function(err) {
+							if (err)
+									res.send(err);
+
+							res.json({ message: 'Skill created!' });
+					});
+
+			});
+
+
+
+			// on routes that end in /skills/:skill_id
+// ----------------------------------------------------
+router.route('/skills/:skill_id')
+
+		// get the skill with that id (accessed at GET http://localhost:8080/api/skills/:skill_id)
+		.get(function(req, res) {
+				Skills.findById(req.params.skill_id, function(err, skill) {
+						if (err)
+								res.send(err);
+						res.json(skill);
+				});
+		})
+
+
+		// update the skill with this id (accessed at PUT http://localhost:8080/api/skills/:skill_id)
+		.put(function(req, res) {
+
+				// use our skill model to find the skill we want
+				Skills.findById(req.params.skill_id, function(err, skill) {
+
+						if (err)
+								res.send(err);
+
+						skill.name = req.body.name;  // update the skills info
+
+						// save the skill
+						skill.save(function(err) {
+								if (err)
+										res.send(err);
+
+								res.json({ message: 'Skill updated!' });
+						});
+
+				});
+		})
+
+
+		// delete the skill with this id (accessed at DELETE http://localhost:8080/api/skills/:skill_id)
+		.delete(function(req, res) {
+				Skills.remove({
+						_id: req.params.skill_id
+				}, function(err, skill) {
+						if (err)
+								res.send(err);
+
+						res.json({ message: 'Successfully deleted' });
+				});
+		});
+
+
+
+
+
+
+
+
+
+// API Routes
+router.route('/categories')
+
+	//******************************************************
+	//GET ALL
+	//get all categories (accessed at GET http://localhost:8080/api/categories)
+	//******************************************************
+	.get(function(req, res) {
+		Category.find(function(err, categories) {
+			if (err)
+				res.send(err);
+
+			res.json(categories);
+		});
+	})
+
+			// create a category (accessed at POST http://localhost:8080/api/categorys)
+			.post(function(req, res) {
+
+					var category = new Category();      // create a new instance of the Category model
+					category.name = req.body.name;  // set the categorys name (comes from the request)
+
+					// save the category and check for errors
+					category.save(function(err) {
+							if (err)
+									res.send(err);
+
+							res.json({ message: 'Category created!' });
+					});
+
+			});
+
+
+
+			// on routes that end in /categorys/:category_id
+// ----------------------------------------------------
+router.route('/categorys/:category_id')
+
+		// get the category with that id (accessed at GET http://localhost:8080/api/categorys/:category_id)
+		.get(function(req, res) {
+			Category.findById(req.params.category_id, function(err, category) {
+						if (err)
+								res.send(err);
+						res.json(category);
+				});
+		})
+
+
+		// update the category with this id (accessed at PUT http://localhost:8080/api/categorys/:category_id)
+		.put(function(req, res) {
+
+				// use our category model to find the category we want
+				Category.findById(req.params.category_id, function(err, category) {
+
+						if (err)
+								res.send(err);
+
+								category.name = req.body.name;  // update the categorys info
+
+						// save the category
+						category.save(function(err) {
+								if (err)
+										res.send(err);
+
+								res.json({ message: 'Category updated!' });
+						});
+
+				});
+		})
+
+
+		// delete the category with this id (accessed at DELETE http://localhost:8080/api/categorys/:category_id)
+		.delete(function(req, res) {
+			Category.remove({
+						_id: req.params.category_id
+				}, function(err, category) {
+						if (err)
+								res.send(err);
+
+						res.json({ message: 'Successfully deleted' });
+				});
+		});
+
+
+
+
+
+
+
+
+
+
+
+// API Routes
+router.route('/jobs')
+
+	//******************************************************
+	//GET ALL
+	//get all jobs (accessed at GET http://localhost:8080/api/jobs)
 	//******************************************************
 	.get(function(req, res) {
 		Jobs.find(function(err, jobs) {
@@ -54,7 +239,79 @@ router.route('/models')
 
 			res.json(jobs);
 		});
-	});
+	})
+
+			// create a job (accessed at POST http://localhost:8080/api/jobs)
+			.post(function(req, res) {
+
+					var job = new Jobs();      // create a new instance of the Job model
+					job.name = req.body.name;  // set the jobs name (comes from the request)
+
+					// save the job and check for errors
+					job.save(function(err) {
+							if (err)
+									res.send(err);
+
+							res.json({ message: 'Job created!' });
+					});
+
+			});
+
+
+
+			// on routes that end in /jobs/:job_id
+// ----------------------------------------------------
+router.route('/jobs/:job_id')
+
+		// get the job with that id (accessed at GET http://localhost:8080/api/jobs/:job_id)
+		.get(function(req, res) {
+				Jobs.findById(req.params.job_id, function(err, job) {
+						if (err)
+								res.send(err);
+						res.json(job);
+				});
+		})
+
+
+		// update the job with this id (accessed at PUT http://localhost:8080/api/jobs/:job_id)
+		.put(function(req, res) {
+
+				// use our job model to find the job we want
+				Jobs.findById(req.params.job_id, function(err, job) {
+
+						if (err)
+								res.send(err);
+
+						job.name = req.body.name;  // update the jobs info
+
+						// save the job
+						job.save(function(err) {
+								if (err)
+										res.send(err);
+
+								res.json({ message: 'Job updated!' });
+						});
+
+				});
+		})
+
+
+		// delete the job with this id (accessed at DELETE http://localhost:8080/api/jobs/:job_id)
+		.delete(function(req, res) {
+				Jobs.remove({
+						_id: req.params.job_id
+				}, function(err, job) {
+						if (err)
+								res.send(err);
+
+						res.json({ message: 'Successfully deleted' });
+				});
+		});
+
+
+
+
+
 
 // REGISTER OUR ROUTES -------------------------------
 // all of our routes will be prefixed with /api
