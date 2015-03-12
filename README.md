@@ -33,9 +33,9 @@ Frontend dependancies:
 Install nodemon. If you are working on the server nodemon will restart the server when you save the files. Otherwise, nodemon isn't needed. See [Nodemon,](https://github.com/remy/nodemon) for more info
 
     npm install -g nodemon
-    
+
 Install Grunt:
-    
+
     npm install -g grunt-cli
 
 Install Sass
@@ -49,23 +49,21 @@ Start the Mongo server (sudo maybe required.)
     mongod
 
 
-Start the server:
-(using Nodemon)
+#Starting the server
 
-    nodemon server.js
+THIS HAS CHANGED
 
+Use:
 
-(or without Nodemon)
+   npm start
 
-    node server.js
+The project now has autoreloading using [BrowserSync.](http://www.browsersync.io/) It is a super cool tool, that will auto reload the page anytime you save a file in the /app dir.
 
-
-
-Then open a web browser to http://localhost:8080/ to see magic.
+The biggest change this brings is the port that it now uses. Typically, it will be port 3000. But it will tell you in the terminal. Instead of going to localhost:8080 it will be localhost:3000. It will open it in a new tab for you.
 
 ##Running Grunt
 
-Tasks will be run automatically when you run Grunt, such as concatenation and minification. 
+Tasks will be run automatically when you run Grunt, such as concatenation and minification.
 
     grunt
     grunt watch
