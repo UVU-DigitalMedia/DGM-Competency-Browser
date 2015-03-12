@@ -1,0 +1,75 @@
+/* ===============================================
+            App Breadcrumbs
+================================================ */
+
+// Foundation
+.breadcrumbs {
+    background: $black-blue;
+    position: absolute;
+    top: $header-height + 10px;
+    left: 10px;
+    height: $breadcrumbs-height;
+    overflow: hidden;
+    @include radius();
+}
+
+// Icons
+.breadcrumbs .icon {
+    
+    float: left;
+    height: inherit;
+    border-right: 1px solid lighten($black-blue, 10%);
+    
+    i.fa {
+        
+        padding: 0px 10px;
+        color: lighten($black-blue, 50%);
+        cursor: pointer;
+        height: $breadcrumbs-height;
+        line-height: $breadcrumbs-height;
+        display: block;
+        font-size: 24px;
+        @include animate(200ms);
+        
+        &:hover {
+            color: white;
+            background: lighten($black-blue, 5%);
+        }
+        
+    }
+    
+}
+
+// List
+.breadcrumbs span {float: left;}
+.breadcrumbs ul.items {
+
+    height: inherit;
+    line-height: $breadcrumbs-height;
+    margin-left: -999px;
+    
+    li {
+        
+        margin: 0px;
+        display: inline-block;
+        float: left;
+        color: lighten($black-blue, 50%);
+        border-right: 1px solid lighten($black-blue, 10%);
+        border-left: 1px solid darken($black-blue, 10%);
+        
+        a {
+            color: lighten($black-blue, 50%);
+            display: block;
+            height: $breadcrumbs-height;
+            padding: 0px 15px 0px 15px;
+            @include animate(200ms);
+            
+            &:hover {background: lighten($black-blue, 5%); color: white;}
+            
+        }
+        
+    }
+    
+    &.open {margin-left: 0px;}
+    
+}

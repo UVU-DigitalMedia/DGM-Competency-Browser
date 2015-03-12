@@ -25,7 +25,7 @@ body {
     @media #{$desktop}{max-width: 1200px;}
 }
 .content-wrapper {
-  padding: $pad-md;
+  //padding: $pad-md;
 }
 
 
@@ -47,7 +47,11 @@ a {
     color: $red;
     text-decoration: none;
     @include animate(200ms);
-    &:hover {color: $red-lowest;}
+    
+    &:hover {color: $red-lowest; text-decoration: none;}
+    
+    &:focus {text-decoration: none;}
+    
 }
 
 // Buttons
@@ -84,6 +88,12 @@ a {
         &:hover {background: $green !important;}
     }//end .green
 }//end .button
+
+
+
+/* ------------------------------------- Move CSS Below */
+
+
 
 // =====   content Sets (filters skills tracks courses)   ===== \\
 .titleContainer{
