@@ -8,7 +8,7 @@
             <h4 class="subTitle col-sm-12">Employers</h4>
         </div><!--end .row title-->
         <div class="labelContainer" ng-repeat="emp in employers">
-          <label  class="filterLabel" for="{{emp.name}}">
+          <label class="filterLabel col-sm-12" for="{{emp.name}}">
                 <input type="checkbox" id="{{emp.name}}" name="cb"
                         ng-model="searchSkills"
                         ng-click="check(emp.skill)">
@@ -24,15 +24,14 @@
             </select>
         </div>-->
 
-        <div class="row jobs">
+        <div class="jobs">
             <h4 class="subTitle col-sm-12">Jobs</h4>
-            <div class="jobSearchWrapper col-sm-12">
+            <div class="jobSearchWrapper input-group col-sm-12">
                   <input type="search"
                           class="search form-control"
                           placeholder="Start Typing"
                           ng-model="search"/>
-
-                  <i class="fa fa-search"></i>
+                  <span class="input-group-addon"><i class="fa fa-search"></i></span>
             </div><!--end .jobSearchWrapper -->
         </div><!--end .row jobs-->
     </div><!-- end.collapse #collapseFilters -->

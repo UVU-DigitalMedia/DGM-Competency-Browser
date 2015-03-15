@@ -1,7 +1,6 @@
 /* ---------------------------------------- Skills Page ---*/
 //filters
 
-
 .contentSet.skills{
   .titleContainer{
     margin-bottom:$pad;
@@ -37,4 +36,14 @@
 }
 .titleContainer {
     cursor:pointer;
+}
+.jobs input[type=search] {
+    height:40px;
+    font-size:18px;
+}
+// Use to style the search input box (removes browser styling)...can be moved to general styles
+.jobs input[type=search] {
+-webkit-appearance: none;
+-moz-appearance: none;
+appearance: none;
 }
