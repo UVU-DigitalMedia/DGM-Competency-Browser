@@ -1,0 +1,99 @@
+/* ===============================================
+            App Spotlight
+================================================ */
+
+// Spotlight
+.spotlight {
+    
+    background: url('../images/spotlight_pattern.png');
+    background-color: $blue;
+    padding: 30px 0px;
+    text-align: center;
+    margin-bottom: 20px;
+    
+    // Tablet
+    @media #{$tablet}{
+        
+        padding: 40px 0px; 
+        text-align: left;
+        
+    }
+    
+    // Column Fixes
+    .col-xs-12 {
+        
+        text-align: center;
+        
+        a {
+            
+            margin: 0px auto;
+            
+        }
+        
+    }
+    .col-sm-6 {
+        
+        text-align: left; 
+        
+        a{
+            
+            margin: 0px;
+            
+        }
+    
+    }
+    
+    // Color Options
+    &.green {background-color: $green-mid;}
+    &.red {background-color: $red;}
+    
+}
+
+// Spotlight Elements
+.spotlight p, .spotlight h1 {color: white;}
+.spotlight h1 {
+    
+    color: white;
+    margin: 0px 0px 20px 0px;
+    
+    // Tablet
+    @media #{$tablet}{
+        
+        @include typography(60px, 1px, 400); 
+        color: white;
+    
+    }
+    
+}
+.spotlight p {
+    
+    color: white; 
+    margin: 0px 0px 20px 0px;
+    
+}
+.spotlight a {
+    
+    margin: 0px auto;
+    
+    // Tablet
+    @media #{$tablet}{ 
+        
+        margin: 0px;
+        
+    }
+    
+}
+.spotlight img {
+        
+    width: 100%;
+    height: auto;
+    margin: 30px 0px 0px 0px;
+    
+    // Small
+    @media #{$small}{
+        
+        margin: 0px;
+    
+    }
+    
+}

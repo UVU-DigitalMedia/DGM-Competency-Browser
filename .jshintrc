@@ -16,7 +16,7 @@
   "maxdepth"      : 3,        // forces nested blocks to only be a certain number of blocks deep
   "maxerr"        : 50,       // maximum number of errors jshint will report before giving up
   "maxlen"        : 130,       // maximum line length
-  "maxparams"     : 5,        // forces functions to have a maximum number of parameters
+  "maxparams"     : 6,        // forces functions to have a maximum number of parameters
   "maxstatements" : 12,       // maximum number of statements in a function
   "newcap"        : true,     // must use capitalized constructors with the `new` keyword
   "noarg"         : true,     // mustn't use `arguments.callee` or `arguments.caller`
@@ -56,5 +56,5 @@
   "withstmt"      : false,    // Don't use with
 
   "node"          : true,     // Node env
-  "predef"        : ["angular", "jQuery", "$", "document"]
+  "predef"        : ["angular", "jQuery", "$", "document", "Firebase"]
 }

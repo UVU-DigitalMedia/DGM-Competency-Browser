@@ -11,8 +11,8 @@ module.exports = function(grunt) {
           dest: 'app/prod/js/production.js'
         },
       distCSS: {
-          src: 'app/css/*.css', // All CSS in the libs folder,
-          dest: 'app/prod/css/production.css'
+          src: 'app/css/*.scss', // All CSS in the libs folder,
+          dest: 'app/prod/css/production.scss'
         }
     },
 
@@ -25,13 +25,16 @@ module.exports = function(grunt) {
         }
       }
     },
+<<<<<<< HEAD
 
+=======
+>>>>>>> upstream/master
     csslint: {
       strict: {
         options: {
           import: 2
         },
-        src: ['app/css/*.css']
+        src: ['app/css/partials/_variables.scss']
       },
       lax: {
         options: {
@@ -88,24 +91,45 @@ module.exports = function(grunt) {
             filter: 'isFile'
         }
 
-    },
+      },
 
-    sass: {
-       dist: {
-         files: [{
-           expand: true,
-           src: ['app/css/*.scss'],
-           dest: '',
-           ext: '.css'
-         }]
-       }
-     },
+      sass: {
+         dist: {
+           files: [{
+             expand: true,
+             src: ['app/css/*.scss'],
+             dest: '',
+             ext: '.css'
+           }]
+         }
+       },
 
-    watch: {
-      files: ['<%= jshint.files %>', 'app/css/**/*.scss' ],
-      tasks: ['sass', 'concat', 'jshint', 'csslint']
+      watch: {
+        files: ['<%= jshint.files %>', 'app/css/*.scss' ],
+        tasks: ['sass', 'concat', 'jshint', 'csslint']
+      },
 
+      rename: {
+        moveJS: {
+            src: 'app/prod/js/production.js',
+            dest: 'production/prod.js'
+        },
+        moveCSS: {
+            src: 'app/prod/css/production.scss',
+            dest: 'production/prod.css',
+        }
+      },
+
+      browserSync: {
+    dev: {
+        bsFiles: {
+            src : 'app/**/*'
+        },
+        options: {
+            proxy: 'localhost:8080'
+        }
     }
+}
   });
 
   grunt.loadNpmTasks('grunt-contrib-jshint');
@@ -114,8 +138,15 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-csslint');
   grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-scss-lint');
+  grunt.loadNpmTasks('grunt-rename');
+grunt.loadNpmTasks('grunt-browser-sync');
 
   // Default task(s).
-  grunt.registerTask('default', ['jshint, sass']);
+
+  grunt.registerTask('default', ['jshint']);
+  grunt.registerTask('production', ['concat', 'rename']);
+  grunt.registerTask('watch', ['browserSync']);
+
 
 };

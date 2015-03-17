@@ -1,11 +1,32 @@
 /* ---------------------------------------- Base Styles */
 
 // Foundation
-body {background: $gray-high; @include typography(14px, 0.5px, 200); overflow: hidden;}
-.app-wrapper {display: block; width: 100%; height: 100%;}
-.app-wrapper.open {margin-left: -$header-nav-width;}
+html {height: 100%;}
+body {
+    height: inherit;
+    background: $gray-high;
+    overflow-x: hidden;
+    @include typography(16px, 0.5px, 200);
+}
+.app-wrapper {
+    display: block;
+    width: 100%;
+    height: inherit;
+    // Open
+    &.open {
+        margin-left: -$header-nav-width;
+        // Tablet
+        @media #{$tablet}{margin-left: 0px;}
+    }//end .open
+}//end .app-wrapper
 
-// Text
+// Container
+.container-fluid {
+    @media #{$desktop}{max-width: 1200px;}
+}
+
+
+// Typography
 p {margin: 5px 0px 7px 0px;}
 h1 {@include typography(32px, 1px, 500); margin: 5px 0px 10px 0px;}
 h2 {@include typography(30px, 1px, 500); margin: 5px 0px 10px 0px;}
@@ -19,17 +40,114 @@ ul {}
 ol {}
 
 // Links
-a {color: $red; text-decoration: none; @include animate(200ms);}
-a:hover {color: $red-lowest;}
-
-// Buttons 
-a.button-red {
-    padding: 10px 20px;
-    color: white;
-    background: $red;
-    border-bottom: 3px solid $red-low;
-    font-weight: 600;
-    @include rounded-corners(5px, 5px, 5px, 5px);
+a {
+    color: $red;
+    text-decoration: none;
+    @include animate(200ms);
+    
+    &:hover {color: $red-lowest; text-decoration: none;}
+    
+    &:focus {text-decoration: none;}
+    
 }
-a.button-red i.fa {margin-right: 10px;}
-a.button-red:hover {background: $red-lowest; border-color: $red-lowest;}
+
+// Buttons
+.button {
+    padding: 20px;
+    color: white !important;
+    background: $gray-mid !important;
+    border: 0px !important;
+    border-bottom: 5px solid $gray !important;
+    cursor: pointer;
+    display: block;
+    max-width: 200px;
+    text-align: center;
+    font-weight: 400;
+    text-transform: uppercase;
+    @include radius(10px);
+    @include animate(200ms);
+
+    // Icon
+    i.fa {margin-right: 10px;}
+
+    &:hover {background: $gray !important;}
+
+    &.red {
+        background: $red !important;
+        border-color: $red-low !important;
+        // Hover
+        &:hover {background: $red-low !important;}
+    }//end .red
+
+    &.green {
+        background: $green-mid !important;
+        border-color: $green !important;
+        &:hover {background: $green !important;}
+    }//end .green
+    
+    &.blue {
+        background: $blue-mid !important;
+        border-color: $blue !important;
+        &:hover {background: $blue !important;}
+    }//end .green
+    
+}//end .button
+
+
+
+/* ------------------------------------- Move CSS Below */
+
+
+
+// =====   content Sets (filters skills tracks courses)   ===== \\
+.titleContainer{
+    background:$green;
+    margin-right:-$pad;
+    margin-left:-$pad;
+    @include clear();
+    .setTitle{
+        color:$white;
+        font-size:1.5em;
+        padding-left:$pad-sm;
+        .fa{
+          float:right;
+          margin-top:.2em;
+          margin-right:.5em;
+        }//end .fa(down-carrot icon)
+    }//end .toggleTitle
+}//end .toggler
+
+.contentSet{
+  border:solid 1px $green;
+  background:$gray-high;
+  padding:0 $pad $pad;
+  @include radius();
+  overflow:hidden;
+  margin-bottom:2em;
+
+  .subTitle{
+    font-size:1em;
+    color:$gray;
+    line-height:130%;
+    font-weight:200;
+    margin:10px 0 0;
+  }//end .subTitle
+
+  input.search{
+    width:100%;
+  }//search
+}//end .filters
+
+.labelContainer{
+  @include clear();
+}
+
+.filterLabel{
+  font-size:1em;
+  background:$white;
+  padding-top:$pad-sm;
+  padding-bottom:$pad-sm;
+  margin:3px 0;
+  display:block;
+  @include radius();
+}

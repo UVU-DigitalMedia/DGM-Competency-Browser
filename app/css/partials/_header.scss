@@ -1,67 +1,223 @@
-/* ---------------------------------------- Mobile */
+/* ---------------------------------------- Header Styles */
 
-// Foundation 
-header {background: white; height: $header-height;}
-
-// Logo
-header .logo h1 {
-    @include typography(24px, 0.5px, 100);
-    height: inherit; 
-    line-height: $header-height;
-    margin: 0px;
-    text-transform: uppercase;
+// Foundation
+header {
+    
+    background: white;
+    height: $header-height;
+    
+    // Logo
+    .logo {
+        
+        a {
+            
+            @include typography(24px, 0.5px, 100);
+            @include animate(100ms);
+            color: #666;
+            height: $header-height;
+            line-height: $header-height;
+            margin: 0px;
+            text-transform: uppercase;
+            
+            // Hover
+            &:hover {color: $green-mid;}
+        
+        }
+        
+    }
+    
+    // Menu
+    .menu {
+        
+        text-align: right;
+        position: static;
+        
+        // Drawer
+        .drawer {
+            
+            height: inherit;
+            line-height: $header-height;
+            
+            // Tablet
+            @media #{$tablet}{display: none;}     
+            
+            // Drawer Icon
+            i.fa {
+                
+                padding: 10px;
+                color: #666666;
+                font-size: 20px;
+                cursor: pointer;
+                @include animate (200ms);
+                
+                // Hover & Open
+                &:hover, &.open {color: $red;}
+                
+            }
+            
+        }
+        
+        // Nav
+        nav {
+            
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: $header-nav-width;
+            height: 100%;
+            display: block;
+            background: $black-blue;
+            text-align: left;
+            margin-right: -$header-nav-width;
+            
+            // Tablet
+            @media #{$tablet}{
+                
+                position: static;
+                width: auto;
+                height: auto;
+                background: none;
+                margin-right: 0px;
+               
+            }
+            
+            // Nav Open
+            &.open {margin-right: 0px;}
+            
+            ul {
+                
+                // Tablet
+                @media #{$tablet}{
+                    
+                    float: right;
+                    height: $header-height;
+                    line-height: $header-height;
+                    
+                }
+                
+                // List Items
+                li {
+                    
+                    border-top: 1px solid lighten($black-blue, 5%);
+                    border-bottom: 1px solid darken($black-blue, 5%);
+                    
+                    &:first-child {border-top: 0px;}
+                    &:last-child {border-bottom: 0px;}
+                    
+                    // Tablet
+                    @media #{$tablet}{
+                        
+                        display: inline-block;
+                        border: 0px;
+                        
+                    }
+                    
+                    // Links
+                    a {
+                        
+                        padding: 20px;
+                        display: block;
+                        color: lighten($black-blue, 50%);
+                        font-size: 16px;
+                        font-weight: 200;
+                        @include animate(100ms);
+                        
+                        i.fa {
+                            
+                            font-size: 20px;
+                            width: 30px;
+                            display: inline-block;
+                            text-align: right;
+                            margin-right: 20px;
+                            
+                        }
+                        
+                        &:hover {
+                            
+                            color: white; 
+                            background: lighten($black-blue, 3%);
+                            
+                        }
+                        
+                        // Tablet
+                        @media #{$tablet}{
+                            
+                            display: inline-block;
+                            padding: 5px 10px;
+                            @include typography(14px, 0.5px, 200);
+                            
+                            // Icon
+                            i.fa {width: auto; margin-right: 10px;}
+                            
+                            // Hover
+                            &:hover {
+                                
+                                color: white;
+                                background: $blue;
+                                @include radius();
+                                
+                            }
+                            
+                        } 
+                        
+                    }
+                    
+                    &.no-link {
+                        
+                        padding: 20px;
+                        display: block;
+                        color: lighten($black-blue, 50%);
+                        font-size: 16px;
+                        font-weight: 200;
+                        cursor: pointer;
+                        @include animate(100ms);
+                        
+                        i.fa {
+                            
+                            font-size: 20px;
+                            width: 30px;
+                            display: inline-block;
+                            text-align: right;
+                            margin-right: 20px;
+                            
+                        }
+                        
+                        &:hover {
+                            
+                            color: white; 
+                            background: lighten($black-blue, 3%);
+                            
+                        }
+                        
+                        // Tablet
+                        @media #{$tablet}{
+                            
+                            display: inline-block;
+                            padding: 5px 10px;
+                            @include typography(14px, 0.5px, 200);
+                            
+                            // Icon
+                            i.fa {width: auto; margin-right: 10px;}
+                            
+                            // Hover
+                            &:hover {
+                                
+                                color: white;
+                                background: $blue;
+                                @include radius();
+                                
+                            }
+                            
+                        } 
+                        
+                    }
+                    
+                }
+                
+            }
+            
+        }
+        
+    }
+    
 }
-header .logo h1 a {color: $green-mid;}
-header .logo h1 a:hover {color: $green;}
-
-// Navigation
-header .nav {text-align: right; position: static;}
-header .nav .drawer {height: inherit; line-height: $header-height;}
-header .nav .drawer i.fa {
-    font-size: 20px; 
-    padding: 10px; 
-    cursor: pointer; 
-    @include animate(200ms);
-}
-header .nav .drawer i.fa:hover {color: $blue;}
-header .nav nav {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: $header-nav-width;
-    height: 100%;
-    display: block;
-    background: $black-blue;
-    text-align: left;
-    margin-right: -$header-nav-width;
-}
-header .nav nav.open {margin-right: 0px;}
-header .nav nav ul li {
-    border-bottom: 1px solid darken($black-blue, 5%);
-    border-top: 1px solid lighten($black-blue, 5%);
-}
-header .nav nav ul li:first-child {border-top: 0px;}
-header .nav nav ul li:last-child {border-bottom: 0px;}
-header .nav nav ul li a {
-    padding: 20px;
-    display: block;
-    color: lighten($black-blue, 50%);
-    @include animate(100ms);
-}
-header .nav nav ul li a:hover {color: white; background: lighten($black-blue, 3%);}
-
-// User
-header .nav nav .user {background: $black-blue-mid; padding: 30px 20px 40px 20px;}
-
-// User Logged Out
-
-// User Logged In
-header .nav nav .user .logged-in {text-align: center;}
-header .nav nav .user .logged-in h1 {color: white;}
-header .nav nav .user .logged-in p {color: white; margin-bottom: 20px;}
-
-/* ---------------------------------------- Tablet */
-@media screen and (min-width: 720px){}
-
-/* ---------------------------------------- Desktop */
-@media screen and (min-width: 1024px){}

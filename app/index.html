@@ -1,89 +1,105 @@
 <!doctype html>
 <html lang="en">
-    
+
     <!-- Head Data -->
     <head>
-        
+
         <!-- Meta -->
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description" content="" />
         <meta name ="author" content="" />
-        
+
         <!-- Favicon -->
         <link rel="icon" href="../../favicon.ico" />
-        
+
         <!-- Title -->
         <title>Competency Browser</title>
-        
+
         <!-- CSS Styles -->
+        <!-- <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet"> -->
         <link href="css/styles.css" rel="stylesheet" />
-        
+
         <!-- HTML5 Support Media Queries -->
         <!--[if lt IE 9]>
           <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
           <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
-        
+
     </head>
-    
+
     <!-- Body -->
     <body ng-app="CompBrowser">
-        
+
         <!-- App Wrapper -->
         <div class="app-wrapper">
-        
-            <!-- Header -->
-            <header>
-                
-                <!-- Container -->
-                <div class="container-fluid">
-                    
-                    <!-- Row -->
-                    <div class="row">
-                        
-                        <!-- Column Logo -->
-                        <div class="col-xs-6 logo">
-                            <h1><a href="#/">Comp<strong>Browser</strong></a></h1>
-                        </div>
-                        
-                        <!-- Column Nav -->
-                        <div class="col-xs-6 nav">
-                            
-                            <!-- Drawer -->
-                            <div class="drawer"><i class="fa fa-navicon"></i></div>
-                            
-                            <!-- Navigation -->
-                            <nav>
-                                
-                                <!-- User -->
-                                <div class="user">
-                                    
+
+            <!-- Sticky Footer Push -->
+            <div class="sticky-footer-push">
+
+                <!-- Header -->
+                <header>
+
+                    <!-- Container -->
+                    <div class="container-fluid">
+
+                        <!-- Row -->
+                        <div class="row">
+
+                            <!-- Logo -->
+                            <div class="logo col-xs-8 col-sm-5 col-md-5">
+                                <a href="#/"><i class="fa fa-check-square-o"></i>Skill<strong>Chckr</strong></a>
+                            </div>
+
+                            <!-- Menu -->
+                            <div class="menu col-xs-4 col-sm-7 col-md-7">
+
+                                <!-- Drawer -->
+                                <div class="drawer"><i class="fa fa-navicon"></i></div>
+
+                                <!-- Menu -->
+                                <nav>
+
+                                   <!-- Logged Out -->
+                                    <ul class="logged-out hide">
+                                        <li><a href="#/"><i class="fa fa-home"></i>Home</a></li>
+                                        <li><a href="#about"><i class="fa fa-mortar-board"></i>About</a></li>
+                                        <li class="no-link sign-in"><i class="fa fa-user"></i>Sign In</li>
+                                    </ul>
+
                                     <!-- Logged In -->
-                                    <div class="logged-in">
-                                        
-                                        <!-- Name -->
-                                        <h1>Hello, John Smith</h1>
-                                        <p>You have <strong>20 Skills</strong> and <strong>10 Classes</strong> planned.</p>
-                                        
-                                        <!-- Log Out -->
-                                        <a class="button-red" href="#"><i class="fa fa-close"></i>Log Out</a>
-                                        
-                                    </div>
-                                    
-                                </div>
-                                
-                                <!-- Items -->
-                                <ul>
-                                    <li><a href="#/">Home</a></li>
-                                    <li><a href="#courses">Courses</a></li>
-                                    <li><a href="#about">About</a></li>
-                                    <li><a href="#tracks">Tracks</a></li>
-                                    <li><a href="#skills">Skills</a></li>
-                                </ul>
-                                
-                            </nav>
+                                    <ul class="logged-in">
+                                        <li><a href="#/"><i class="fa fa-dashboard"></i>Dashboard</a></li>
+                                        <li><a href="#courses"><i class="fa fa-database"></i>Courses</a></li>
+                                        <li><a href="#tracks"><i class="fa fa-calendar"></i>Tracks</a></li>
+                                        <li><a href="#skills"><i class="fa fa-check-square-o"></i>Skills</a></li>
+                                        <li class="no-link"><i class="fa fa-close"></i>Log Out</li>
+                                    </ul>
+
+                                </nav>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </header>
+                
+                <!-- Breaddrumbs -->
+                <div class="breadcrumbs">
+                    
+                    <!-- Container -->
+                    <div class="container-fluid">
+                        
+                        <!-- Row -->
+                        <div class="row">
+                            
+                            <!-- Column -->
+                            <div class="col-xs-12">
+                                <div ncy-breadcrumb></div>
+                            </div>
                             
                         </div>
                         
@@ -91,35 +107,84 @@
                     
                 </div>
                 
-            </header>
-            
-            <!-- Content -->
-            <div class="app-wrapper">
-                <div ui-view></div>
-            </div>
-            
+                <!-- Content -->
+                <div class="content-wrapper">
+                    <div ui-view></div>
+                </div>
+
+            </div> <!-- End Sticky Footer Push -->
+
             <!-- Footer -->
             <footer>
+                <p>Copyright &copy; 2015 Utah Valley University.</p>
             </footer>
-            
+
+            <!-- User Login -->
+            <div class="user-login">
+
+                <!-- Container -->
+                <div class="container-fluid">
+
+                    <!-- Row -->
+                    <div class="row">
+
+                        <!-- Header -->
+                        <div class="header col-xs-8">
+                            <h2><i class="fa fa-user"></i>Log In</h2>
+                        </div>
+
+                        <!-- Close -->
+                        <div class="close col-xs-4">
+                            <i class="fa fa-close"></i>
+                        </div>
+
+                    </div>
+
+                    <!-- Row -->
+                    <div class="row">
+                         <form method="post" enctype="multipart/form-data">
+                            <input type="text" ng-model="email" placeholder="Username" required />
+                            <input type="password" ng-model="password" placeholder="Password" required />
+                            <input class="button green" type="submit" value="Submit" ng-click="login()"/>
+                        </form>
+                    </div>
+
+                </div>
+
+            </div>
+
         </div>
-        
+
         <!-- Load Scripts -->
         <script src="lib/jquery/dist/jquery.min.js"></script>
         <script src="lib/jquery-ui/jquery-ui.min.js"></script>
-        <script src="lib/angular/angular.min.js"></script>
+        <script src="lib/angular/angular.js"></script>
+        <script src="lib/angular-sanitize/angular-sanitize.min.js"></script>
+        <script src="lib/angular-mocks/angular-mocks.js"></script>
         <script src="lib/angular-resource/angular-resource.min.js"></script>
         <script src="lib/angular-ui-router/release/angular-ui-router.min.js"></script>
+        <script src="lib/angular-bootstrap/ui-bootstrap.js"></script>
+        <script src="lib/angular-breadcrumb/dist/angular-breadcrumb.min.js"></script>
         <script src="js/app.js"></script>
         <script src="js/animations.js"></script>
         <script src="js/controllers.js"></script>
         <script src="js/filters.js"></script>
         <script src="js/services.js"></script>
         <script src="skills/skillsCtrl.js"></script>
+        <script src="courses/courseCtrl.js"></script>
         <script src="js/jquery.js"></script>
-        
+
+        <!-- Services -->
+        <script src="js/common/services/common.services.js"></script>
+        <script src="js/common/services/empResource.js"></script>
+        <script src="js/common/services/empResourceMock.js"></script>
+        <script src="js/common/services/trackResource.js"></script>
+        <script src="js/common/services/trackResourceMock.js"></script>
+
+        <!--Firebase Resources-->
+        <script src="https://cdn.firebase.com/js/client/2.1.2/firebase.js"></script>
+        <script src="https://cdn.firebase.com/libs/angularfire/0.9.2/angularfire.min.js"></script>
+
     </body>
-    
+
 </html>
-
-
