@@ -1,57 +1,72 @@
-<div class="filter-bar" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-  <a href="#"><span class="caret"></span> Filters</a>
-</div>
-
-<div class="collapse" id="collapseExample">
-	<div class="radio">
-    	<label>
-        	<input type="radio" name="filter" value="recomended">
-            Recomended
-        </label>
-    </div>
-    <div class="radio">
-    	<label>
-        	<input type="radio" name="filter" value="fav">
-            With My Skills
-        </label>
-    </div>
-    <div class="radio">
-    	<label>
-        	<input type="radio" name="filter" value="all">
-            All
-        </label>
-    </div>
-</div>
-<div class="courses">
-Courses
-</div>
-<div class="courselist">
-    <div class="row" ng-repeat="course in courses">
-        <div class="recomended col-xs-12">
-            <div class="c-head row">
-                <div class="arrow col-xs-1">
-                
-                </div>
-                <div class="col-xs-10">
-                    {{course.crnum}} {{course.crtitle}}
-                </div>
-                <div class="star col-xs-1">
-                
-                </div>
-            </div>
-            <div class="row details">
-                <div class="col-xs-6 text-green">{{course.crhours}} Credits</div><div class="col-xs-6 text-right text-green"><span ng-if="course.fallsem"> Fall</span><span ng-if="course.springsem"> Spring</span><span ng-if="course.summersem"> Summer</span></div>
-                <div class="col-xs-12">
-                    <p><span class="text-green">Prerequisites:</span>
-                    <br>{{course.prereq}}</p>
-                </div>
-                <div class="col-xs-12">
-                    <p><span class="text-green">Description:</span>
-                    <br>{{course.crdesc}}</p>
-                </div>
+<!-- Container -->
+<div class="container-fluid">
+    
+    <!-- Row -->
+    <div class="row">
+        
+        <!-- Column -->
+        <div class="col-xs-12">
+            
+            <div class="filter-bar" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+              <a href="#"><span class="caret"></span> Filters</a>
             </div>
             
-        </div>
-    </div>
+            <div class="collapse" id="collapseExample">
+            	<div class="radio">
+                	<label>
+                    	<input type="radio" name="filter" value="recomended">
+                        Recomended
+                    </label>
+                </div>
+                <div class="radio">
+                	<label>
+                    	<input type="radio" name="filter" value="fav">
+                        With My Skills
+                    </label>
+                </div>
+                <div class="radio">
+                	<label>
+                    	<input type="radio" name="filter" value="all">
+                        All
+                    </label>
+                </div>
+            </div>
+            <div class="courses">
+            Courses
+            </div>
+            <div class="courselist">
+                <div class="row" ng-repeat="course in courses">
+                    <div class="recomended col-xs-12">
+                        <div class="c-head row">
+                            <div class="arrow col-xs-1">
+                            
+                            </div>
+                            <div class="col-xs-10">
+                                {{course.crnum}} {{course.crtitle}}
+                            </div>
+                            <div class="star col-xs-1">
+                            
+                            </div>
+                        </div>
+                        <div class="row details">
+                            <div class="col-xs-6 text-green">{{course.crhours}} Credits</div><div class="col-xs-6 text-right text-green"><span ng-if="course.fallsem"> Fall</span><span ng-if="course.springsem"> Spring</span><span ng-if="course.summersem"> Summer</span></div>
+                            <div class="col-xs-12">
+                                <p><span class="text-green">Prerequisites:</span>
+                                <br>{{course.prereq}}</p>
+                            </div>
+                            <div class="col-xs-12">
+                                <p><span class="text-green">Description:</span>
+                                <br>{{course.crdesc}}</p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+            </div>
+            
+         </div>
     
+    </div>
+
 </div>
