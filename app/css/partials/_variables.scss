@@ -25,6 +25,7 @@
 
     // Blue
     $blue: #4d82b2;
+    $blue-mid: lighten($blue, 5%);
 
     // Green
     $green: #3f643f;
@@ -54,7 +55,7 @@
     // Sizes
     $header-height: 75px;
     $header-nav-width: 80%;
-    $breadcrumbs-height: 35px;
+    $breadcrumbs-height: 45px;
 
 // -------- Footer
 

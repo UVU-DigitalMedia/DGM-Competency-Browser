@@ -24,9 +24,6 @@ body {
 .container-fluid {
     @media #{$desktop}{max-width: 1200px;}
 }
-.content-wrapper {
-  //padding: $pad-md;
-}
 
 
 // Typography
@@ -60,14 +57,14 @@ a {
     color: white !important;
     background: $gray-mid !important;
     border: 0px !important;
-    border-bottom: 3px solid $gray !important;
+    border-bottom: 5px solid $gray !important;
     cursor: pointer;
     display: block;
     max-width: 200px;
     text-align: center;
     font-weight: 400;
     text-transform: uppercase;
-    @include radius();
+    @include radius(10px);
     @include animate(200ms);
 
     // Icon
@@ -87,6 +84,13 @@ a {
         border-color: $green !important;
         &:hover {background: $green !important;}
     }//end .green
+    
+    &.blue {
+        background: $blue-mid !important;
+        border-color: $blue !important;
+        &:hover {background: $blue !important;}
+    }//end .green
+    
 }//end .button
 
 
