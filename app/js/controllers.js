@@ -129,32 +129,260 @@ angular.module('CompBrowserControllers', [])
             {'semester': 'Spring 2015',
                 'note': 'Generals',
                 'order': 1,
-                'track': 'recommended'
+                'track': 'recommended',
+                'classes' :[
+                {
+                    "crnum": "DGM 1090",
+                    "crtitle": "Game Languages 1",
+                    "fav": true,
+                    "crhours": 3,
+                    "prereq": "None",
+                    "recommended": true,
+                    "crdesc": "Teaches basic scripting for games. Topics in this course include: understanding the writing process; writing effective sentences, paragraphs, and short essays; patterns of organization; rhetorical modes and purposes; audience analysis; the composing process; and editing."
+                },
+                {
+                    "crnum": "DGM 1090",
+                    "crtitle": "Game Languages 1",
+                    "fav": true,
+                    "crhours": 3,
+                    "prereq": "None",
+                    "recommended": true,
+                    "crdesc": "Teaches basic scripting for games. Topics in this course include: understanding the writing process; writing effective sentences, paragraphs, and short essays; patterns of organization; rhetorical modes and purposes; audience analysis; the composing process; and editing."
+                },
+                {
+                    "crnum": "DGM 1090",
+                    "crtitle": "Game Languages 1",
+                    "fav": true,
+                    "crhours": 3,
+                    "prereq": "None",
+                    "recommended": true,
+                    "crdesc": "Teaches basic scripting for games. Topics in this course include: understanding the writing process; writing effective sentences, paragraphs, and short essays; patterns of organization; rhetorical modes and purposes; audience analysis; the composing process; and editing."
+                },
+                {
+                    "crnum": "DGM 1090",
+                    "crtitle": "Game Languages 1",
+                    "fav": true,
+                    "crhours": 3,
+                    "prereq": "None",
+                    "recommended": true,
+                    "crdesc": "Teaches basic scripting for games. Topics in this course include: understanding the writing process; writing effective sentences, paragraphs, and short essays; patterns of organization; rhetorical modes and purposes; audience analysis; the composing process; and editing."
+                }
+                ]
             },
             {'semester': 'Fall 2015',
                 'note': 'Undergraduate Classes',
                 'order': 2,
-                'track': 'recommended'
+                'track': 'recommended',
+                'classes' :[
+                    {
+                        "crnum": "DGM 1090",
+                        "crtitle": "Game Languages 1",
+                        "fav": true,
+                        "crhours": 3,
+                        "prereq": "None",
+                        "recommended": true,
+                        "crdesc": "Teaches basic scripting for games. Topics in this course include: understanding the writing process; writing effective sentences, paragraphs, and short essays; patterns of organization; rhetorical modes and purposes; audience analysis; the composing process; and editing."
+                    },
+                    {
+                        "crnum": "DGM 1090",
+                        "crtitle": "Game Languages 1",
+                        "fav": true,
+                        "crhours": 3,
+                        "prereq": "None",
+                        "recommended": true,
+                        "crdesc": "Teaches basic scripting for games. Topics in this course include: understanding the writing process; writing effective sentences, paragraphs, and short essays; patterns of organization; rhetorical modes and purposes; audience analysis; the composing process; and editing."
+                    },
+                    {
+                        "crnum": "DGM 1090",
+                        "crtitle": "Game Languages 1",
+                        "fav": true,
+                        "crhours": 3,
+                        "prereq": "None",
+                        "recommended": true,
+                        "crdesc": "Teaches basic scripting for games. Topics in this course include: understanding the writing process; writing effective sentences, paragraphs, and short essays; patterns of organization; rhetorical modes and purposes; audience analysis; the composing process; and editing."
+                    },
+                    {
+                        "crnum": "DGM 1090",
+                        "crtitle": "Game Languages 1",
+                        "fav": true,
+                        "crhours": 3,
+                        "prereq": "None",
+                        "recommended": true,
+                        "crdesc": "Teaches basic scripting for games. Topics in this course include: understanding the writing process; writing effective sentences, paragraphs, and short essays; patterns of organization; rhetorical modes and purposes; audience analysis; the composing process; and editing."
+                    }
+                ]
             },
             {'semester': 'Spring 2016',
                 'note': 'Undergraduate Classes',
                 'order': 3,
-                'track':'custom1'
+                'track':'custom1',
+                'classes' :[
+                    {
+                        "crnum": "DGM 1090",
+                        "crtitle": "Game Languages 1",
+                        "fav": true,
+                        "crhours": 3,
+                        "prereq": "None",
+                        "recommended": true,
+                        "crdesc": "Teaches basic scripting for games. Topics in this course include: understanding the writing process; writing effective sentences, paragraphs, and short essays; patterns of organization; rhetorical modes and purposes; audience analysis; the composing process; and editing."
+                    },
+                    {
+                        "crnum": "DGM 1090",
+                        "crtitle": "Game Languages 1",
+                        "fav": true,
+                        "crhours": 3,
+                        "prereq": "None",
+                        "recommended": true,
+                        "crdesc": "Teaches basic scripting for games. Topics in this course include: understanding the writing process; writing effective sentences, paragraphs, and short essays; patterns of organization; rhetorical modes and purposes; audience analysis; the composing process; and editing."
+                    },
+                    {
+                        "crnum": "DGM 1090",
+                        "crtitle": "Game Languages 1",
+                        "fav": true,
+                        "crhours": 3,
+                        "prereq": "None",
+                        "recommended": true,
+                        "crdesc": "Teaches basic scripting for games. Topics in this course include: understanding the writing process; writing effective sentences, paragraphs, and short essays; patterns of organization; rhetorical modes and purposes; audience analysis; the composing process; and editing."
+                    },
+                    {
+                        "crnum": "DGM 1090",
+                        "crtitle": "Game Languages 1",
+                        "fav": true,
+                        "crhours": 3,
+                        "prereq": "None",
+                        "recommended": true,
+                        "crdesc": "Teaches basic scripting for games. Topics in this course include: understanding the writing process; writing effective sentences, paragraphs, and short essays; patterns of organization; rhetorical modes and purposes; audience analysis; the composing process; and editing."
+                    }
+                ]
             },
             {'semester': 'Fall 2016',
                 'note': 'Undergraduate Classes',
                 'order': 4,
-                'track':'custom1'
+                'track':'custom1',
+                'classes' :[
+                    {
+                        "crnum": "DGM 1090",
+                        "crtitle": "Game Languages 1",
+                        "fav": true,
+                        "crhours": 3,
+                        "prereq": "None",
+                        "recommended": true,
+                        "crdesc": "Teaches basic scripting for games. Topics in this course include: understanding the writing process; writing effective sentences, paragraphs, and short essays; patterns of organization; rhetorical modes and purposes; audience analysis; the composing process; and editing."
+                    },
+                    {
+                        "crnum": "DGM 1090",
+                        "crtitle": "Game Languages 1",
+                        "fav": true,
+                        "crhours": 3,
+                        "prereq": "None",
+                        "recommended": true,
+                        "crdesc": "Teaches basic scripting for games. Topics in this course include: understanding the writing process; writing effective sentences, paragraphs, and short essays; patterns of organization; rhetorical modes and purposes; audience analysis; the composing process; and editing."
+                    },
+                    {
+                        "crnum": "DGM 1090",
+                        "crtitle": "Game Languages 1",
+                        "fav": true,
+                        "crhours": 3,
+                        "prereq": "None",
+                        "recommended": true,
+                        "crdesc": "Teaches basic scripting for games. Topics in this course include: understanding the writing process; writing effective sentences, paragraphs, and short essays; patterns of organization; rhetorical modes and purposes; audience analysis; the composing process; and editing."
+                    },
+                    {
+                        "crnum": "DGM 1090",
+                        "crtitle": "Game Languages 1",
+                        "fav": true,
+                        "crhours": 3,
+                        "prereq": "None",
+                        "recommended": true,
+                        "crdesc": "Teaches basic scripting for games. Topics in this course include: understanding the writing process; writing effective sentences, paragraphs, and short essays; patterns of organization; rhetorical modes and purposes; audience analysis; the composing process; and editing."
+                    }
+                ]
             },
             {'semester': 'Spring 2017',
                 'note': 'Upper Division Classes',
                 'order': 5,
-                'track':'custom2'
+                'track':'custom2',
+                'classes' :[
+                    {
+                        "crnum": "DGM 1090",
+                        "crtitle": "Game Languages 1",
+                        "fav": true,
+                        "crhours": 3,
+                        "prereq": "None",
+                        "recommended": true,
+                        "crdesc": "Teaches basic scripting for games. Topics in this course include: understanding the writing process; writing effective sentences, paragraphs, and short essays; patterns of organization; rhetorical modes and purposes; audience analysis; the composing process; and editing."
+                    },
+                    {
+                        "crnum": "DGM 1090",
+                        "crtitle": "Game Languages 1",
+                        "fav": true,
+                        "crhours": 3,
+                        "prereq": "None",
+                        "recommended": true,
+                        "crdesc": "Teaches basic scripting for games. Topics in this course include: understanding the writing process; writing effective sentences, paragraphs, and short essays; patterns of organization; rhetorical modes and purposes; audience analysis; the composing process; and editing."
+                    },
+                    {
+                        "crnum": "DGM 1090",
+                        "crtitle": "Game Languages 1",
+                        "fav": true,
+                        "crhours": 3,
+                        "prereq": "None",
+                        "recommended": true,
+                        "crdesc": "Teaches basic scripting for games. Topics in this course include: understanding the writing process; writing effective sentences, paragraphs, and short essays; patterns of organization; rhetorical modes and purposes; audience analysis; the composing process; and editing."
+                    },
+                    {
+                        "crnum": "DGM 1090",
+                        "crtitle": "Game Languages 1",
+                        "fav": true,
+                        "crhours": 3,
+                        "prereq": "None",
+                        "recommended": true,
+                        "crdesc": "Teaches basic scripting for games. Topics in this course include: understanding the writing process; writing effective sentences, paragraphs, and short essays; patterns of organization; rhetorical modes and purposes; audience analysis; the composing process; and editing."
+                    }
+                ]
             },
             {'semester': 'Fall 2017',
                 'note': 'Upper Division Classes',
                 'order': 6,
-                'track':'custom2'
+                'track':'custom2',
+                'classes' :[
+                    {
+                        "crnum": "DGM 1090",
+                        "crtitle": "Game Languages 1",
+                        "fav": true,
+                        "crhours": 3,
+                        "prereq": "None",
+                        "recommended": true,
+                        "crdesc": "Teaches basic scripting for games. Topics in this course include: understanding the writing process; writing effective sentences, paragraphs, and short essays; patterns of organization; rhetorical modes and purposes; audience analysis; the composing process; and editing."
+                    },
+                    {
+                        "crnum": "DGM 1090",
+                        "crtitle": "Game Languages 1",
+                        "fav": true,
+                        "crhours": 3,
+                        "prereq": "None",
+                        "recommended": true,
+                        "crdesc": "Teaches basic scripting for games. Topics in this course include: understanding the writing process; writing effective sentences, paragraphs, and short essays; patterns of organization; rhetorical modes and purposes; audience analysis; the composing process; and editing."
+                    },
+                    {
+                        "crnum": "DGM 1090",
+                        "crtitle": "Game Languages 1",
+                        "fav": true,
+                        "crhours": 3,
+                        "prereq": "None",
+                        "recommended": true,
+                        "crdesc": "Teaches basic scripting for games. Topics in this course include: understanding the writing process; writing effective sentences, paragraphs, and short essays; patterns of organization; rhetorical modes and purposes; audience analysis; the composing process; and editing."
+                    },
+                    {
+                        "crnum": "DGM 1090",
+                        "crtitle": "Game Languages 1",
+                        "fav": true,
+                        "crhours": 3,
+                        "prereq": "None",
+                        "recommended": true,
+                        "crdesc": "Teaches basic scripting for games. Topics in this course include: understanding the writing process; writing effective sentences, paragraphs, and short essays; patterns of organization; rhetorical modes and purposes; audience analysis; the composing process; and editing."
+                    }
+                ]
             }
         ];
 
