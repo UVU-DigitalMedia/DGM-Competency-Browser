@@ -4,6 +4,9 @@ var CompBrowser = angular.module('CompBrowser.services', ['ngResource']);
 // Random Color for Spotlight
 CompBrowser.factory('randomColor', function(){
     
+    // Use Strict
+    'use strict';
+    
     // Create Array
     var colorArray = ['blue', 'green', 'red'];
     
