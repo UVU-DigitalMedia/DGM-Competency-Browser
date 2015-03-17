@@ -1,6 +1,9 @@
-angular.module("courseCtrl", [])
+angular.module("courseCtrl", ['CompBrowser.services'])
 
-.controller("CourseCtrl", function($scope) {
+.controller("CourseCtrl", function($scope, randomColor) {
+    
+    // Call Spotlight Random Color Service
+    $scope.randomColor = randomColor;
 
 	$scope.courses = [
 		{

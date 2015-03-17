@@ -1,4 +1,4 @@
-angular.module('CompBrowserControllers', [])
+angular.module('CompBrowserControllers', ['CompBrowser.services'])
 
 .controller('MainCtrl', function($scope) {
     'use strict';
@@ -117,8 +117,11 @@ angular.module('CompBrowserControllers', [])
     };
 })
 
-    .controller('TrackCtrl', function ($scope, trackResource) {
+    .controller('TrackCtrl', function ($scope, trackResource, randomColor) {
         'use strict';
+        
+        // Call Spotlight Random Color Service
+        $scope.randomColor = randomColor;
 
         // Query to fake httpBackend service for testing purposes
         trackResource.query(function(data) {
