@@ -59,17 +59,17 @@
                                 <div class="drawer"><i class="fa fa-navicon"></i></div>
 
                                 <!-- Menu -->
-                                <nav>
+                                <nav ng-controller="menuCtrl">
 
                                    <!-- Logged Out -->
-                                    <ul class="logged-out hide">
+                                    <ul ng-show="isLoggedIn == false" ng class="logged-out">
                                         <li><a href="#/"><i class="fa fa-home"></i>Home</a></li>
                                         <li><a href="#about"><i class="fa fa-mortar-board"></i>About</a></li>
-                                        <li class="no-link sign-in"><i class="fa fa-user"></i>Sign In</li>
+                                        <li><a href="#login"><i class="fa fa-user"></i>Login</a></li>
                                     </ul>
 
                                     <!-- Logged In -->
-                                    <ul class="logged-in">
+                                    <ul ng-show="isLoggedIn == true" class="logged-in">
                                         <li><a href="#/"><i class="fa fa-dashboard"></i>Dashboard</a></li>
                                         <li><a href="#courses"><i class="fa fa-database"></i>Courses</a></li>
                                         <li><a href="#tracks"><i class="fa fa-calendar"></i>Tracks</a></li>
@@ -89,22 +89,22 @@
 
                 <!-- Breaddrumbs -->
                 <div class="breadcrumbs">
-                    
+
                     <!-- Container -->
                     <div class="container-fluid">
-                        
+
                         <!-- Row -->
                         <div class="row">
-                            
+
                             <!-- Column -->
                             <div class="col-xs-12">
                                 <div ncy-breadcrumb></div>
                             </div>
-                            
+
                         </div>
-                        
+
                     </div>
-                    
+
                 </div>
 
                 <!-- Content -->

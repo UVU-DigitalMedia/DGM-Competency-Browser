@@ -6,15 +6,19 @@ angular.module('CompBrowserControllers', ['CompBrowser.services'])
 
 })
 
-.controller('LoginCtrl', function($scope, $rootScope, $firebase, $firebaseAuth, FBURL, $window) {
+.controller('menuCtrl', function($scope, userAuth) {
     'use strict';
 
-    //Check if user is logged in
-    $rootScope.checkSession();
+    //Check Session
+     $scope.isLoggedIn = userAuth.checkSession();
 
-    if($rootScope.isLoggedIn === true) {
-      $window.location.href = '#/';
-    }
+})
+
+.controller('LoginCtrl', function($scope, userAuth, $firebase, $firebaseAuth, FBURL, $window) {
+    'use strict';
+
+    //Check Session
+    userAuth.checkSession();
 
       var ref = new Firebase(FBURL);
 
@@ -71,11 +75,7 @@ angular.module('CompBrowserControllers', ['CompBrowser.services'])
 
     $scope.registerUser = function() {
 
-      if($scope.person.email !== $scope.person.emailConf || $scope.person.email !== '' ) {
-        $scope.errors = 'The email addresses do not match, please make sure they match';
-      } else {
-        $scope.errors = '';
-      }
+      
 
       if($scope.errors !== '') {
         //Fix errors before submitting the form
@@ -119,7 +119,7 @@ angular.module('CompBrowserControllers', ['CompBrowser.services'])
 
     .controller('TrackCtrl', function ($scope, trackResource, randomColor) {
         'use strict';
-        
+
         // Call Spotlight Random Color Service
         $scope.randomColor = randomColor;
 
