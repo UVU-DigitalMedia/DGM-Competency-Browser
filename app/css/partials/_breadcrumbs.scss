@@ -1,0 +1,39 @@
+/* ===============================================
+            App Breadcrumbs
+================================================ */
+
+// Foundation
+.breadcrumbs {
+    background: darken($gray-high, 5%);
+    height: $breadcrumbs-height;
+}
+
+// List
+.breadcrumbs ul {
+    
+    height: $breadcrumbs-height;
+    line-height: $breadcrumbs-height;
+    
+    li {
+        
+        margin: 0px 10px 0px 0px;
+        padding: 0;
+        float: left;
+        color: darken($gray-high, 50%);
+        font-weight: 300;
+        letter-spacing: 1px;
+        
+        a {
+            
+            color: $green-mid;
+            @include animate(200ms);
+            
+            &:hover {color: $green-high;}
+            
+        }
+        
+        span.spacer {margin-left: 10px; color: darken($gray-high, 30%);}
+        
+    }
+    
+}

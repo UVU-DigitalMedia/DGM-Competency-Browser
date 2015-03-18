@@ -1,21 +1,49 @@
 /* ---------------------------------------- Skills Page ---*/
-.skillList{
-  @include clear();
+//filters
+
+.contentSet.skills{
+  .titleContainer{
+    margin-bottom:$pad;
+  }
 }
-.filter-bar{
+
+.skillList{
   @include clear();
 }
 .skillList{
   @include clear();
 }
 .skillItem{
-  padding:$pad;
   @include radius();
   @include clear();
-  margin-bottom:5px;
-  background:$green;
+  margin-top:6px;
+  background:$white;
 
   .skill{
-    color:$white;
+    padding:$pad;
   }
+
+  .favorite{
+    padding:$pad-md;
+  }
+  .fa{
+    float:right;
+  }
+
+  .skill{
+    color:$green;
+  }
+}
+.titleContainer {
+    cursor:pointer;
+}
+.jobs input[type=search] {
+    height:40px;
+    font-size:18px;
+}
+// Use to style the search input box (removes browser styling)...can be moved to general styles
+.jobs input[type=search] {
+-webkit-appearance: none;
+-moz-appearance: none;
+appearance: none;
 }

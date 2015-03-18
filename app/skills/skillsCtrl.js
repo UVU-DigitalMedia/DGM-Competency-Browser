@@ -1,10 +1,17 @@
 (function () {
     'use strict';
-    
-    angular.module('skillsCtrl', [])
 
-    .controller('SkillsCtrl', function($scope, empResource) {
+    angular.module('skillsCtrl', ['ui.bootstrap', 'CompBrowser.services'])
+
+    .controller('SkillsCtrl', function($scope, empResource, randomColor) {
         
+        // Call Spotlight Random Color Service
+        $scope.randomColor = randomColor;
+    
+        
+        
+        $scope.isCollapsed = false;
+
         // Query to fake httpBackend service for testing purposes
         empResource.query(function(data) {
             $scope.employers = data;
@@ -32,5 +39,9 @@
             }
                 return employers;
             };
+            
+        
+        
+        
     });
 }());

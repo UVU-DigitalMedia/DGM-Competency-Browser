@@ -4,7 +4,7 @@
     var app = angular.module('empResourceMock', ['ngMockE2E']);
 
     app.run(function ($httpBackend) {
-               
+
         var employers = [
             {
                 "employerId": 1,
@@ -47,9 +47,17 @@
             }
         ];
 
+        // Test structure
+        // "skill": {
+        //     "skillInfo": [
+        //         { "id": "2-D Packages", "desc": "This is the skill desc." },
+        //         { "id": "3-D Packages", "desc": "This is the skill desc2." },
+        //         { "id": "Integrating Game Assets", "desc": "This is the skill desc3." },
+        //         { "id": "Identifying Art Problems", "desc": "This is the skill desc4." }
+
         var employerUrl = '/api/employers';
         $httpBackend.whenGET(employerUrl).respond(employers);
-       
+
         // Pass through any requests for other files
         $httpBackend.whenGET(/.*/).passThrough();
 

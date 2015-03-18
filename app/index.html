@@ -18,6 +18,7 @@
         <title>Competency Browser</title>
 
         <!-- CSS Styles -->
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
         <link href="css/styles.css" rel="stylesheet" />
 
         <!-- HTML5 Support Media Queries -->
@@ -86,8 +87,28 @@
 
                 </header>
 
+                <!-- Breaddrumbs -->
+                <div class="breadcrumbs">
+
+                    <!-- Container -->
+                    <div class="container-fluid">
+
+                        <!-- Row -->
+                        <div class="row">
+
+                            <!-- Column -->
+                            <div class="col-xs-12">
+                                <div ncy-breadcrumb></div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
                 <!-- Content -->
-                <div class="content-wrappers">
+                <div class="content-wrapper">
                     <div ui-view></div>
                 </div>
 
@@ -122,9 +143,9 @@
                     <!-- Row -->
                     <div class="row">
                          <form method="post" enctype="multipart/form-data">
-                            <input type="text" placeholder="Username" required />
-                            <input type="password" placeholder="Password" required />
-                            <input class="button green" type="submit" value="Submit"/>
+                            <input type="text" ng-model="email" placeholder="Username" required />
+                            <input type="password" ng-model="password" placeholder="Password" required />
+                            <input class="button green" type="submit" value="Submit" ng-click="login()"/>
                         </form>
                     </div>
 
@@ -139,9 +160,12 @@
         <script src="lib/jquery/dist/jquery.min.js"></script>
         <script src="lib/jquery-ui/jquery-ui.min.js"></script>
         <script src="lib/angular/angular.js"></script>
+        <script src="lib/angular-sanitize/angular-sanitize.min.js"></script>
         <script src="lib/angular-mocks/angular-mocks.js"></script>
         <script src="lib/angular-resource/angular-resource.min.js"></script>
         <script src="lib/angular-ui-router/release/angular-ui-router.min.js"></script>
+        <script src="lib/angular-bootstrap/ui-bootstrap.js"></script>
+        <script src="lib/angular-breadcrumb/dist/angular-breadcrumb.min.js"></script>
         <script src="js/app.js"></script>
         <script src="js/animations.js"></script>
         <script src="js/controllers.js"></script>
