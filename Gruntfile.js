@@ -8,11 +8,11 @@ module.exports = function(grunt) {
     concat: {
       distJS: {
           src: 'app/js/*.js', //All javascript
-          dest: 'app/prod/js/production.js'
+          dest: 'production/build.js'
         },
       distCSS: {
           src: 'app/css/*.scss', // All CSS in the libs folder,
-          dest: 'app/prod/css/production.scss'
+          dest: 'production/build.scss'
         }
     },
 
@@ -105,6 +105,7 @@ module.exports = function(grunt) {
         tasks: ['sass', 'concat', 'jshint', 'csslint']
       },
 
+      // build process tasks
       rename: {
         moveJS: {
             src: 'app/prod/js/production.js',
@@ -115,7 +116,6 @@ module.exports = function(grunt) {
             dest: 'production/prod.css',
         }
       }
-      
   });
 
   grunt.loadNpmTasks('grunt-contrib-jshint');
@@ -129,6 +129,14 @@ module.exports = function(grunt) {
 
   // Default task(s).
   grunt.registerTask('default', ['jshint']);
-  grunt.registerTask('production', ['concat', 'rename']);
+  grunt.registerTask('build', [
+    'concat',
+    'rename',
+    'useminPrepare',
+    'cssmin:generated',
+    'uglify:generated',
+    'filerev',
+    'usemin'
+  ]);
 
 };
