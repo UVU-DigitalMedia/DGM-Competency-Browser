@@ -31,11 +31,10 @@ CompBrowser.factory('userAuth', function($firebase, FBURL){
 
               if (authData) {
                   //Allow app access
-                  console.log('User ' + authData.uid + ' is logged in the service');
 
                   var isLoggedIn = true;
                   console.log('User is logged in: ' + isLoggedIn);
-
+                  return isLoggedIn;
               } else {
                   var isLoggedIn = false;
                   console.log('User is logged in: ' + isLoggedIn);

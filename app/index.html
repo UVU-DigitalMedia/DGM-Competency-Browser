@@ -62,14 +62,14 @@
                                 <nav ng-controller="menuCtrl">
 
                                    <!-- Logged Out -->
-                                    <ul ng-show="isLoggedIn == false" ng class="logged-out">
+                                    <ul ng-if="isLoggedIn === false">
                                         <li><a href="#/"><i class="fa fa-home"></i>Home</a></li>
                                         <li><a href="#about"><i class="fa fa-mortar-board"></i>About</a></li>
                                         <li><a href="#login"><i class="fa fa-user"></i>Login</a></li>
                                     </ul>
 
                                     <!-- Logged In -->
-                                    <ul ng-show="isLoggedIn == true" class="logged-in">
+                                    <ul ng-if="isLoggedIn === true" >
                                         <li><a href="#/"><i class="fa fa-dashboard"></i>Dashboard</a></li>
                                         <li><a href="#courses"><i class="fa fa-database"></i>Courses</a></li>
                                         <li><a href="#tracks"><i class="fa fa-calendar"></i>Tracks</a></li>
