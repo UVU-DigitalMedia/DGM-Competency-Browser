@@ -1,6 +1,8 @@
 module.exports = function(grunt) {
 
-  require('load-grunt-config')(grunt)
+'use strict';
+
+  require('load-grunt-config')(grunt);
 
   // Define tasks
   grunt.registerTask('default', ['jshint']);
@@ -17,6 +19,6 @@ module.exports = function(grunt) {
     'usemin'
   ]);
 
-;
+
 
 };
