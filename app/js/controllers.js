@@ -1,6 +1,6 @@
 angular.module('CompBrowserControllers', ['CompBrowser.services'])
 
-.controller('MainCtrl', function($scope) {
+.controller('MainCtrl', function($scope, loginForm) {
     'use strict';
     $scope.message = 'APP BASE';
 

@@ -11,6 +11,8 @@
     right: 0;
     padding: 20px;
     width: 70%;
+    opacity: 0.95;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha"(Opacity=95);
     @include radius();
     
     // Tablet
@@ -94,6 +96,9 @@
                 border-color: $green-mid;
                 
             }
+            
+            // Reduce Margin for Button
+            &[type=submit]{margin-top: 15px;}
             
         }
         

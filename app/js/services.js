@@ -4,8 +4,31 @@
 // Create Module
 var CompBrowser = angular.module('CompBrowser.services', ['ngResource']);
 
+// Open User Login
+CompBrowser.factory('loginForm', function($rootScope, $location){
+    
+    // Set Open Function
+    $rootScope.openLoginForm = function(){
+        
+        $rootScope.loginFormClosed = 'open'; 
+        
+    }
+    
+    // Set Close Function
+    $rootScope.closeLoginForm = function(){
+        
+        $rootScope.loginFormClosed = 'closed'; 
+        
+    }
+    
+    
+    
+
+   
+})
+
 // Random Color for Spotlight
-CompBrowser.factory('randomColor', function($rootScope){
+.factory('randomColor', function($rootScope){
     
     // Create Array
     var colorArray = ['blue', 'green', 'red'];
