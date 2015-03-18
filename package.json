@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start":"nodemon server.js & grunt browserSync",
+    "start": "nodemon server.js & grunt browserSync",
     "watch": "grunt watch",
     "test": "grunt",
     "cover": "istanbul cover --dir reports/coverage node_modules/argg tests/*.js",
@@ -45,6 +45,7 @@
     "karma-ie-launcher": "^0.1.5",
     "karma-jasmine": "^0.3.5",
     "karma-phantomjs-launcher": "^0.1.4",
+    "load-grunt-config": "^0.16.0",
     "phantomjs": "1.9.15",
     "protractor": "^1.6.1"
   }
