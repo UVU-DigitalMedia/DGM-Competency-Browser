@@ -18,7 +18,7 @@
         <title>Competency Browser</title>
 
         <!-- CSS Styles -->
-        <!-- <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet"> -->
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
         <link href="css/styles.css" rel="stylesheet" />
 
         <!-- HTML5 Support Media Queries -->
@@ -86,27 +86,27 @@
                     </div>
 
                 </header>
-                
+
                 <!-- Breaddrumbs -->
                 <div class="breadcrumbs">
-                    
+
                     <!-- Container -->
                     <div class="container-fluid">
-                        
+
                         <!-- Row -->
                         <div class="row">
-                            
+
                             <!-- Column -->
                             <div class="col-xs-12">
                                 <div ncy-breadcrumb></div>
                             </div>
-                            
+
                         </div>
-                        
+
                     </div>
-                    
+
                 </div>
-                
+
                 <!-- Content -->
                 <div class="content-wrapper">
                     <div ui-view></div>
@@ -155,6 +155,7 @@
 
         </div>
 
+        <!-- build:js production/build.js -->
         <!-- Load Scripts -->
         <script src="lib/jquery/dist/jquery.min.js"></script>
         <script src="lib/jquery-ui/jquery-ui.min.js"></script>
@@ -184,6 +185,8 @@
         <!--Firebase Resources-->
         <script src="https://cdn.firebase.com/js/client/2.1.2/firebase.js"></script>
         <script src="https://cdn.firebase.com/libs/angularfire/0.9.2/angularfire.min.js"></script>
+        <!-- endbuild -->
+
 
     </body>
 
