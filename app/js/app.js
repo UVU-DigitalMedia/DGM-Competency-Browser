@@ -8,7 +8,9 @@ angular.module('CompBrowser', ['common.services',
                                'trackResourceMock',
                                'ncy-angular-breadcrumb',
                                'ngSanitize',
-                               'firebase'])
+                               'firebase',
+                               'offClick',
+                               'ngAnimate'])
 
 .run(function ($rootScope, $firebaseAuth, $firebase, $window) {
     
