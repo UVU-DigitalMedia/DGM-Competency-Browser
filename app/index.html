@@ -62,14 +62,14 @@
                                 <nav>
 
                                    <!-- Logged Out -->
-                                    <ul class="logged-out hide">
+                                    <ul class="logged-out">
                                         <li><a href="#/"><i class="fa fa-home"></i>Home</a></li>
                                         <li><a href="#about"><i class="fa fa-mortar-board"></i>About</a></li>
-                                        <li class="no-link sign-in"><i class="fa fa-user"></i>Sign In</li>
+                                        <li class="no-link sign-in" ng-click="loginClosed = !loginClosed"><i class="fa fa-user"></i>Sign In</li>
                                     </ul>
 
                                     <!-- Logged In -->
-                                    <ul class="logged-in">
+                                    <ul class="logged-in hide">
                                         <li><a href="#/"><i class="fa fa-dashboard"></i>Dashboard</a></li>
                                         <li><a href="#courses"><i class="fa fa-database"></i>Courses</a></li>
                                         <li><a href="#tracks"><i class="fa fa-calendar"></i>Tracks</a></li>
@@ -120,7 +120,7 @@
             </footer>
 
             <!-- User Login -->
-            <div class="user-login">
+            <div class="user-login" ng-hide="loginClosed == true" off-click="loginOffClick()" off-click-filter="'.sign-in'">
 
                 <!-- Container -->
                 <div class="container-fluid">
@@ -134,7 +134,7 @@
                         </div>
 
                         <!-- Close -->
-                        <div class="close col-xs-4">
+                        <div class="close col-xs-4" ng-click="loginClosed = !loginClosed">
                             <i class="fa fa-close"></i>
                         </div>
 
@@ -145,6 +145,7 @@
                          <form method="post" enctype="multipart/form-data">
                             <input type="text" ng-model="email" placeholder="Username" required />
                             <input type="password" ng-model="password" placeholder="Password" required />
+                            <a href="#/register" ng-click="loginClosed = !loginClosed">Register for an account.</a>
                             <input class="button green" type="submit" value="Submit" ng-click="login()"/>
                         </form>
                     </div>
@@ -166,10 +167,13 @@
         <script src="lib/angular-ui-router/release/angular-ui-router.min.js"></script>
         <script src="lib/angular-bootstrap/ui-bootstrap.js"></script>
         <script src="lib/angular-breadcrumb/dist/angular-breadcrumb.min.js"></script>
+        <script src="lib/angular-off-click/offClick.js"></script>
+        <script src="lib/angular-animate/angular-animate.min.js"></script>
         <script src="js/app.js"></script>
         <script src="js/animations.js"></script>
         <script src="js/controllers.js"></script>
         <script src="js/filters.js"></script>
+        <script src="js/directives.js"></script>
         <script src="js/services.js"></script>
         <script src="skills/skillsCtrl.js"></script>
         <script src="courses/courseCtrl.js"></script>

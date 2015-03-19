@@ -15,32 +15,7 @@
     @media #{$tablet}{
         
         padding: 40px 0px; 
-        text-align: left;
         
-    }
-    
-    // Column Fixes
-    .col-xs-12 {
-        
-        text-align: center;
-        
-        a {
-            
-            margin: 0px auto;
-            
-        }
-        
-    }
-    .col-sm-6 {
-        
-        text-align: left; 
-        
-        a{
-            
-            margin: 0px;
-            
-        }
-    
     }
     
     // Color Options
@@ -74,13 +49,6 @@
 .spotlight a {
     
     margin: 0px auto;
-    
-    // Tablet
-    @media #{$tablet}{ 
-        
-        margin: 0px;
-        
-    }
     
 }
 .spotlight img {
