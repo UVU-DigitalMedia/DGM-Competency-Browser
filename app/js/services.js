@@ -28,15 +28,16 @@ CompBrowser.factory('userAuth', function($firebase, FBURL){
             checkSession: function() {
               var authRef = new Firebase(FBURL);
               var authData = authRef.getAuth();
+              var isLoggedIn;
 
               if (authData) {
                   //Allow app access
 
-                  var isLoggedIn = true;
+                  isLoggedIn = true;
                   console.log('User is logged in: ' + isLoggedIn);
                   return isLoggedIn;
               } else {
-                  var isLoggedIn = false;
+                  isLoggedIn = false;
                   console.log('User is logged in: ' + isLoggedIn);
                   return isLoggedIn;
               }
