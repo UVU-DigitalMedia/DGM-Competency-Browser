@@ -11,7 +11,41 @@ angular.module('CompBrowser', ['common.services',
                                'firebase'])
 
 .run(function ($rootScope, $firebaseAuth, $firebase, $window) {
-  'use strict';
+    
+    // Use Strict
+    'use strict';
+  
+    // ------------------------------ Show/Hide Login Form
+  
+    // Set Variable
+    $rootScope.loginClosed = true;
+    
+    // Close Login on Off Click
+    $rootScope.loginOffClick = function(){
+        
+        $rootScope.loginClosed = true;
+        
+    };
+    
+    // ------------------------------ Random Colors
+    
+    // Create Array
+    var colorArray = ['blue', 'green', 'red'];
+    
+    // Set Variable
+    $rootScope.randomColor = $rootScope.randomColor = colorArray[Math.floor(Math.random() * colorArray.length)];
+    
+    // Root Scope on State Change
+    $rootScope.$on('$stateChangeStart', function(){
+        
+        // Set Random Color
+        $rootScope.randomColor = colorArray[Math.floor(Math.random() * colorArray.length)];
+       
+    });
+
+  
+  
+  // ------------------------------ Start Firebase
   $rootScope.baseUrl = 'https://competency-browser.firebaseio.com/';
   var authRef = new Firebase($rootScope.baseUrl);
   $rootScope.auth = $firebaseAuth(authRef);

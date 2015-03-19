@@ -1,6 +1,6 @@
 angular.module('CompBrowserControllers', ['CompBrowser.services' ])
 
-.controller('MainCtrl', function($scope, loginForm) {
+.controller('MainCtrl', function($scope) {
     'use strict';
     $scope.message = 'APP BASE';
 
@@ -36,7 +36,7 @@ angular.module('CompBrowserControllers', ['CompBrowser.services' ])
       };
 })
 
-.controller('RegisterCtrl', function($scope, $firebase, $firebaseAuth, FBURL, loginForm, randomColor) {
+.controller('RegisterCtrl', function($scope, $firebase, $firebaseAuth, FBURL) {
     'use strict';
 
     $scope.errors = '';
@@ -117,7 +117,7 @@ angular.module('CompBrowserControllers', ['CompBrowser.services' ])
     };
 })
 
-    .controller('TrackCtrl', function ($scope, trackResource, randomColor) {
+    .controller('TrackCtrl', function ($scope, trackResource) {
         'use strict';
 
         // Query to fake httpBackend service for testing purposes
