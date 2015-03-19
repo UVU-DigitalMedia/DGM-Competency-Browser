@@ -1,10 +1,15 @@
 angular.module("courseCtrl", ['CompBrowser.services'])
 
-.controller("CourseCtrl", function($scope, randomColor) {
+<<<<<<< HEAD
+.controller("CourseCtrl", function($scope) {
     
     // Call Spotlight Random Color Service
     $scope.randomColor = randomColor;
     
+=======
+.controller("CourseCtrl", function($scope) {
+
+>>>>>>> upstream/master
 	$scope.courses = [
 
     {

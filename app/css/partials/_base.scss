@@ -22,7 +22,7 @@ body {
 
 // Container
 .container-fluid {
-    @media #{$desktop}{max-width: 1200px;}
+    @media #{$desktop}{max-width: 1200px; margin: 0px auto;}
 }
 
 
