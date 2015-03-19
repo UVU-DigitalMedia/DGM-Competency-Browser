@@ -1,12 +1,4 @@
-angular.module("courseCtrl", ['CompBrowser.services'])
-
-.controller("CourseCtrl", function($scope, randomColor) {
-    
-    // Call Spotlight Random Color Service
-    $scope.randomColor = randomColor;
-    
-	$scope.courses = [
-
+[
     {
       "number": "DGM 1061",
       "name": "Motion Picture Editing",
@@ -2795,4 +2787,3 @@ angular.module("courseCtrl", ['CompBrowser.services'])
       "description": "For bachelor's degree students and other interested persons. Offers independent study as directed in reading or in individual projects; offered at the discretion and approval of the department chairperson. May be repeated for a maximum of 6 credits toward graduation."
     }
   ]
-});
