@@ -3,7 +3,7 @@
 
     angular.module('skillsCtrl', ['ui.bootstrap', 'CompBrowser.services'])
 
-    .controller('SkillsCtrl', function($scope, empResource, randomColor) {
+    .controller('SkillsCtrl', function($scope, empResource) {
 
         $scope.isCollapsed = false;
 
