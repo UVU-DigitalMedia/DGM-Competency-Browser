@@ -1,6 +1,6 @@
 angular.module("courseCtrl", ['CompBrowser.services'])
 
-.controller("CourseCtrl", function($scope, randomColor) {
+.controller("CourseCtrl", function($scope) {
 
 	$scope.courses = [
 		{
