@@ -5,7 +5,7 @@
     
     background: darken($gray-high, 10%);
     position: absolute;
-    margin: -500px auto 0px auto;
+    margin: 150px auto 0px auto;
     top: 0;
     left: 0;
     right: 0;
@@ -14,12 +14,19 @@
     opacity: 0.95;
     -ms-filter:"progid:DXImageTransform.Microsoft.Alpha"(Opacity=95);
     @include radius();
+    @include animate(200ms);
+    
+    // Hide
+    &.ng-hide {
+ 
+        margin-top: -400px;
+        opacity: 0;
+        -ms-filter:"progid:DXImageTransform.Microsoft.Alpha"(Opacity=0);
+        
+    }
     
     // Tablet
     @media #{$tablet}{max-width: 300px;}
-    
-    // Open
-    &.open {margin-top: 150px;}
     
     // Header
     .header {
@@ -103,5 +110,42 @@
         }
         
     }
+    
+}
+
+// Register Form
+.registerForm {
+    
+    // Error Message
+    span {
+        
+        display: block;
+        padding: 15px;
+        width: 100%;
+        background: $red;
+        color: white;
+        text-align: center;
+        @include radius(10px);
+        
+    }
+    
+    // Inputs
+    input {
+        
+        display: block;
+        width: 100%;
+        margin: 0px 0px 20px 0px;
+        padding: 10px;
+        background: $gray-high;
+        border: 1px solid darken($gray-high, 10%);
+        @include typography(14px, 0.5px, 300);
+        @include animate(100ms);
+        
+        &:focus {outline: none; border-color: $green-mid;}
+        
+    }
+    
+    // Button
+    button {min-width: 200px; margin: 0px auto;}
     
 }

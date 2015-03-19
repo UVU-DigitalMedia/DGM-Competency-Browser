@@ -1,4 +1,4 @@
-angular.module('CompBrowserControllers', ['CompBrowser.services'])
+angular.module('CompBrowserControllers', ['CompBrowser.services' ])
 
 .controller('MainCtrl', function($scope, loginForm) {
     'use strict';
@@ -36,7 +36,7 @@ angular.module('CompBrowserControllers', ['CompBrowser.services'])
       };
 })
 
-.controller('RegisterCtrl', function($scope, $firebase, $firebaseAuth, FBURL) {
+.controller('RegisterCtrl', function($scope, $firebase, $firebaseAuth, FBURL, loginForm, randomColor) {
     'use strict';
 
     $scope.errors = '';

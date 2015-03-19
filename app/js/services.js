@@ -2,28 +2,23 @@
 'use strict';
 
 // Create Module
-var CompBrowser = angular.module('CompBrowser.services', ['ngResource']);
+angular.module('CompBrowser.services', ['ngResource', 'offClick', 'ngAnimate'])
 
 // Open User Login
-CompBrowser.factory('loginForm', function($rootScope, $location){
+.factory('loginForm', function($rootScope, $location){
     
-    // Set Open Function
-    $rootScope.openLoginForm = function(){
-        
-        $rootScope.loginFormClosed = 'open'; 
-        
-    }
+    // Set Variable
+    $rootScope.loginClosed = true;
     
-    // Set Close Function
-    $rootScope.closeLoginForm = function(){
+    // Close Login on Off Click
+    $rootScope.loginOffClick = function(){
         
-        $rootScope.loginFormClosed = 'closed'; 
+        $rootScope.loginClosed = true;
         
     }
     
-    
-    
-
+    // Return
+    return $rootScope.loginClosed;
    
 })
 
@@ -33,6 +28,9 @@ CompBrowser.factory('loginForm', function($rootScope, $location){
     // Create Array
     var colorArray = ['blue', 'green', 'red'];
     
+    // Set Variable
+    $rootScope.randomColor = $rootScope.randomColor = colorArray[Math.floor(Math.random() * colorArray.length)];
+    
     // Root Scope on State Change
     $rootScope.$on('$stateChangeStart', function(){
         
@@ -41,16 +39,10 @@ CompBrowser.factory('loginForm', function($rootScope, $location){
        
     });
     
-});
+    // Return
+    return $rootScope.randomColor;
+    
+})
 
-
-
-
-
-
-
-//angular.module('CompBrowser.services', ['ngResource'])
-
-CompBrowser.factory('Service', ['$resource',]);
-
-
+// Other
+.factory('Service', ['$resource',]);
