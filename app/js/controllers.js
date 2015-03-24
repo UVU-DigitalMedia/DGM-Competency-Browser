@@ -12,6 +12,10 @@ angular.module('CompBrowserControllers', ['CompBrowser.services' ])
     //Check Session
      $scope.isLoggedIn = userAuth.checkSession();
 
+     $scope.logout = function() {
+       userAuth.logout();
+     };
+
 })
 
 .controller('LoginCtrl', function($scope, userAuth, $firebase, $firebaseAuth, FBURL, $window) {
@@ -35,6 +39,8 @@ angular.module('CompBrowserControllers', ['CompBrowser.services' ])
               } else {
                   console.log('Authenticated successfully with payload:', authData);
                   $window.location.href = '#/';
+                  //refresh the page
+                  $window.location.reload();
               }
           });
       };
@@ -121,6 +127,7 @@ angular.module('CompBrowserControllers', ['CompBrowser.services' ])
         'use strict';
 
         // Call Spotlight Random Color Service
+        var randomColor;
         $scope.randomColor = randomColor;
 
 

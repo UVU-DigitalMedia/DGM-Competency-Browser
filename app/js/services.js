@@ -6,8 +6,6 @@ var CompBrowser = angular.module('CompBrowser.services', ['ngResource']);
 // Random Color for Spotlight
 CompBrowser.factory('randomColor', function(){
 
-    // Use Strict
-    'use strict';
 
     // Create Array
     var colorArray = ['blue', 'green', 'red'];
@@ -21,10 +19,8 @@ CompBrowser.factory('randomColor', function(){
 });
 
 // User Authentication Service
-CompBrowser.factory('userAuth', function($firebase, FBURL){
+CompBrowser.factory('userAuth', function($firebase, FBURL, $window){
 
-    // Use Strict
-    'use strict';
 
     return {
             checkSession: function() {
@@ -49,6 +45,13 @@ CompBrowser.factory('userAuth', function($firebase, FBURL){
             get: function() {
                 var test = 'Awesome';
                 return test;
+            },
+            logout: function() {
+              var authRef = new Firebase(FBURL);
+              authRef.unauth();
+
+              //refresh the page
+              $window.location.reload();
             }
         };
 
