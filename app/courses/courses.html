@@ -70,21 +70,35 @@
                             
                             </div>
                             <div class="col-xs-10">
-                                {{course.crnum}} {{course.crtitle}}
+                                {{course.number}} - {{course.name}}
                             </div>
                             <div class="star col-xs-1">
                             
                             </div>
                         </div>
                         <div class="row details">
-                            <div class="col-xs-6 text-green">{{course.crhours}} Credits</div><div class="col-xs-6 text-right text-green"><span ng-if="course.fallsem"> Fall</span><span ng-if="course.springsem"> Spring</span><span ng-if="course.summersem"> Summer</span></div>
+                            <div class="col-xs-12 text-green">{{course.credits}} Credits</div>
                             <div class="col-xs-12">
-                                <p><span class="text-green">Prerequisites:</span>
-                                <br>{{course.prereq}}</p>
+                                <p><span class="text-green">Recently Offered:</span></p>
+                            </div>
+                            <div class="col-xs-12" ng-repeat="past in course.past_offered">
+                                <p>
+                                    CRN:{{past.crn}}<br>Section: {{past.section}}<br><span ng-hide="!past.start_date.length">Start Date: {{past.start_date}} </span><span ng-hide="!past.end_date.length">End Date: {{past.end_date}}</span>
+                                </p>
+                                <div>
+                                    <div class="col-xs-12" ng-repeat="scheduled in past.scheduled" ng-hide="!past.scheduled.length">
+                                        <p ng-hide="!scheduled.length">
+                                            Scheduled: {{scheduled.days}} {{scheduled.start_time}} - {{scheduled.end_time}} in {{scheduled.room}}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12">
+                            <p>Instructor: {{course.instructor}}<br>Number Enrolled: {{course.enrolled}}<br>Max Enrollment: {{course.max_enrollment}}</p>
                             </div>
                             <div class="col-xs-12">
                                 <p><span class="text-green">Description:</span>
-                                <br>{{course.crdesc}}</p>
+                                <br>{{course.description}}</p>
                             </div>
                         </div>
                         

@@ -1,0 +1,88 @@
+/* ===============================================
+            App Content
+================================================ */
+
+// Foundation
+.content-wrapper .container-fluid {margin-bottom: 20px;}
+
+// Triple Row
+.content-wrapper .triple {
+    
+    background: white;
+    text-align: center;
+    padding: 30px 0px;
+    
+    .row div {margin-bottom: 40px; &:last-child{margin-bottom: 0;}}
+    
+    // Max Width Fix
+    @media #{$desktop}{
+        max-width: none;
+        .row {max-width: 1200px; margin: 0px auto; div {margin-bottom: 0;}}
+    }
+    
+    // Content
+    i.fa {font-size: 90px; margin-bottom: 15px;color: $red;}
+    h1 {text-transform: capitalize;}
+    p {margin-bottom: 0px;}
+    
+}
+
+// Tagline
+.content-wrapper .tagline {padding-top: 40px; padding-bottom: 40px;}
+.content-wrapper .tagline h1 {
+    @include typography(50px, 1px, 300); 
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    @media #{$tablet}{@include typography(60px, 1px, 300);}
+    
+}
+.content-wrapper .tagline p {
+    @include typography(18px, 0.5px, 200);
+    line-height: 40px;
+    @media #{$tablet}{@include typography(22px, 0.5px, 200); line-height: 50px;}
+}
+
+// Logos
+.content-wrapper .logos {
+    
+    padding: 40px 0px; 
+    text-align: center;
+    
+    h3 {color: darken($gray-mid, 20%); font-weight: 200;}
+    
+}
+.content-wrapper .logos ul {
+    
+    margin-top: 50px;
+    
+    li {
+        
+        margin-bottom: 50px; 
+        &:last-child {margin-bottom: 0px;}
+        
+        a {
+            
+            opacity: 0.70;
+            -ms-filter:"progid:DXImageTransform.Microsoft.Alpha"(Opacity=70);
+            @include animate(200ms);
+            
+             &:hover {  
+                opacity: 1;
+                -ms-filter:"progid:DXImageTransform.Microsoft.Alpha"(Opacity=100);  
+            }
+            
+        }
+        
+        // Tablet
+        @media #{$tablet}{
+            
+            display: inline-block;
+            margin-bottom: 0;
+            margin-right: 50px;
+            &:last-child {margin-right: 0;}
+            
+        }
+        
+    }
+    
+}

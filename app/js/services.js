@@ -1,3 +1,5 @@
+// Use Strict
+'use strict';
 // Create Module
 var CompBrowser = angular.module('CompBrowser.services', ['ngResource']);
 
@@ -54,13 +56,3 @@ CompBrowser.factory('userAuth', function($firebase, FBURL){
 
 
 });
-
-
-
-
-
-
-
-//angular.module('CompBrowser.services', ['ngResource'])
-
-CompBrowser.factory('Service', ['$resource',]);
