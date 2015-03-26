@@ -59,22 +59,26 @@
                                 <div class="drawer"><i class="fa fa-navicon"></i></div>
 
                                 <!-- Menu -->
-                                <nav>
+                                <nav ng-controller="menuCtrl">
 
                                    <!-- Logged Out -->
-                                    <ul class="logged-out hide">
+                                    <ul ng-if="isLoggedIn === false">
                                         <li><a href="#/"><i class="fa fa-home"></i>Home</a></li>
                                         <li><a href="#about"><i class="fa fa-mortar-board"></i>About</a></li>
+
+                                        <li><a href="#login"><i class="fa fa-user"></i>Login</a></li>
+
                                         <li class="no-link sign-in" ng-click="loginClosed = !loginClosed"><i class="fa fa-user"></i>Sign In</li>
+
                                     </ul>
 
                                     <!-- Logged In -->
-                                    <ul class="logged-in">
+                                    <ul ng-if="isLoggedIn === true" >
                                         <li><a href="#/"><i class="fa fa-dashboard"></i>Dashboard</a></li>
                                         <li><a href="#courses"><i class="fa fa-database"></i>Courses</a></li>
                                         <li><a href="#tracks"><i class="fa fa-calendar"></i>Tracks</a></li>
                                         <li><a href="#skills"><i class="fa fa-check-square-o"></i>Skills</a></li>
-                                        <li class="no-link"><i class="fa fa-close"></i>Log Out</li>
+                                        <li ng-click="logout();" class="no-link"><i class="fa fa-close"></i>Log Out</li>
                                     </ul>
 
                                 </nav>
