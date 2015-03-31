@@ -22,7 +22,13 @@ angular.module('CompBrowserControllers', ['ui.bootstrap', 'CompBrowser.services'
     'use strict';
 
     //Check Session
-    userAuth.checkSession();
+    //userAuth.checkSession();
+    //userAuth.getUserInfo()
+    //Get the logged in users info
+    userAuth.getUserInfo().then(function(data) {
+			$scope.currentUser = data;
+      console.log('Awesome' + $scope.currentUser);
+		});
 
       var ref = new Firebase(FBURL);
 
@@ -46,7 +52,7 @@ angular.module('CompBrowserControllers', ['ui.bootstrap', 'CompBrowser.services'
       };
 })
 
-.controller('RegisterCtrl', function($scope, $firebase, $firebaseAuth, FBURL) {
+.controller('RegisterCtrl', function($scope, $firebase, $firebaseAuth, FBURL, $window) {
     'use strict';
 
     $scope.errors = '';
@@ -59,25 +65,6 @@ angular.module('CompBrowserControllers', ['ui.bootstrap', 'CompBrowser.services'
     $scope.authObj = $firebaseAuth(ref);
 
     var authData = userRef.getAuth();
-    if (authData) {
-        console.log('User ' + authData.uid + ' is logged in with ' + authData.provider);
-        var userData = new Firebase(FBURL+'/users/'+authData.uid);
-
-        // Attach an asynchronous callback to read the data at our posts reference
-        userData.on('value', function(snapshot) {
-          var userObj = snapshot.val();
-          console.log(userObj);
-
-        }, function (errorObject) {
-          console.log('The read failed: ' + errorObject.code);
-        });
-
-    } else {
-        console.log('User is logged out');
-    }
-
-
-
 
     $scope.registerUser = function() {
 
@@ -108,14 +95,23 @@ angular.module('CompBrowserControllers', ['ui.bootstrap', 'CompBrowser.services'
 
               ref.child('users').child(authData.uid).set({
 
+                  //Grab the form values to store in the DB
                   fName: $scope.person.fname,
                   lName: $scope.person.lname,
+                  studentID: $scope.person.studentID,
                   email: $scope.person.email,
                   password: $scope.person.password
 
               });
         // Show any errors
-          }).catch(function(error) {
+      }).then(function() {
+
+        //redirect to the main page
+        $window.location.href = '#/';
+        //refresh the page
+        $window.location.reload();
+
+      }).catch(function(error) {
               console.error('Error: ', error);
           });
       }
