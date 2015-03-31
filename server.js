@@ -12,6 +12,7 @@ mongoose.connect('mongodb://localhost/Competency-Browser');
 var Category = require('./models/categories');
 var Skills = require('./models/skills');
 var Jobs = require('./models/jobs');
+var Courses = require('./models/courses');
 
 // configure app to use bodyParser()
 // to get data from a POST
@@ -310,6 +311,90 @@ router.route('/jobs/:job_id')
 
 
 
+
+
+// API Routes
+router.route('/courses')
+
+	//******************************************************
+	//GET ALL
+	//get all courses (accessed at GET http://localhost:8080/api/courses)
+	//******************************************************
+	.get(function(req, res) {
+		Courses.find(function(err, courses) {
+			if (err)
+				res.send(err);
+
+			res.json(courses);
+		});
+	})
+
+			// create a course (accessed at POST http://localhost:8080/api/courses)
+			.post(function(req, res) {
+
+					var course = new Courses();      // create a new instance of the Course model
+					course.name = req.body.name;  // set the courses name (comes from the request)
+
+					// save the course and check for errors
+					course.save(function(err) {
+							if (err)
+									res.send(err);
+
+							res.json({ message: 'Course created!' });
+					});
+
+			});
+
+
+
+			// on routes that end in /courses/:course_id
+// ----------------------------------------------------
+router.route('/courses/:course_id')
+
+		// get the course with that id (accessed at GET http://localhost:8080/api/courses/:course_id)
+		.get(function(req, res) {
+				Courses.findById(req.params.course_id, function(err, course) {
+						if (err)
+								res.send(err);
+						res.json(course);
+				});
+		})
+
+
+		// update the course with this id (accessed at PUT http://localhost:8080/api/courses/:course_id)
+		.put(function(req, res) {
+
+				// use our course model to find the course we want
+				Courses.findById(req.params.course_id, function(err, course) {
+
+						if (err)
+								res.send(err);
+
+						course.name = req.body.name;  // update the courses info
+
+						// save the course
+						course.save(function(err) {
+								if (err)
+										res.send(err);
+
+								res.json({ message: 'Course updated!' });
+						});
+
+				});
+		})
+
+
+		// delete the course with this id (accessed at DELETE http://localhost:8080/api/courses/:course_id)
+		.delete(function(req, res) {
+				Courses.remove({
+						_id: req.params.course_id
+				}, function(err, course) {
+						if (err)
+								res.send(err);
+
+						res.json({ message: 'Successfully deleted' });
+				});
+		});
 
 
 
