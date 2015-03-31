@@ -1,4 +1,4 @@
-angular.module('CompBrowserControllers', ['CompBrowser.services' ])
+angular.module('CompBrowserControllers', ['ui.bootstrap', 'CompBrowser.services' ])
 
 .controller('MainCtrl', function($scope) {
     'use strict';
@@ -443,4 +443,37 @@ angular.module('CompBrowserControllers', ['CompBrowser.services' ])
     return 'I am awesome';
   };
 
-});
+})
+
+.controller('newSemester', function ($scope, $modal) {
+    'use strict';
+
+    $scope.open = function () {
+
+        $modal.open({
+            templateUrl: 'addNewSemester.html',
+            controller: 'ModalInstanceCtrl'
+        });
+    };
+})
+
+.controller('newClass', function ($scope, $modal) {
+    'use strict';
+    $scope.open = function () {
+
+        $modal.open({
+            templateUrl: 'addNewCourse.html',
+            controller: 'ModalInstanceCtrl'
+        });
+    };
+})
+
+// Please note that $modalInstance represents a modal window (instance) dependency.
+// It is not the same as the $modal service used above.
+
+    .controller('ModalInstanceCtrl', function ($scope, $modalInstance) {
+        'use strict';
+        $scope.cancel = function () {
+            $modalInstance.dismiss('cancel');
+        };
+    });
