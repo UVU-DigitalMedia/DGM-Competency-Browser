@@ -41,10 +41,26 @@
 
     Search: <input ng-model="search"> <br />
 
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#addNewSemester">
-        Add New Semester
-    </button><br />
+    <!-- Add New Semester modal -->
+    <div ng-controller="newSemester">
+        <script type="text/ng-template" id="addNewSemester.html">
+            <div class="modal-header">
+                <h3 class="modal-title">Add New Semester</h3>
+            </div>
+            <div class="modal-body">
+                Semester Name: <input type="text" placeholder="Fall 2014" required /><br />
+                Track: <input type="text" placeholder="Recommended" required /><br />
+                Note: <input type="text" placeholder="Upper Division Classes" required /><br />
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" ng-click="ok()">Add</button>
+                <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+            </div>
+        </script>
+        <button type="button" class="btn btn-success btn-lg" ng-click="open()">
+            Add New Semester
+        </button><br />
+    </div>
 
     Filter By Tracks:<br />
     <input type="checkbox" ng-click="includesTracks('recommended')"/> Recommended</br/>
@@ -90,9 +106,25 @@
                       </div>
                 </div>
 
-                <button type="button" class="btn btn-warning btn-lg" data-toggle="modal" data-target="#addNewCourse">
-                    Add New Course
-                </button><br />
+                <!-- Add New Semester modal -->
+                <div ng-controller="newClass">
+                    <script type="text/ng-template" id="addNewCourse.html">
+                        <div class="modal-header">
+                            <h3 class="modal-title">Add New Course</h3>
+                        </div>
+                        <div class="modal-body">
+                            Course Name: <input type="text" placeholder="DGM 3790" required /><br />
+                            CRN Number: <input type="text" placeholder="234587" required /><br />
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-primary" ng-click="ok()">Add</button>
+                            <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+                        </div>
+                    </script>
+                    <button type="button" class="btn btn-warning btn-lg" ng-click="open()">
+                        Add New Course
+                    </button><br />
+                </div>
 
                 <p>{{track.note}}</p>
 
@@ -101,10 +133,6 @@
             </div><!-- end.collapse #collapseSemester -->
         </li>
     </ul>
-
-
-
-
 
 </div>
 
