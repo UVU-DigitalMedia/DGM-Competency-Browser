@@ -473,6 +473,11 @@ angular.module('CompBrowserControllers', ['ui.bootstrap', 'CompBrowser.services'
 
     .controller('ModalInstanceCtrl', function ($scope, $modalInstance) {
         'use strict';
+
+        $scope.ok = function () {
+            $modalInstance.close('add');
+        };
+
         $scope.cancel = function () {
             $modalInstance.dismiss('cancel');
         };
