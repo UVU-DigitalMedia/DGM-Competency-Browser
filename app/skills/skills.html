@@ -1,36 +1,36 @@
 <!-- Spotlight -->
 <div class="spotlight" ng-class='randomColor'>
-    
+
   <!-- Container -->
   <div class="container-fluid">
-      
+
       <!-- Row -->
       <div class="row">
-          
+
           <!-- Column  -->
           <div class="col-xs-12">
-              
+
               <!-- Header -->
               <h1>Skills</h1>
-              
+
               <!-- Captain -->
               <p>Browse skills you can earn and add the skills you have earned to your profile!</p>
-              
+
           </div>
-                   
+
       </div>
-      
+
   </div>
-    
+
 </div>
 
 
 <!-- Container -->
 <div class="container-fluid">
-    
+
     <!-- Row -->
     <div class="row">
-        
+
         <!-- Column -->
         <div class="col-xs-12">
 
@@ -79,10 +79,10 @@
     </div><!--end titleContainer-->
     <div >
         <ul class="skillList" ng-repeat="skillset in employers | filter:searchSkills">
-            <li class="skillItem" ng-repeat="indSkill in skillset.skill | filter:search">
+            <li class="skillItem" ng-repeat="indSkill in skillset.skill | filter:search" ng-click="favorite();">
                 <div class="skill col-xs-10">{{indSkill}}</div>
                 <div class="favorite col-xs-2">
-                    <i class="fa fa-heart-o"></i>
+                    <i class="fa fa-heart-o" ng-class="favClass"></i>
                 </div>
             </li><!--end .skillItem-->
         </ul><!--end .skillList-->
