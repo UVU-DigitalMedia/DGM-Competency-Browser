@@ -47,15 +47,12 @@ CompBrowser.factory('userAuth', function($firebase, FBURL, $window, $http){
               var authData = authRef.getAuth();
               console.log(authData.uid);
 
-              var userData = new Firebase(FBURL+'/users/'+authData.uid);
+              //var userData = new Firebase(FBURL+'/users/'+authData.uid);
 
               return $http.get(FBURL+'/users/'+authData.uid)
                 .then(function(result) {
                     return result.data;
                 });
-
-
-              return authData;
 
             },
             logout: function() {

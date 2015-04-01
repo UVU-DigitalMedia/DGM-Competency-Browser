@@ -58,13 +58,13 @@ angular.module('CompBrowserControllers', ['ui.bootstrap', 'CompBrowser.services'
     $scope.errors = '';
 
     //Define Firebase URL endpoints
-    var userRef = new Firebase(FBURL + '/users');
+    //var userRef = new Firebase(FBURL + '/users');
     var ref = new Firebase(FBURL);
 
 
     $scope.authObj = $firebaseAuth(ref);
 
-    var authData = userRef.getAuth();
+    //var authData = userRef.getAuth();
 
     $scope.registerUser = function() {
 
