@@ -6,46 +6,6 @@ angular.module('CompBrowserControllers', ['ui.bootstrap', 'CompBrowser.services'
 
 })
 
-.controller('menuCtrl', function($scope, userAuth) {
-    'use strict';
-
-    //Check Session
-     $scope.isLoggedIn = userAuth.checkSession();
-
-     $scope.logout = function() {
-       userAuth.logout();
-     };
-
-})
-
-.controller('LoginCtrl', function($scope, userAuth, $firebase, $firebaseAuth, FBURL, $window) {
-    'use strict';
-
-    //Check Session
-    userAuth.checkSession();
-
-      var ref = new Firebase(FBURL);
-
-      //LOGIN
-      $scope.login = function () {
-          ref.authWithPassword({
-
-              email    : $scope.email,
-              password : $scope.password
-
-          }, function(error, authData) {
-              if (error) {
-                  console.log('Login Failed!', error);
-              } else {
-                  console.log('Authenticated successfully with payload:', authData);
-                  $window.location.href = '#/';
-                  //refresh the page
-                  $window.location.reload();
-              }
-          });
-      };
-})
-
 .controller('RegisterCtrl', function($scope, $firebase, $firebaseAuth, FBURL) {
     'use strict';
 

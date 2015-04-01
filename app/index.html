@@ -59,25 +59,22 @@
                                 <div class="drawer"><i class="fa fa-navicon"></i></div>
 
                                 <!-- Menu -->
-                                <nav ng-controller="menuCtrl">
+                                <nav>
 
                                    <!-- Logged Out -->
-                                    <ul ng-if="isLoggedIn === false">
+                                    <ul ng-show="isLoggedIn == false">
                                         <li><a href="#/"><i class="fa fa-home"></i>Home</a></li>
                                         <li><a href="#about"><i class="fa fa-mortar-board"></i>About</a></li>
-
-                                        <!-- <li><a href="#login"><i class="fa fa-user"></i>Login</a></li> -->
-                                        <li class="no-link sign-in" ng-click="loginClosed = !loginClosed"><i class="fa fa-user"></i>Sign In</li>
-
+                                        <li class="no-link sign-in" ng-click="openLoginForm()"><i class="fa fa-user"></i>Sign In</li>
                                     </ul>
 
                                     <!-- Logged In -->
-                                    <ul ng-if="isLoggedIn === true" >
+                                    <ul ng-show="isLoggedIn === true" >
                                         <li><a href="#/"><i class="fa fa-dashboard"></i>Dashboard</a></li>
                                         <li><a href="#courses"><i class="fa fa-database"></i>Courses</a></li>
                                         <li><a href="#tracks"><i class="fa fa-calendar"></i>Tracks</a></li>
                                         <li><a href="#skills"><i class="fa fa-check-square-o"></i>Skills</a></li>
-                                        <li ng-click="logout();" class="no-link"><i class="fa fa-close"></i>Log Out</li>
+                                        <li ng-click="logout()" class="no-link"><i class="fa fa-close"></i>Log Out</li>
                                     </ul>
 
                                 </nav>
@@ -123,7 +120,7 @@
             </footer>
 
             <!-- User Login -->
-            <div class="user-login" ng-hide="loginClosed == true" off-click="loginOffClick()" off-click-filter="'.sign-in'" ng-cloak>
+            <div class="user-login" ng-hide="isLoginFormOpen === false" off-click="closeLoginForm()" off-click-filter="'.sign-in'" ng-cloak>
 
                 <!-- Container -->
                 <div class="container-fluid">
@@ -137,18 +134,18 @@
                         </div>
 
                         <!-- Close -->
-                        <div class="close col-xs-4" ng-click="loginClosed = !loginClosed">
-                            <i class="fa fa-close"></i>
+                        <div class="close col-xs-4">
+                            <i class="fa fa-close" ng-click="closeLoginForm()"></i>
                         </div>
 
                     </div>
 
                     <!-- Row -->
                     <div class="row">
-                         <form method="post" enctype="multipart/form-data">
-                            <input type="text" ng-model="email" placeholder="Username" required />
+                         <form name="loginForm">
+                            <input type="text" ng-model="email" placeholder="Email" required />
                             <input type="password" ng-model="password" placeholder="Password" required />
-                            <a href="#/register" ng-click="loginClosed = !loginClosed">Register for an account.</a>
+                            <a href="#/register" ng-click="closeLoginForm()">Register for an account.</a>
                             <input class="button green" type="submit" value="Submit" ng-click="login()"/>
                         </form>
                     </div>
@@ -170,8 +167,8 @@
         <script src="lib/angular-ui-router/release/angular-ui-router.min.js"></script>
         <!--<script src="lib/angular-bootstrap/ui-bootstrap.js"></script> --><!--better angular ui boostrap below-->
         <script src="lib/angular-breadcrumb/dist/angular-breadcrumb.min.js"></script>
-        <script src="lib/angular-off-click/offClick.js"></script>
         <script src="lib/angular-animate/angular-animate.min.js"></script>
+        <script src="lib/angular-off-click/offClick.js"></script> 
         <script src="js/app.js"></script>
         <script src="js/animations.js"></script>
         <script src="js/controllers.js"></script>

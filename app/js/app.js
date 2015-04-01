@@ -10,25 +10,14 @@ angular.module('CompBrowser', ['common.services',
                                'ngSanitize',
                                'firebase',
                                'offClick',
-                               'ngAnimate'])
+                               'ngAnimate',
+                               'CompBrowser.services'])
 
 
-.run(function ($rootScope, $firebaseAuth, $firebase, $window) {
+.run(function ($rootScope, $firebaseAuth, $firebase, $window, userAuth, FBURL) {
 
     // Use Strict
     'use strict';
-
-    // ------------------------------ Show/Hide Login Form
-
-    // Set Variable
-    $rootScope.loginClosed = true;
-
-    // Close Login on Off Click
-    $rootScope.loginOffClick = function(){
-
-        $rootScope.loginClosed = true;
-
-    };
 
     // ------------------------------ Random Colors
 
@@ -46,7 +35,51 @@ angular.module('CompBrowser', ['common.services',
 
     });
 
-
+    // ------------------------------ Show/Hide Login Form
+    
+    // Set Variable
+    $rootScope.isLoginFormOpen = false;
+    
+    // Open Login Form Function
+    $rootScope.openLoginForm = function(){$rootScope.isLoginFormOpen = true;};
+    
+    // Close Login Form Function
+    $rootScope.closeLoginForm = function(){$rootScope.isLoginFormOpen = false; console.log('test');};
+    
+    // ------------------------------ Show Nav Based on Login Status
+        
+        // Check Session
+        $rootScope.isLoggedIn = userAuth.checkSession();
+        
+        // Logout
+        $rootScope.logout = function() {
+           userAuth.logout();
+        };
+        
+    // ------------------------------ Login
+    
+    // Check Session
+    userAuth.checkSession();
+    
+    // Make Reference
+    var ref = new Firebase(FBURL);
+    
+    // Login Function
+    $rootScope.login = function(){
+        ref.authWithPassword({
+              email    : $rootScope.email,
+              password : $rootScope.password
+          }, function(error, authData) {
+              if (error) {
+                  console.log('Login Failed!', error);
+              } else {
+                  console.log('Authenticated successfully with payload:', authData);
+                  $window.location.href = '#/';
+                  //refresh the page
+                  $window.location.reload();
+              }
+          }); 
+    };
 
   // ------------------------------ Start Firebase
   $rootScope.baseUrl = 'https://competency-browser.firebaseio.com/';
