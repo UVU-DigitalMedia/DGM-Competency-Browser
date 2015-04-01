@@ -6,6 +6,59 @@ angular.module('CompBrowserControllers', ['ui.bootstrap', 'CompBrowser.services'
 
 })
 
+.controller('LoginCtrl', function($scope, $rootScope, $firebase, $window, userAuth, FBURL){
+    
+    // Use Strict
+    'use strict';
+    
+    // ------------------------------ Show Nav Based on Login Status
+        
+    // Check Session
+    $scope.isLoggedIn = userAuth.checkSession();
+    
+    // Logout
+    $scope.logout = function() {
+       userAuth.logout();
+    };
+        
+    // ------------------------------ Show/Hide Login Form
+    
+    // Set Variable
+    $rootScope.isLoginFormOpen = false;
+    
+    // Open Login Form Function
+    $rootScope.openLoginForm = function(){$rootScope.isLoginFormOpen = true;};
+    
+    // Close Login Form Function
+    $rootScope.closeLoginForm = function(){$rootScope.isLoginFormOpen = false;};
+    
+    // ------------------------------ Login
+    
+    // Check Session
+    userAuth.checkSession();
+    
+    // Make Reference
+    var ref = new Firebase(FBURL);
+    
+    // Login Function
+    $rootScope.login = function(){
+        ref.authWithPassword({
+              email    : $rootScope.email,
+              password : $rootScope.password
+          }, function(error, authData) {
+              if (error) {
+                  console.log('Login Failed!', error);
+              } else {
+                  console.log('Authenticated successfully with payload:', authData);
+                  $window.location.href = '#/';
+                  //refresh the page
+                  $window.location.reload();
+              }
+          }); 
+    }; 
+            
+})
+
 .controller('RegisterCtrl', function($scope, $firebase, $firebaseAuth, FBURL) {
     'use strict';
 
