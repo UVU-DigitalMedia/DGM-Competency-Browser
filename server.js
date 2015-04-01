@@ -63,6 +63,9 @@ router.route('/skills')
 
 					var skill = new Skills();      // create a new instance of the Skill model
 					skill.name = req.body.name;  // set the skills name (comes from the request)
+					skill.id = req.body.id;  // set the skills name (comes from the request)
+					skill.description = req.body.description;  // set the skills name (comes from the request)
+					skill.flags = req.body.flags;  // set the skills name (comes from the request)
 
 					// save the skill and check for errors
 					skill.save(function(err) {
@@ -153,7 +156,9 @@ router.route('/categories')
 			.post(function(req, res) {
 
 					var category = new Category();      // create a new instance of the Category model
-					category.name = req.body.name;  // set the categorys name (comes from the request)
+					category.id = req.body.id;  // set the category's name (comes from the request)
+					category.name = req.body.name;  // set the category's name (comes from the request)
+					category.description = req.body.description;  // set the category's name (comes from the request)
 
 					// save the category and check for errors
 					category.save(function(err) {
@@ -246,7 +251,12 @@ router.route('/jobs')
 			.post(function(req, res) {
 
 					var job = new Jobs();      // create a new instance of the Job model
+					job.id = req.body.id;  // set the jobs name (comes from the request)
 					job.name = req.body.name;  // set the jobs name (comes from the request)
+					job.requiredSkills = req.body.requiredSkills;  // set the jobs name (comes from the request)
+					job.categories = req.body.categories;  // set the jobs name (comes from the request)
+					job.createdDate = req.body.createdDate;  // set the jobs name (comes from the request)
+					job.updated = req.body.updated;  // set the jobs name (comes from the request)
 
 					// save the job and check for errors
 					job.save(function(err) {
@@ -334,6 +344,13 @@ router.route('/courses')
 
 					var course = new Courses();      // create a new instance of the Course model
 					course.name = req.body.name;  // set the courses name (comes from the request)
+					course.number = req.body.number;  // set the courses name (comes from the request)
+					course.credits = req.body.credits;  // set the courses name (comes from the request)
+					course.lecture = req.body.lecture;  // set the courses name (comes from the request)
+					course.lab = req.body.lab;  // set the courses name (comes from the request)
+					course.catalog_offered = req.body.catalog_offered;  // set the courses name (comes from the request)
+					course.past_offered = [];  // set the courses name (comes from the request)
+					course.description = req.body.description;  // set the courses name (comes from the request)
 
 					// save the course and check for errors
 					course.save(function(err) {
