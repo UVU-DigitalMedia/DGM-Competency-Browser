@@ -10,25 +10,14 @@ angular.module('CompBrowser', ['common.services',
                                'ngSanitize',
                                'firebase',
                                'offClick',
-                               'ngAnimate'])
+                               'ngAnimate',
+                               'CompBrowser.services'])
 
 
 .run(function ($rootScope, $firebaseAuth, $firebase, $window) {
 
     // Use Strict
     'use strict';
-
-    // ------------------------------ Show/Hide Login Form
-
-    // Set Variable
-    $rootScope.loginClosed = true;
-
-    // Close Login on Off Click
-    $rootScope.loginOffClick = function(){
-
-        $rootScope.loginClosed = true;
-
-    };
 
     // ------------------------------ Random Colors
 
@@ -45,8 +34,6 @@ angular.module('CompBrowser', ['common.services',
         $rootScope.randomColor = colorArray[Math.floor(Math.random() * colorArray.length)];
 
     });
-
-
 
   // ------------------------------ Start Firebase
   $rootScope.baseUrl = 'https://competency-browser.firebaseio.com/';

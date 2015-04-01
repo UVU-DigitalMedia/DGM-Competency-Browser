@@ -6,50 +6,81 @@ angular.module('CompBrowserControllers', ['ui.bootstrap', 'CompBrowser.services'
 
 })
 
-.controller('menuCtrl', function($scope, userAuth) {
+.controller('MenuCtrl', function($rootScope, userAuth, $firebase, $firebaseAuth, FBURL, $window){
+    
+    // Use Strict
     'use strict';
-
-    //Check Session
-     $scope.isLoggedIn = userAuth.checkSession();
-
-     $scope.logout = function() {
+    
+    // ------------------------------ Show Nav Based on Login Status
+        
+    // Check Session
+    $rootScope.isLoggedIn = userAuth.checkSession();
+    
+    // Logout
+    $rootScope.logout = function() {
        userAuth.logout();
-     };
-
-})
-
-.controller('LoginCtrl', function($scope, userAuth, $firebase, $firebaseAuth, FBURL, $window) {
-    'use strict';
-
-    //Check Session
-    //userAuth.checkSession();
-    //userAuth.getUserInfo()
-    //Get the logged in users info
-    userAuth.getUserInfo().then(function(data) {
-			$scope.currentUser = data;
-      console.log('Awesome' + $scope.currentUser);
-		});
-
-      var ref = new Firebase(FBURL);
-
-      //LOGIN
-      $scope.login = function () {
-          ref.authWithPassword({
-
-              email    : $scope.email,
-              password : $scope.password
-
-          }, function(error, authData) {
-              if (error) {
-                  console.log('Login Failed!', error);
-              } else {
-                  console.log('Authenticated successfully with payload:', authData);
-                  $window.location.href = '#/';
-                  //refresh the page
-                  $window.location.reload();
-              }
-          });
-      };
+    };
+    
+    // ------------------------------ Show/Hide Login Form
+    
+    // Set Variable
+    $rootScope.isLoginFormOpen = false;
+    
+    // Open Login Form Function
+    $rootScope.openLoginForm = function(){$rootScope.isLoginFormOpen = true;};
+    
+    // Close Login Form Function
+    $rootScope.closeLoginForm = function(){$rootScope.isLoginFormOpen = false;};
+    
+    // ------------------------------ Login
+  
+    // Get User Info
+   /* userAuth.getUserInfo().then(function(data) {
+        
+        // Assign Current User
+        $rootScope.currentUser = data;
+    
+        // Confirm User
+        console.log('Awesome' + $rootScope.currentUser);
+        
+    }); */
+    
+    // Make Reference
+    var ref = new Firebase(FBURL);
+    
+    // Login Function
+    $rootScope.login = function() {
+        
+        // Get Details
+        ref.authWithPassword({
+            
+            // Get Information
+            email    : $rootScope.email,
+            password : $rootScope.password
+            
+        }, function(error, authData){
+            
+            // If Error
+            if(error){console.log('Login Failed!', error);}
+            
+            // Else
+            else{
+                
+                // Print Success
+                console.log('Authenticated successfully with payload:', authData);
+                
+                // Set URL
+                $window.location.href = '#/';
+                
+                // Refresh
+                $window.location.reload();
+                
+            }
+            
+        });
+        
+    };
+            
 })
 
 .controller('RegisterCtrl', function($scope, $firebase, $firebaseAuth, FBURL, $window) {
