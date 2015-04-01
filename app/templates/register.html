@@ -1,53 +1,52 @@
 <!-- Spotlight -->
 <div class="spotlight" ng-class="randomColor">
-    
+
   <!-- Container -->
   <div class="container-fluid">
-      
+
       <!-- Row -->
       <div class="row">
-          
+
           <!-- Column -->
           <div class="col-xs-12">
-              
+
               <!-- Header -->
               <h1>Sign Up</h1>
-              
+
               <!-- Captain -->
               <p>Sign up and start tracking your skills today!</p>
-              
+
           </div>
 
       </div>
-      
+
   </div>
-    
+
 </div>
 
 <!-- Form -->
 <div class="container-fluid">
-    
+
     <!-- Row -->
     <div class="row">
-        
+
         <!-- Column -->
         <div class="col-xs-12">
-            
+
             <form name="registerForm" class="registerForm">
                 <span class="hide">{{errors}}</span><br />
                 <input type="text" ng-model="person.fname" placeholder="First Name" required />
                 <input type="text" ng-model="person.lname" placeholder="Last Name" required />
                 <input type="text" ng-model="person.email" placeholder="Email" required />
                 <input type="text" ng-model="person.emailConf" placeholder="Confirm Email" required />
-                <input type="text" placeholder="Student ID" required />
+                <input type="text" ng-model="person.studentID" placeholder="Student ID" required />
                 <input type="password" ng-model="person.password" placeholder="Password" required />
                 <input type="password" placeholder="Confirm Password" required />
                 <button label="Sign Up" ng-click="registerUser()" class="button green">Sign Up</button>
             </form>
-            
-        </div>
-        
-    </div>
-    
-</div>
 
+        </div>
+
+    </div>
+
+</div>
