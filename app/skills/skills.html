@@ -82,7 +82,7 @@
             <li class="skillItem" ng-repeat="indSkill in skillset.skill | filter:search" ng-click="favorite();">
                 <div class="skill col-xs-10">{{indSkill}}</div>
                 <div class="favorite col-xs-2">
-                    <i class="fa fa-heart-o" ng-class="favClass"></i>
+                    <i class="fa fa-heart-o" ng-class="classToggle"></i>
                 </div>
             </li><!--end .skillItem-->
         </ul><!--end .skillList-->

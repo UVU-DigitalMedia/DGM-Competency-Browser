@@ -36,14 +36,14 @@
             };
 
         // Function to toggle favorite skill class
-        $scope.favClass = "";
+        $scope.classToggle = "";
         $scope.favorite = function() {
-            if ($scope.favClass === "" ) {
-                $scope.favClass = "favoriteSkill";
+            if ($scope.classToggle === "" ) {
+                $scope.classToggle = "favoriteSkill";
             } else {
-                $scope.favClass = "";
+                $scope.classToggle = "";
             }
-            console.log("Class Name: " + $scope.favClass);
+            console.log("Class Name: " + $scope.classToggle);
         }
 
     });
