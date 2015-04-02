@@ -63,20 +63,20 @@
 
                                    <!-- Logged Out -->
                                     <ul ng-show="isLoggedIn == false">
-                                        <li><a href="#/"><i class="fa fa-home"></i>Home</a></li>
-                                        <li><a href="#about"><i class="fa fa-mortar-board"></i>About</a></li>
+                                        <li><a href ui-sref="home" ui-sref-active="active"><i class="fa fa-home"></i>Home</a></li>
+                                        <li><a href ui-sref="about" ui-sref-active="active"><i class="fa fa-mortar-board"></i>About</a></li>
                                         <li class="no-link sign-in" ng-click="openLoginForm()"><span><i class="fa fa-user"></i>Sign In</span></li>
                                     </ul>
 
                                     <!-- Logged In -->
                                     <ul ng-show="isLoggedIn === true">
-                                        <li><a href="#/"><i class="fa fa-dashboard"></i>Dashboard</a></li>
-                                        <li><a href="#courses"><i class="fa fa-database"></i>Courses</a></li>
-                                        <li><a href="#tracks"><i class="fa fa-calendar"></i>Tracks</a></li>
-                                        <li><a href="#skills"><i class="fa fa-check-square-o"></i>Skills</a></li>
-                                        <li ng-mouseenter="openSubNav()" ng-mouseleave="closeSubNav()"><a href="#profile"><i class="fa fa-user"></i>My Profile</a>
+                                        <li><a href ui-sref="home" ui-sref-active="active"><i class="fa fa-dashboard"></i>Dashboard</a></li>
+                                        <li><a href ui-sref="courses" ui-sref-active="active"><i class="fa fa-database"></i>Courses</a></li>
+                                        <li><a href ui-sref="tracks" ui-sref-active="active"><i class="fa fa-calendar"></i>Tracks</a></li>
+                                        <li><a href ui-sref="skills" ui-sref-active="active"><i class="fa fa-check-square-o"></i>Skills</a></li>
+                                        <li ng-mouseenter="openSubNav()" ng-mouseleave="closeSubNav()"><a href ui-sref="profile" ui-sref-active="active"><i class="fa fa-user"></i>My Profile</a>
                                             <ul ng-hide="isSubNavOpened === false" ng-cloak>
-                                                <li><a href="#"><i class="fa fa-heart"></i>My Favorites</a></li>
+                                                <li><a href ui-sref="favorites" ui-sref-active="active"><i class="fa fa-heart"></i>My Favorites</a></li>
                                                 <li class="no-link" ng-click="logout()"><span><i class="fa fa-close"></i>Logout</span></li>
                                             </ul>
                                         </li>      
