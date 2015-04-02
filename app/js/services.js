@@ -19,7 +19,7 @@ CompBrowser.factory('randomColor', function(){
 });
 
 // User Authentication Service
-CompBrowser.factory('userAuth', function($firebase, FBURL, $window){
+CompBrowser.factory('userAuth', function($firebase, FBURL, $window, $http){
 
 
     return {
@@ -42,9 +42,18 @@ CompBrowser.factory('userAuth', function($firebase, FBURL, $window){
 
               return authData;
             },
-            get: function() {
-                var test = 'Awesome';
-                return test;
+            getUserInfo: function() {
+              var authRef = new Firebase(FBURL);
+              var authData = authRef.getAuth();
+              console.log(authData.uid);
+
+              //var userData = new Firebase(FBURL+'/users/'+authData.uid);
+
+              return $http.get(FBURL+'/users/'+authData.uid)
+                .then(function(result) {
+                    return result.data;
+                });
+
             },
             logout: function() {
               var authRef = new Firebase(FBURL);

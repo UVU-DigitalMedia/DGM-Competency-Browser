@@ -1,4 +1,4 @@
-angular.module('CompBrowserControllers', ['CompBrowser.services' ])
+angular.module('CompBrowserControllers', ['ui.bootstrap', 'CompBrowser.services' ])
 
 .controller('MainCtrl', function($scope) {
     'use strict';
@@ -6,78 +6,96 @@ angular.module('CompBrowserControllers', ['CompBrowser.services' ])
 
 })
 
-.controller('menuCtrl', function($scope, userAuth) {
+.controller('MenuCtrl', function($rootScope, userAuth, $firebase, $firebaseAuth, FBURL, $window){
+    
+    // Use Strict
     'use strict';
-
-    //Check Session
-     $scope.isLoggedIn = userAuth.checkSession();
-
-     $scope.logout = function() {
+    
+    // ------------------------------ Show Nav Based on Login Status
+        
+    // Check Session
+    $rootScope.isLoggedIn = userAuth.checkSession();
+    
+    // Logout
+    $rootScope.logout = function() {
        userAuth.logout();
-     };
-
+    };
+    
+    // ------------------------------ Show/Hide Login Form
+    
+    // Set Variable
+    $rootScope.isLoginFormOpen = false;
+    
+    // Open Login Form Function
+    $rootScope.openLoginForm = function(){$rootScope.isLoginFormOpen = true;};
+    
+    // Close Login Form Function
+    $rootScope.closeLoginForm = function(){$rootScope.isLoginFormOpen = false;};
+    
+    // ------------------------------ Login
+  
+    // Get User Info
+   /* userAuth.getUserInfo().then(function(data) {
+        
+        // Assign Current User
+        $rootScope.currentUser = data;
+    
+        // Confirm User
+        console.log('Awesome' + $rootScope.currentUser);
+        
+    }); */
+    
+    // Make Reference
+    var ref = new Firebase(FBURL);
+    
+    // Login Function
+    $rootScope.login = function() {
+        
+        // Get Details
+        ref.authWithPassword({
+            
+            // Get Information
+            email    : $rootScope.email,
+            password : $rootScope.password
+            
+        }, function(error, authData){
+            
+            // If Error
+            if(error){console.log('Login Failed!', error);}
+            
+            // Else
+            else{
+                
+                // Print Success
+                console.log('Authenticated successfully with payload:', authData);
+                
+                // Set URL
+                $window.location.href = '#/';
+                
+                // Refresh
+                $window.location.reload();
+                
+            }
+            
+        });
+        
+    };
+            
 })
 
-.controller('LoginCtrl', function($scope, userAuth, $firebase, $firebaseAuth, FBURL, $window) {
-    'use strict';
-
-    //Check Session
-    userAuth.checkSession();
-
-      var ref = new Firebase(FBURL);
-
-      //LOGIN
-      $scope.login = function () {
-          ref.authWithPassword({
-
-              email    : $scope.email,
-              password : $scope.password
-
-          }, function(error, authData) {
-              if (error) {
-                  console.log('Login Failed!', error);
-              } else {
-                  console.log('Authenticated successfully with payload:', authData);
-                  $window.location.href = '#/';
-                  //refresh the page
-                  $window.location.reload();
-              }
-          });
-      };
-})
-
-.controller('RegisterCtrl', function($scope, $firebase, $firebaseAuth, FBURL) {
+.controller('RegisterCtrl', function($scope, $firebase, $firebaseAuth, FBURL, $window) {
     'use strict';
 
     $scope.errors = '';
 
     //Define Firebase URL endpoints
-    var userRef = new Firebase(FBURL + '/users');
+    //var userRef = new Firebase(FBURL + '/users');
     var ref = new Firebase(FBURL);
 
 
     $scope.authObj = $firebaseAuth(ref);
 
-    var authData = userRef.getAuth();
-    if (authData) {
-        console.log('User ' + authData.uid + ' is logged in with ' + authData.provider);
-        var userData = new Firebase(FBURL+'/users/'+authData.uid);
-
-        // Attach an asynchronous callback to read the data at our posts reference
-        userData.on('value', function(snapshot) {
-          var userObj = snapshot.val();
-          console.log(userObj);
-
-        }, function (errorObject) {
-          console.log('The read failed: ' + errorObject.code);
-        });
-
-    } else {
-        console.log('User is logged out');
-    }
-
-
-
+    //var authData = userRef.getAuth();
 
     $scope.registerUser = function() {
 
@@ -108,14 +126,23 @@ angular.module('CompBrowserControllers', ['CompBrowser.services' ])
 
               ref.child('users').child(authData.uid).set({
 
+                  //Grab the form values to store in the DB
                   fName: $scope.person.fname,
                   lName: $scope.person.lname,
+                  studentID: $scope.person.studentID,
                   email: $scope.person.email,
                   password: $scope.person.password
 
               });
         // Show any errors
-          }).catch(function(error) {
+      }).then(function() {
+
+        //redirect to the main page
+        $window.location.href = '#/';
+        //refresh the page
+        $window.location.reload();
+
+      }).catch(function(error) {
               console.error('Error: ', error);
           });
       }
@@ -443,4 +470,42 @@ angular.module('CompBrowserControllers', ['CompBrowser.services' ])
     return 'I am awesome';
   };
 
-});
+})
+
+.controller('newSemester', function ($scope, $modal) {
+    'use strict';
+
+    $scope.open = function () {
+
+        $modal.open({
+            templateUrl: 'addNewSemester.html',
+            controller: 'ModalInstanceCtrl'
+        });
+    };
+})
+
+.controller('newClass', function ($scope, $modal) {
+    'use strict';
+    $scope.open = function () {
+
+        $modal.open({
+            templateUrl: 'addNewCourse.html',
+            controller: 'ModalInstanceCtrl'
+        });
+    };
+})
+
+// Please note that $modalInstance represents a modal window (instance) dependency.
+// It is not the same as the $modal service used above.
+
+    .controller('ModalInstanceCtrl', function ($scope, $modalInstance) {
+        'use strict';
+
+        $scope.ok = function () {
+            $modalInstance.close('add');
+        };
+
+        $scope.cancel = function () {
+            $modalInstance.dismiss('cancel');
+        };
+    });
