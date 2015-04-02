@@ -102,6 +102,12 @@ angular.module('CompBrowser', ['common.services',
         controller: 'LoginCtrl',
         ncyBreadcrumb: {label: 'Login'}
     })
+    .state('profile', {
+        url: '/profile',
+        templateUrl: 'templates/profile.html',
+        controller: 'ProfileCtrl',
+        ncyBreadcrumb: {label: 'My Profile'}
+    })
     .state('tracks', {
         url: '/tracks',
         templateUrl: '../tracks/tracks.html',
