@@ -78,14 +78,19 @@
       <h4 class="setTitle">Skills</h4>
     </div><!--end titleContainer-->
     <div >
+
         <ul class="skillList" ng-repeat="skillset in employers | filter:searchSkills">
-            <li class="skillItem" ng-repeat="indSkill in skillset.skill | filter:search" ng-click="favorite();">
+            <li class="skillItem" data-ng-repeat="indSkill in skillset.skill | filter:search"
+                data-ng-class="{favoriteSkill : toggle}"
+                data-ng-click="toggle = !toggle"
+                data-ng-init="toggle=false">
                 <div class="skill col-xs-10">{{indSkill}}</div>
                 <div class="favorite col-xs-2">
-                    <i class="fa fa-heart-o" ng-class="classToggle"></i>
+                  <i class="fa fa-heart-o"></i>
                 </div>
-            </li><!--end .skillItem-->
+            </li>
         </ul><!--end .skillList-->
+
     </div><!--end collapseSkills-->
 </div><!--end .contentSet-->
 
