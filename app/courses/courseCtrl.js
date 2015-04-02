@@ -2791,5 +2791,10 @@ angular.module("courseCtrl", ['CompBrowser.services'])
       "days": "",
       "description": "For bachelor's degree students and other interested persons. Offers independent study as directed in reading or in individual projects; offered at the discretion and approval of the department chairperson. May be repeated for a maximum of 6 credits toward graduation."
     }
-  ]
+  ];
+   $scope.courseSort = function(course) {
+			if(isNaN(course[$scope.sortExpression]))
+				return course[$scope.sortExpression];
+			return parseInt(course[$scope.sortExpression]);
+		} 
 });
