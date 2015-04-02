@@ -1,0 +1,141 @@
+/* ====================
+    Profile
+==================== */
+
+.studentProfile {
+    
+    // Base
+    margin: 0px 10px;
+    
+    // Desktop
+    @media #{$desktop}{margin: 0px auto;}
+    
+    // Student ID Bar
+    .studentIDBar {
+        
+        // Base
+        border: 1px solid $gray-mid;
+        padding: 10px;
+        @include radius();
+        
+        // Student ID
+        .studentID {
+            
+            // Base
+            text-align: center;
+            vertical-align: middle;
+            
+            // Small
+            @media #{$small}{text-align: left;}
+            
+        }
+        
+        // Edit Profile
+        .editProfile {
+            
+            // Button
+            button {
+                
+                // Base
+                max-width: 150px;
+                margin: 0px auto 10px auto;
+                padding: 5px 20px;
+                border-bottom: 0px !important;
+                
+                // Small
+                @media #{$small}{max-width: auto; margin: 0px; float: right;}
+                
+                // Outline
+                &:focus {outline: none;}
+                
+            }
+            
+        }
+        
+    }
+    
+    // Student Info
+    .studentInfo {
+        
+        // Base
+        margin-top: 25px;
+        
+        // Student About
+        .studentAbout {
+            
+            // Base
+            overflow: hidden;
+            background: white;
+            border-bottom: 4px solid lighten($gray-mid, 15%);
+            @include radius-specify(0px, 0px, 10px, 10px);
+            
+            // Boxes
+            div {
+                
+                // Base
+                background: white;
+                height: 100%;
+                border-bottom: 1px solid lighten($gray-mid, 15%);
+                padding: 20px;
+                
+                // Last Child
+                &:last-child {border-bottom: 0px;}
+                
+                // Heading
+                h1 {color: $green-mid;}
+                
+                // Tablet
+                @media #{$tablet}{
+                    
+                    // Base
+                    border-bottom: 0px;
+                    border-right: 1px solid lighten($gray-mid, 15%);
+                    
+                    // Last Child
+                    &:last-child {border-right: 0px;}
+                    
+                }
+                
+            }
+            
+        }
+        
+    }
+    
+    // Student Comp
+    .studentComp {
+        
+        // Padding Fix
+        .row div {padding: 0px;}
+        
+        // Base
+        margin-top: 25px;
+        
+        // List
+        ul {
+            
+            // Items
+            li {
+                
+                display: inline-block;
+                padding: 5px 10px;
+                background: lighten($gray-mid, 15%);
+                margin: 0px 10px 10px 0px;
+                @include radius(5px);
+                
+                // Icon
+                i.fa {
+                    
+                    // Base
+                    margin-right: 5px;
+                    color: $green-mid;
+                    
+                }
+                
+            }
+            
+        }
+        
+    }
+    
+}

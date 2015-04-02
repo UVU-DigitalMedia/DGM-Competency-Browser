@@ -32,6 +32,30 @@ angular.module('CompBrowserControllers', ['ui.bootstrap', 'CompBrowser.services'
     // Close Login Form Function
     $rootScope.closeLoginForm = function(){$rootScope.isLoginFormOpen = false;};
     
+    // ------------------------------ Secondary Nav Hover
+    
+    // Set Variable
+    $rootScope.isSubNavOpened = false;
+    
+    // Open Function
+    $rootScope.openSubNav = function(){
+        
+        // Modify Variable
+        $rootScope.isSubNavOpened = true;
+        
+    };
+    
+    // Close Function
+    $rootScope.closeSubNav = function(){
+        
+        // Modify Variable
+        $rootScope.isSubNavOpened = false;
+        
+    };
+    
+    
+    
+    
     // ------------------------------ Login
   
     // Get User Info
@@ -494,6 +518,18 @@ angular.module('CompBrowserControllers', ['ui.bootstrap', 'CompBrowser.services'
         });
     };
 })
+
+
+// ---------------------- Profile Controller
+.controller('ProfileCtrl', function($scope){
+    
+    // Set Scope Variables
+    $scope.userName = "John Smith";
+    $scope.userProgram = "Internet Technologies Student";
+    $scope.studentID = "10435435";
+    
+})
+
 
 // Please note that $modalInstance represents a modal window (instance) dependency.
 // It is not the same as the $modal service used above.
