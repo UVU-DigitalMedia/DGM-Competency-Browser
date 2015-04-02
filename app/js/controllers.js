@@ -523,10 +523,13 @@ angular.module('CompBrowserControllers', ['ui.bootstrap', 'CompBrowser.services'
 // ---------------------- Profile Controller
 .controller('ProfileCtrl', function($scope){
     
+    // Use Strict
+    'use strict';
+    
     // Set Scope Variables
-    $scope.userName = "John Smith";
-    $scope.userProgram = "Internet Technologies Student";
-    $scope.studentID = "10435435";
+    $scope.userName = 'John Smith';
+    $scope.userProgram = 'Internet Technologies Student';
+    $scope.studentID = '10435435';
     
 })
 
