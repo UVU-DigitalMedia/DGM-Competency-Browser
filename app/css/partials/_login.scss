@@ -2,7 +2,7 @@
 
 // Foundation
 .user-login {
-    
+
     background: darken($gray-high, 10%);
     position: absolute;
     margin: 150px auto 0px auto;
@@ -12,54 +12,54 @@
     padding: 20px;
     width: 70%;
     opacity: 0.95;
-    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha"(Opacity=95);
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha"(95);
     @include radius();
     @include animate(200ms);
-    
+
     // Hide
     &.ng-hide {
- 
+
         margin-top: -400px;
         opacity: 0;
-        -ms-filter:"progid:DXImageTransform.Microsoft.Alpha"(Opacity=0);
-        
+        -ms-filter:"progid:DXImageTransform.Microsoft.Alpha"(0);
+
     }
-    
+
     // Tablet
     @media #{$tablet}{max-width: 300px;}
-    
+
     // Header
     .header {
-        
+
         padding: 0px;
-    
+
         h2 {
-            
+
             color: $blue;
             margin: 0px 0px 25px 0px;
             font-size: 24px;
             text-transform: uppercase;
-            
+
             // Icon
             i.fa {
-                
+
                 margin-right: 15px;
                 font-size: 30px;
-                
+
             }
-            
+
         }
-        
+
     }
-    
+
     // Close
     .close {
-        
+
         padding: 0px;
         text-align: right;
-        
+
         i.fa {
-            
+
             background: $gray;
             color: white;
             font-size: 18px;
@@ -70,19 +70,19 @@
             cursor: pointer;
             @include radius(30px);
             @include animate(200ms);
-            
+
             // Hover
             &:hover {background: $red;}
-            
+
         }
-        
+
     }
-    
+
     // Login Form
     form {
-        
+
         input {
-            
+
             display: block;
             padding: 10px;
             border: 0px;
@@ -92,33 +92,33 @@
             background: $gray-high;
             border: 2px solid $gray-high;
             @include radius();
-            
+
             // Last Input
             &:last-child {margin: 30px 0px 0px 0px;}
-            
+
             // Focus
             &:focus {
-                
+
                 outline: none;
                 border-color: $green-mid;
-                
+
             }
-            
+
             // Reduce Margin for Button
             &[type=submit]{margin-top: 15px;}
-            
+
         }
-        
+
     }
-    
+
 }
 
 // Register Form
 .registerForm {
-    
+
     // Error Message
     span {
-        
+
         display: block;
         padding: 15px;
         width: 100%;
@@ -126,12 +126,12 @@
         color: white;
         text-align: center;
         @include radius(10px);
-        
+
     }
-    
+
     // Inputs
     input {
-        
+
         display: block;
         width: 100%;
         margin: 0px 0px 20px 0px;
@@ -140,12 +140,12 @@
         border: 1px solid darken($gray-high, 10%);
         @include typography(14px, 0.5px, 300);
         @include animate(100ms);
-        
+
         &:focus {outline: none; border-color: $green-mid;}
-        
+
     }
-    
+
     // Button
     button {min-width: 200px; margin: 0px auto;}
-    
+
 }
