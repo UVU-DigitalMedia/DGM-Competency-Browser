@@ -24,74 +24,61 @@
 
 </div>
 
-
-<!-- Container -->
-<div class="container-fluid">
-
-    <!-- Row -->
-    <div class="row">
-
-        <!-- Column -->
+<!-- Display Skills -->
+<div class="container-fluid compSkills">
+    
+    <!-- Filters -->
+    <div class="filters row">  
         <div class="col-xs-12">
-
-<div class="contentSet">
-    <div class="titleContainer" data-toggle="collapse" data-target="#collapseSkills" aria-expanded="false" aria-controls="collapseSkills">
-        <h4 class="setTitle" ng-click="isCollapsed = !isCollapsed">Filters</span><i class="fa fa-caret-down"></i></h4>
-    </div><!--end .setTitle-->
-
-    <div collapse="isCollapsed">
-        <div class="row title">
-            <h4 class="subTitle col-sm-12">Employers</h4>
-        </div><!--end .row title-->
-        <div class="labelContainer" ng-repeat="emp in employers">
-          <label class="filterLabel col-sm-12" for="{{emp.name}}">
-                <input type="checkbox" id="{{emp.name}}" name="cb"
-                        ng-model="searchSkills"
-                        ng-click="check(emp.skill)">
-                {{emp.name}}
-            </label>
-        </div><!--end .filterCheckbox-->
-
-        <!-- Test select box for filtering...this can be removed if wanted
-        <div class="selectWrapper col-sm-12">
-            <select ng-model="searchSkills" class="col-xs-12">
-                <option value="">All</option>
-                <option ng-repeat="emp in employers" value="{{emp.name}}">{{emp.name}}</option>
-            </select>
-        </div>-->
-
-        <div class="jobs">
-            <h4 class="subTitle col-sm-12">Jobs</h4>
-            <div class="jobSearchWrapper input-group col-sm-12">
-                  <input type="search"
-                          class="search form-control"
-                          placeholder="Start Typing"
-                          ng-model="search"/>
-                  <span class="input-group-addon"><i class="fa fa-search"></i></span>
-            </div><!--end .jobSearchWrapper -->
-        </div><!--end .row jobs-->
-    </div><!-- end.collapse #collapseFilters -->
-</div><!--end .contentSet-->
-
-<div class="contentSet skills">
-    <div class="titleContainer">
-      <h4 class="setTitle">Skills</h4>
-    </div><!--end titleContainer-->
-    <div >
-
-        <ul class="skillList" ng-repeat="skillset in employers | filter:searchSkills">
-            <li class="skillItem" data-ng-repeat="indSkill in skillset.skill | filter:search"
-                data-ng-class="{favoriteSkill : toggle}"
-                data-ng-click="toggle = !toggle"
-                data-ng-init="toggle=false">
-                <div class="skill col-xs-10">{{indSkill}}</div>
-                <div class="favorite col-xs-2">
-                  <i class="fa fa-heart-o"></i>
+            <div class="contentSet">
+                <div class="titleContainer" data-toggle="collapse" data-target="#collapseSkills" aria-expanded="false" aria-controls="collapseSkills">
+                    <h4 class="setTitle" ng-click="isCollapsed = !isCollapsed">Filter Skills<i class="fa fa-caret-down"></i></h4>
                 </div>
-            </li>
-        </ul><!--end .skillList-->
-
-    </div><!--end collapseSkills-->
-</div><!--end .contentSet-->
-
-</div></div></div>
+                <div collapse="isCollapsed" class="variables">
+                    <div class="padding">
+                        <div class="title">
+                            <h4>Employers</h4>
+                        </div>
+                        <div class="labelContainer" ng-repeat="emp in employers">
+                            <label class="filterLabel" for="{{emp.name}}">
+                                <input type="checkbox" id="{{emp.name}}" name="cb" ng-model="searchSkills" ng-click="check(emp.skill)" />
+                                <span>{{emp.name}}</span>
+                            </label>
+                        </div>
+                        <div class="searchSkills">
+                            <div class="title">
+                                <h4>Search Skills</h4>
+                            </div>
+                            <div class="skillSearchWrapper">
+                                <input type="search" class="skilLSearchInput" placeholder="Search Skills" ng-model="search" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Skills -->
+    <div class="skills row">
+        <div class="col-xs-12">
+            <div class="contentSet">
+                <div class="titleContainer">
+                    <h4 class="setTitle">Skills</h4>
+                </div>
+                <div class="skillListWrapper">
+                    <ul class="skillList" ng-repeat="skillset in employers | filter:searchSkills">
+                        <li class="skillItem" data-ng-repeat="indSkill in skillset.skill | filter:search"
+                            data-ng-class="{favoriteSkill : toggle}"
+                            data-ng-click="toggle = !toggle"
+                            data-ng-init="toggle = false">
+                            <span class="skill">{{indSkill}}</span>
+                            <span class="menu"><i class="fa fa-heart"></i></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
