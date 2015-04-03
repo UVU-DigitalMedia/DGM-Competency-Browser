@@ -128,6 +128,9 @@ header {
                             
                         }
                         
+                        // Active
+                        &.active {color: white;}
+                        
                         // Tablet
                         @media #{$tablet}{
                             
@@ -144,6 +147,19 @@ header {
                                 color: white;
                                 background: $blue;
                                 @include radius();
+                                
+                            }
+                            
+                            // Active
+                            &.active {
+                                
+                                background: $green-mid;
+                                color: white;
+                                @include radius();
+                                @include animate(200ms);
+                                    
+                                // Hover
+                                &:hover {background: $blue;}
                                 
                             }
                             
