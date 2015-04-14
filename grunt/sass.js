@@ -1,6 +1,5 @@
 module.exports = {
-  sass: {
-    dist: {
+  dist: {
       files: [{
         expand: true,
         src: ['app/css/*.scss'],
@@ -8,5 +7,4 @@ module.exports = {
         ext: '.css'
       }]
     }
-  }
 };
