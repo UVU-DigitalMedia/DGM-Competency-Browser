@@ -1,6 +1,5 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
-var PastOfferedSchema = require('./past_offered.js');
 
 var CoursesSchema = new Schema({
 
@@ -10,7 +9,7 @@ var CoursesSchema = new Schema({
     lecture: Number,
     lab: Number,
     catalog_offered: String,
-    past_offered: [PastOfferedSchema],
+    past_offered: [],
     description: String
 
 
