@@ -44,11 +44,11 @@ a {
     color: $red;
     text-decoration: none;
     @include animate(200ms);
-    
+
     &:hover {color: $red-lowest; text-decoration: none;}
-    
+
     &:focus {text-decoration: none;}
-    
+
 }
 
 // Buttons
@@ -84,13 +84,13 @@ a {
         border-color: $green !important;
         &:hover {background: $green !important;}
     }//end .green
-    
+
     &.blue {
         background: $blue-mid !important;
         border-color: $blue !important;
         &:hover {background: $blue !important;}
     }//end .green
-    
+
 }//end .button
 
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
