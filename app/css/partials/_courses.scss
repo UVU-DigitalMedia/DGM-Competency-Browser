@@ -1,0 +1,31 @@
+/* ---------------------------------------- Skills Page ---*/
+
+.course{
+  @include radius();
+  @include clear();
+  margin-top:6px;
+  background:$white;
+
+  .fa{
+    float:right;
+  }//end .fa
+}//end .course
+
+.courseTitle {
+    cursor:pointer;
+    @include clear();
+}
+
+.details{
+  @include clear();
+  padding:$pad-sm;
+}
+
+.detailsInner{
+  background:$gray-high;
+  @include clear();
+}
+
+.favoriteCourse i.fa.fa-heart {
+  color:$red;
+}
