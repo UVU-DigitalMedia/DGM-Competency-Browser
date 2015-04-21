@@ -343,14 +343,13 @@ router.route('/courses')
 			.post(function(req, res) {
 
 					var course = new Courses();      // create a new instance of the Course model
-					course.name = req.body.name;  // set the courses name (comes from the request)
-					course.number = req.body.number;  // set the courses name (comes from the request)
-					course.credits = req.body.credits;  // set the courses name (comes from the request)
-					course.lecture = req.body.lecture;  // set the courses name (comes from the request)
-					course.lab = req.body.lab;  // set the courses name (comes from the request)
-					course.catalog_offered = req.body.catalog_offered;  // set the courses name (comes from the request)
-					course.past_offered = [];  // set the courses name (comes from the request)
-					course.description = req.body.description;  // set the courses name (comes from the request)
+					course.name = req.body.name;
+					course.number = req.body.number;
+					course.credits = req.body.credits;
+					course.lecture = req.body.lecture;
+					course.lab = req.body.lab;
+					course.catalog_offered = req.body.catalog_offered;
+					course.description = req.body.description; 
 
 					// save the course and check for errors
 					course.save(function(err) {

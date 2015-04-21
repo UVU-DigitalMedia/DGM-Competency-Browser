@@ -3,6 +3,12 @@ angular.module('CompBrowserControllers', ['ui.bootstrap', 'CompBrowser.services'
 .controller('MainCtrl', function($scope) {
     'use strict';
     $scope.message = 'APP BASE';
+    
+    
+    // Temp Favorite Classes
+    $scope.favClasses = ['DGM 3270 DVD Authoring 2', 'DGM 1061 Motion Picture Editing', 'DGM 1063 Image Editing'];
+    $scope.favSkills = ['2-D Packages', '3-D Packages', 'Integrating Game Assets', 'Requirements Gathering'];
+    $scope.earnedComps = ['AngularJS', 'WordPress', 'JavaScript', 'jQuery', 'Drupal', 'NodeJS', 'Grunt & Gulp'];
 
 })
 

@@ -1,49 +1,211 @@
-/* ---------------------------------------- Skills Page ---*/
-//filters
+/* ===============================================
+            Skills Page
+================================================ */
 
-.contentSet.skills{
-  .titleContainer{
-    margin-bottom:$pad;
-  }
-}
+// Skills
+.compSkills {
+    
+    // Set Content Fix
+    .contentSet {border: 0px; padding: 0px;}
+    
+    // Filters
+    .filters {
+        
+        // Title Container
+        .titleContainer {
+            
+            // Base
+            background: $green-high;
+            padding: 5px 20px;
+            border-bottom: 5px solid $green-mid;
+            cursor: pointer;
+            position: relative;
+            @include radius(10px);
+            
+            // Title
+            .setTitle {
+                
+                // Base
+                @include typography(25px, 1.5px, 500);
+                color: white;
+                text-transform: uppercase;
+                margin: 0px;
+                
+                // Icon
+                i.fa {
+                    
+                    // Base
+                    position: absolute;
+                    top: 50%;
+                    margin-top: -10px;
+                    right: 20px;
+                    
+                }
+                
+            }
+            
+        }
+        
+        // Variables
+        .variables {
+            
+            // Base
+            margin-top: 20px;
+            
+            // Padding
+            .padding {
+                
+                padding: 20px;
+                background: white;
+                border-bottom: 5px solid lighten($gray-mid, 10%);
+                @include radius(10px);
+                
+            }
+            
+            // Titles
+            .title {
+                
+                // Header
+                h4 {
+                    
+                    // Base
+                    margin: 0px 0px 10px 0px;
+                    @include typography(20px, 1.5px, 500);
+                    
+                }
+                
+            }
+            
+            // Lables
+            .filterLabel {
+                
+                // Base
+                border-bottom: 1px dashed $gray-mid;
+                width: 100%;
+                padding: 10px;
+                cursor: pointer;
+                                
+                // Input Checkboxes
+                input[type="checkbox"]{
+                    
+                    // Base
+                    margin-right: 10px;
+                    
+                }
+                
+                // Highlight
+                &:hover {background: lighten($gray-high, 5%);}
+                
+            }
+            
+            // Search Form
+            .searchSkills {
+                
+                // Base
+                margin-top: 15px;
+                
+                // Search Form
+                .skilLSearchInput {
+                    
+                    // Base
+                    width: 100%;
+                    border: 0px;
+                    background: $gray-high;
+                    padding: 10px;
+                    border: 1px solid $gray-high;
+                    @include radius();
+                    @include animate(200ms);
+                    
+                    // Focus
+                    &:focus {outline: none; border-color: $green-mid;}
+                    
+                }
+                
+            }
+            
+        }
+        
+    }
+    
+    // Skills List
+    .skills {
+        
+        // Base
+        margin-top: 25px;
+        
+        // Title Container
+        .titleContainer {
+            
+            // Base
+            background: $green-high;
+            padding: 5px 20px;
+            border-bottom: 5px solid $green-mid;
+            cursor: pointer;
+            position: relative;
+            @include radius(10px);
+            
+            // Title
+            .setTitle {
+                
+                // Base
+                @include typography(25px, 1.5px, 500);
+                color: white;
+                text-transform: uppercase;
+                margin: 0px;
+                
+                // Icon
+                i.fa {
+                    
+                    // Base
+                    position: absolute;
+                    top: 50%;
+                    margin-top: -10px;
+                    right: 20px;
+                    
+                }
+                
+            }
 
-.skillList{
-  @include clear();
-}
-.skillList{
-  @include clear();
-}
-.skillItem{
-  @include radius();
-  @include clear();
-  margin-top:6px;
-  background:$white;
-
-  .skill{
-    padding:$pad;
-  }
-
-  .favorite{
-    padding:$pad-md;
-  }
-  .fa{
-    float:right;
-  }
-
-  .skill{
-    color:$green;
-  }
-}
-.titleContainer {
-    cursor:pointer;
-}
-.jobs input[type=search] {
-    height:40px;
-    font-size:18px;
-}
-// Use to style the search input box (removes browser styling)...can be moved to general styles
-.jobs input[type=search] {
--webkit-appearance: none;
--moz-appearance: none;
-appearance: none;
+        }
+        
+        // Skills List Wrapper
+        .skillListWrapper {
+            
+            // Base
+            margin-top: 20px;
+            
+            // List
+            ul {
+                
+                // Items
+                li {
+                    
+                    // Base
+                    background: white;
+                    width: 100%;
+                    margin-bottom: 10px;
+                    padding: 5px 10px;
+                    cursor: pointer;
+                    border-bottom: 3px solid lighten($gray-mid, 10%);
+                    @include radius(10px);
+                    
+                    // Menu
+                    span.menu {
+                        
+                        // Base
+                        float: right;
+                        
+                    }
+                    
+                    // Favirte Skill
+                    &.favoriteSkill i.fa {color: $red;}
+                    
+                }
+                
+            }
+            
+        }
+        
+    }
+    
 }

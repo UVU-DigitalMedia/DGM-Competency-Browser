@@ -3,7 +3,7 @@ module.exports = {
   html: 'index.html',
   options: {
     blockReplacements: {
-/*      less: function (block) {
+/*    css: function (block) {
           return '<link rel="stylesheet" href="' + block.dest + '">';
       },*/
       js: function (block) {

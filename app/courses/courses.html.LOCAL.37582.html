@@ -1,0 +1,98 @@
+<!-- Spotlight Header-->
+<div class="spotlight" ng-class='randomColor'>
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-xs-12">
+              <h1>Courses</h1>
+              <p>Browse available courses and add them to your favorites or track planner.</p>
+            </div><!-- end Column  -->
+        </div><!-- end Row -->
+    </div><!-- end .container-fluid -->
+</div><!-- end .spotlight-->
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="contentSet">
+                <div class="titleContainer" data-toggle="collapse" data-target="#collapseFilter" aria-expanded="false" aria-controls="collapseFilter">
+                    <h4 class="setTitle" ng-click="isCollapsed = !isCollapsed">Filters<i class="fa fa-caret-down"></i></h4>
+                </div><!-- end .titleContainer-->
+
+                <div class="filters" collapse="!isCollapsed">
+                    <label>Sort by:
+                        <select ng-model="courseSort">
+                            <option value="number">Course Number</option>
+                            <option value="name">Course Name</option>
+                            <option value="credits">Credit Hours</option>
+                        </select>
+                    </label>
+                    <label>Search:
+                      <input type="text" ng-model="search.$" />
+                    </label>
+                </div><!-- end .filters-->
+            </div><!--end .contentSet-->
+
+            <div class="contentSet">
+                <div class="titleContainer">
+                    <h4 class="setTitle">Courses</h4>
+                </div><!-- end .titleContainer-->
+
+                <div class="courselist">
+                    <div class="course" ng-repeat="course in courses | orderBy:courseSort | filter:search">
+
+                            <div class="row">
+                              <div class="courseTitle col-xs-11" ng-click="isCollapsedCourse = !isCollapsedCourse" data-toggle="collapse" data-target="#collapseCourse" aria-expanded="false" aria-controls="collapseCourse">
+                                  <h6 class="col-xs-10">{{course.number}} - {{course.name}}</h6>
+                                  <div class="col-xs-2">
+                                    <i class="fa fa-caret-down"></i>
+                                  </div><!--end .col-->
+                              </div><!-- end .courseTitle-->
+                              <div class="col-xs-1 text-right"
+                                   data-ng-class="{favoriteCourse : toggle}"
+                                   data-ng-click="toggle = !toggle"
+                                   data-ng-init="toggle = false">
+                                        <span class="menu"><i class="fa fa-heart"></i></span>
+                              </div><!--end .text-right-->
+                            </div><!--end row-->
+
+                            <div class="details" collapse="!isCollapsedCourse">
+                              <div class="detailsInner">
+                                <!--
+                                =======================================================================
+                                 past courses not needed add future classes and when they are available
+                                =======================================================================
+
+
+                                <div class="col-xs-12">
+                                    <p><span class="text-green">Recently Offered:</span></p>
+                                </div><!-- end .col
+                                <div class="col-xs-12" ng-repeat="past in course.past_offered">
+                                    <p>
+                                        CRN:{{past.crn}}<br>Section: {{past.section}}<br><span ng-hide="!past.start_date.length">Start Date: {{past.start_date}} </span><span ng-hide="!past.end_date.length">End Date: {{past.end_date}}</span>
+                                    </p>
+                                </div><!-- end .col
+                                <div class="col-xs-12">
+                                    <p>Instructor: {{course.instructor}}<br>Number Enrolled: {{course.enrolled}}<br>Max Enrollment: {{course.max_enrollment}}</p>
+                                </div><!-- end .col
+
+
+                                -->
+                                <div class="col-xs-11 text-green">{{course.credits}} Credits</div>
+
+                                <div class="description col-xs-12">
+                                    <p><span class="text-green">Description:</span>
+                                        <br>{{course.description}}
+                                    </p>
+                                </div><!-- end .description-->
+
+                              </div><!--end .detailsInner-->
+                            </div><!-- end .row details-->
+
+                    </div><!-- end .row course in courses-->
+                </div><!-- end .courselist-->
+            </div><!--end .contentSet-->
+
+        </div><!-- end .column -->
+  </div><!-- end Row -->
+</div><!-- end .container-fluid -->

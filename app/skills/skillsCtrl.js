@@ -5,7 +5,7 @@
 
     .controller('SkillsCtrl', function($scope, empResource) {
 
-        $scope.isCollapsed = true;
+        $scope.isCollapsed = false;
 
         // Query to fake httpBackend service for testing purposes
         empResource.query(function(data) {
@@ -34,17 +34,6 @@
             }
                 return employers;
             };
-
-        // Function to toggle favorite skill class
-        $scope.classToggle = "";
-        $scope.favorite = function() {
-            if ($scope.classToggle === "" ) {
-                $scope.classToggle = "favoriteSkill";
-            } else {
-                $scope.classToggle = "";
-            }
-            console.log("Class Name: " + $scope.classToggle);
-        }
 
     });
 }());

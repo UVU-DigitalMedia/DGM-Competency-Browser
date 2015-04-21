@@ -1,104 +1,197 @@
-<!-- Spotlight -->
-<div class="spotlight">
+<!-- Show if Logged In is False -->
+<div ng-show="isLoggedIn === false">
 
-  <!-- Container -->
-  <div class="container-fluid">
-
-      <!-- Row -->
-      <div class="row">
-
-          <!-- Column 1 -->
-          <div class="col-xs-12 col-sm-6">
-
-              <!-- Header -->
-              <h1>DGM Competency Browser {{message}}{{test}}</h1>
-
-              <!-- Captain -->
-              <p>Use this document as a way to quickly start any new project.  All you get is this text and a mostly barebones HTML document.</p>
-
-               <!-- Button -->
-               <a href="#" class="button red">Learn More</a>
-
+    <!-- Spotlight -->
+    <div class="spotlight">
+    
+      <!-- Container -->
+      <div class="container-fluid">
+    
+          <!-- Row -->
+          <div class="row">
+    
+              <!-- Column 1 -->
+              <div class="col-xs-12 col-sm-6">
+    
+                  <!-- Header -->
+                  <h1>DGM Competency Browser {{message}}{{test}}</h1>
+    
+                  <!-- Captain -->
+                  <p>Use this document as a way to quickly start any new project.  All you get is this text and a mostly barebones HTML document.</p>
+    
+                   <!-- Button -->
+                   <a href="#" class="button red">Learn More</a>
+    
+              </div>
+    
+              <!-- Column 2 -->
+              <div class="col-xs-12 col-sm-6">
+    
+                  <!-- Spotlight -->
+                  <img src="images/devices.png" alt="devices" />
+    
+              </div>
+    
           </div>
-
-          <!-- Column 2 -->
-          <div class="col-xs-12 col-sm-6">
-
-              <!-- Spotlight -->
-              <img src="images/devices.png" alt="devices" />
-
-          </div>
-
+    
       </div>
-
-  </div>
-
-</div>
-
-<!-- Content -->
-<div class="container-fluid tagline">
     
-    <!-- Row -->
-    <div class="row">
+    </div>
+    
+    <!-- Content -->
+    <div class="container-fluid tagline">
         
-        <!-- Column -->
-        <div class="col-xs-12">
-            <h1>Lorem ipsum dolor sit amet</h1>
-            <p>Duis justo eros, tincidunt id quam a, placerat tempor felis. Donec id volutpat nulla. Sed efficitur diam volutpat, gravida lorem id, cursus risus. Proin orci neque, tincidunt sed ultricies vel, efficitur nec nulla. Curabitur mollis egestas metus finibus finibus. Maecenas nibh felis, viverra a orci vel, viverra posuere lectus.</p>
+        <!-- Row -->
+        <div class="row">
+            
+            <!-- Column -->
+            <div class="col-xs-12">
+                <h1>Lorem ipsum dolor sit amet</h1>
+                <p>Duis justo eros, tincidunt id quam a, placerat tempor felis. Donec id volutpat nulla. Sed efficitur diam volutpat, gravida lorem id, cursus risus. Proin orci neque, tincidunt sed ultricies vel, efficitur nec nulla. Curabitur mollis egestas metus finibus finibus. Maecenas nibh felis, viverra a orci vel, viverra posuere lectus.</p>
+            </div>
+            
         </div>
+    
+    </div>
+    
+    <!-- Content -->
+    <div class="container-fluid triple">
         
+        <!-- Row -->
+        <div class="row">
+            
+            <!-- Column -->
+            <div class="col-xs-12 col-md-4">
+                <i class="fa fa-cloud-upload"></i>
+                <h1>Lorem ipsum dolor</h1>
+                <p>Duis justo eros, tincidunt id quam a, placerat tempor felis. Donec id volutpat nulla.</p>
+            </div>
+            
+            <!-- Column -->
+            <div class="col-xs-12 col-md-4">
+                <i class="fa fa-diamond"></i>
+                <h1>Donec nulla sapien</h1>
+                <p>Donec nulla sapien, molestie in mollis ac, malesuada et sem. Ut aliquam urna ac enim tristique hendrerit.</p>
+            </div>
+            
+            <!-- Column -->
+            <div class="col-xs-12 col-md-4">
+                <i class="fa fa-dropbox"></i>
+                <h1>Suspendisse a risus</h1>
+                <p>Duis justo eros, tincidunt id quam a, placerat tempor felis. Donec id volutpat nulla. Sed efficitur diam volutpat.</p>
+            </div>
+            
+        </div>
+    
+    </div>
+    
+    <!-- Content -->
+    <div class="container-fluid logos">
+        
+        <!-- Row -->
+        <div class="row">
+            
+            <!-- Column -->
+            <div class="col-xs-12">
+                <h3>Employers</h3>
+                <ul>
+                    <li><a href="#"><img src="images/logos/adobe.png" alt="adobe logo"/></a></li>
+                    <li><a href="#"><img src="images/logos/art_task.png" alt="art task logo"/></a></li>
+                    <li><a href="#"><img src="images/logos/domo.png" alt="domo logo"/></a></li>
+                    <li><a href="#"><img src="images/logos/lds_church.png" alt="lds church logo"/></a></li>
+                </ul>
+            </div>
+            
+        </div>
+    
     </div>
 
 </div>
 
-<!-- Content -->
-<div class="container-fluid triple">
+<!-- If Logged In -->
+<div ng-show="isLoggedIn === true">
     
-    <!-- Row -->
-    <div class="row">
-        
-        <!-- Column -->
-        <div class="col-xs-12 col-md-4">
-            <i class="fa fa-cloud-upload"></i>
-            <h1>Lorem ipsum dolor</h1>
-            <p>Duis justo eros, tincidunt id quam a, placerat tempor felis. Donec id volutpat nulla.</p>
-        </div>
-        
-        <!-- Column -->
-        <div class="col-xs-12 col-md-4">
-            <i class="fa fa-diamond"></i>
-            <h1>Donec nulla sapien</h1>
-            <p>Donec nulla sapien, molestie in mollis ac, malesuada et sem. Ut aliquam urna ac enim tristique hendrerit.</p>
-        </div>
-        
-        <!-- Column -->
-        <div class="col-xs-12 col-md-4">
-            <i class="fa fa-dropbox"></i>
-            <h1>Suspendisse a risus</h1>
-            <p>Duis justo eros, tincidunt id quam a, placerat tempor felis. Donec id volutpat nulla. Sed efficitur diam volutpat.</p>
-        </div>
-        
-    </div>
-
-</div>
-
-<!-- Content -->
-<div class="container-fluid logos">
+    <!-- Spotlight -->
+    <div class="spotlight">
     
-    <!-- Row -->
-    <div class="row">
-        
-        <!-- Column -->
-        <div class="col-xs-12">
-            <h3>Employers</h3>
-            <ul>
-                <li><a href="#"><img src="images/logos/adobe.png" alt="adobe logo"/></a></li>
-                <li><a href="#"><img src="images/logos/art_task.png" alt="art task logo"/></a></li>
-                <li><a href="#"><img src="images/logos/domo.png" alt="domo logo"/></a></li>
-                <li><a href="#"><img src="images/logos/lds_church.png" alt="lds church logo"/></a></li>
-            </ul>
-        </div>
-        
+      <!-- Container -->
+      <div class="container-fluid">
+    
+          <!-- Row -->
+          <div class="row">
+    
+              <!-- Column 1 -->
+              <div class="col-xs-12">
+    
+                  <!-- Header -->
+                  <h1>Hello, John</h1>
+                  
+                  <!-- Paragraph -->
+                  <p>Glad to see you!  It's been a while.</p>
+                  
+              </div>
+    
+          </div>
+    
+      </div>
+    
     </div>
-
+    
+    <!-- Dashboard Items -->
+    <div class="dashboard">
+    
+        <!-- Container -->
+        <div class="container-fluid">
+            
+            <!-- Row -->
+            <div class="row">
+                
+                <!-- Favorite Classes -->
+                <div class="col-xs-12 col-md-4 favorites-dashboard favorite-classes">
+                    <div class="title">
+                        <h1>Favorite Classes</h1>
+                    </div>
+                    <ul class="list">
+                        <li ng-repeat="favClass in favClasses"
+                            data-ng-class="{dashFav : toggle}"
+                            data-ng-click="toggle = !toggle"
+                            data-ng-init="toggle = false">{{favClass}} <i class="fa fa-heart"></i></li>
+                    </ul>
+                    <a href="#/favorites" class="button blue">See More</a>
+                </div>
+                
+                <!-- Favorite Skills -->
+                <div class="col-xs-12 col-md-4 favorites-dashboard favorite-skills">
+                    <div class="title">
+                        <h1>Favorite Skills</h1>
+                    </div>
+                    <ul class="list">
+                        <li ng-repeat="favSkill in favSkills"
+                            data-ng-class="{dashFav : toggle}"
+                            data-ng-click="toggle = !toggle"
+                            data-ng-init="toggle = false">{{favSkill}} <i class="fa fa-heart"></i></li>
+                    </ul>
+                    <a href="#/favorites" class="button blue">See More</a>
+                </div>
+                
+                <!-- Earned Comp -->
+                <div class="col-xs-12 col-md-4 favorites-dashboard earned-comp">
+                    <div class="title">
+                        <h1>Competencies Earned</h1>
+                    </div>
+                    <ul class="list">
+                        <li ng-repeat="earnedComp in earnedComps"
+                            data-ng-class="{dashFav : toggle}"
+                            data-ng-click="toggle = !toggle"
+                            data-ng-init="toggle = true">{{earnedComp}} <i class="fa fa-heart"></i></li>
+                    </ul>
+                    <a href="#/profile" class="button blue">View Profile</a>
+                </div>
+                
+            </div>
+            
+        </div>
+    
+    </div>
+    
 </div>

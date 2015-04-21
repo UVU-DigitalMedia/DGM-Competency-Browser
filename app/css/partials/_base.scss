@@ -100,9 +100,8 @@ a {
 /* ------------------------------------- Move CSS Below */
 
 
-
 // =====   content Sets (filters skills tracks courses)   ===== \\
-.titleContainer{
+.listTemp .titleContainer{
     background:$green;
     margin-right:-$pad;
     margin-left:-$pad;
@@ -119,7 +118,7 @@ a {
     }//end .toggleTitle
 }//end .toggler
 
-.contentSet{
+.listTemp .contentSet{
   border:solid 1px $green;
   background:$gray-high;
   padding:0 $pad $pad;
@@ -140,11 +139,11 @@ a {
   }//search
 }//end .filters
 
-.labelContainer{
+.listTemp .labelContainer{
   @include clear();
 }
 
-.filterLabel{
+.listTemp .filterLabel{
   font-size:1em;
   background:$white;
   padding-top:$pad-sm;
