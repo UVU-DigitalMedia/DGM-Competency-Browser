@@ -13,104 +13,106 @@ angular.module('CompBrowserControllers', ['ui.bootstrap', 'CompBrowser.services'
 })
 
 .controller('MenuCtrl', function($rootScope, userAuth, $firebase, $firebaseAuth, FBURL, $window){
-    
+
     // Use Strict
     'use strict';
-    
+
     // ------------------------------ Show Nav Based on Login Status
-        
+
     // Check Session
     $rootScope.isLoggedIn = userAuth.checkSession();
-    
+
     // Logout
     $rootScope.logout = function() {
        userAuth.logout();
     };
-    
+
     // ------------------------------ Show/Hide Login Form
-    
+
     // Set Variable
     $rootScope.isLoginFormOpen = false;
-    
+
     // Open Login Form Function
     $rootScope.openLoginForm = function(){$rootScope.isLoginFormOpen = true;};
-    
+
     // Close Login Form Function
     $rootScope.closeLoginForm = function(){$rootScope.isLoginFormOpen = false;};
-    
+
     // ------------------------------ Secondary Nav Hover
-    
+
     // Set Variable
     $rootScope.isSubNavOpened = false;
-    
+
     // Open Function
     $rootScope.openSubNav = function(){
-        
+
         // Modify Variable
         $rootScope.isSubNavOpened = true;
-        
+
     };
-    
+
     // Close Function
     $rootScope.closeSubNav = function(){
-        
+
         // Modify Variable
         $rootScope.isSubNavOpened = false;
-        
+
     };
-    
-    
-    
-    
+
+
+
+
     // ------------------------------ Login
-  
+
     // Get User Info
    /* userAuth.getUserInfo().then(function(data) {
-        
+
         // Assign Current User
         $rootScope.currentUser = data;
-    
+
         // Confirm User
         console.log('Awesome' + $rootScope.currentUser);
-        
+
     }); */
-    
+
     // Make Reference
     var ref = new Firebase(FBURL);
-    
+
     // Login Function
     $rootScope.login = function() {
-        
+        $rootScope.email = 'test@test.com';
+        $rootScope.password = 'asdf';
+
         // Get Details
         ref.authWithPassword({
-            
+
             // Get Information
             email    : $rootScope.email,
             password : $rootScope.password
-            
+
         }, function(error, authData){
-            
+
             // If Error
             if(error){console.log('Login Failed!', error);}
-            
+
             // Else
             else{
-                
+
                 // Print Success
                 console.log('Authenticated successfully with payload:', authData);
-                
+
                 // Set URL
                 $window.location.href = '#/';
-                
+
                 // Refresh
                 $window.location.reload();
-                
+
             }
-            
+
         });
-        
+
     };
-            
+
 })
 
 .controller('RegisterCtrl', function($scope, $firebase, $firebaseAuth, FBURL, $window) {
@@ -528,15 +530,15 @@ angular.module('CompBrowserControllers', ['ui.bootstrap', 'CompBrowser.services'
 
 // ---------------------- Profile Controller
 .controller('ProfileCtrl', function($scope){
-    
+
     // Use Strict
     'use strict';
-    
+
     // Set Scope Variables
     $scope.userName = 'John Smith';
     $scope.userProgram = 'Internet Technologies Student';
     $scope.studentID = '10435435';
-    
+
 })
 
 
