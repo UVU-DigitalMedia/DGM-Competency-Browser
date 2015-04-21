@@ -1,0 +1,105 @@
+/* ===============================================
+            App Dashboard
+================================================ */
+
+.dashboard {
+    
+    // Base
+    padding: $pad-md;
+    
+    // Favorite Dashboard
+    .favorites-dashboard {
+        
+        // Base
+        margin: 0px 20px 20px 0px;
+        padding: 0px;
+        @include radius(10px);
+        
+        // Medium
+        @media #{$tablet}{
+            
+            // Base
+            width: 31%;
+            
+        }
+        
+        // Title
+        .title {
+            
+            // Base
+            background: $green-mid;
+            @include radius(10px);
+            padding: 2px 15px;
+           
+            // Header
+            h1 {
+                
+                // Base
+                @include typography(20px, 1px, 200);
+                color: white;
+                margin: 0px;
+                
+            }
+            
+        }
+        
+        // List
+        ul.list {
+            
+            // Base
+            margin: 15px 0px 0px 0px;
+            
+            // Items
+            li {
+                
+                // Base
+                padding: 5px 20px;
+                background: white;
+                margin-bottom: 10px;
+                position: relative;
+                cursor: pointer;
+                @include radius(10px);
+                
+                // Last Child
+                &:last-child {margin-bottom: 0px;}
+                
+                // Icon
+                i.fa {
+                    
+                    // Base
+                    position: absolute;
+                    top: 50%;
+                    margin-top: -10px;
+                    right: 20px;
+                    
+                }
+                
+                // Favorite
+                &.dashFav {
+                    
+                    // Icon
+                    i.fa {
+                        
+                        // Base
+                        color: $red;
+                        
+                    }
+                    
+                }
+                
+            }
+            
+        }
+        
+        // Button
+        a.button {
+            
+            // Base
+            padding: 5px 10px;
+            margin: 15px 0px 0px 0px;
+            
+        }
+        
+    }
+    
+}
