@@ -1,3 +1,5 @@
+/* jshint maxlen: 1000 */
+
 angular.module('CompBrowserControllers', ['ui.bootstrap', 'CompBrowser.services' ])
 
 .controller('MainCtrl', function($scope) {
@@ -539,6 +541,75 @@ angular.module('CompBrowserControllers', ['ui.bootstrap', 'CompBrowser.services'
     $scope.userProgram = 'Internet Technologies Student';
     $scope.studentID = '10435435';
 
+})
+
+// ---------------------- Favorites Controller
+.controller('FavoritesCtrl', function($scope){
+    
+    // Use Strict
+    'use strict';
+    
+    // Spotlight Message
+    $scope.header = 'Favorites';
+    $scope.message = 'View and manage your favorites.';
+    
+    // Description Open
+    $scope.descOpen = false;
+    
+    // Favorites
+    $scope.favoriteClasses = [
+        {
+            'name': 'DGM 3270 DVD Authoring 2',
+            'desc': 'Aenean et ornare risus, id ultricies justo. Quisque auctor mauris sed nulla semper, mattis maximus ex laoreet. Sed malesuada erat eu erat posuere volutpat. Cras bibendum non nulla sit amet imperdiet. Nunc quis laoreet justo. Proin sed molestie risus. Aliquam auctor dignissim mollis. Mauris at diam commodo, consectetur odio a, porttitor lacus. Praesent malesuada tortor sed purus bibendum placerat. Nunc dapibus interdum urna, ac sagittis lectus sagittis vitae.'
+        },
+        {
+            'name': 'DGM 1061 Motion Picture Editing',
+            'desc': 'Aenean et ornare risus, id ultricies justo. Quisque auctor mauris sed nulla semper, mattis maximus ex laoreet. Sed malesuada erat eu erat posuere volutpat. Cras bibendum non nulla sit amet imperdiet. Nunc quis laoreet justo. Proin sed molestie risus. Aliquam auctor dignissim mollis. Mauris at diam commodo, consectetur odio a, porttitor lacus. Praesent malesuada tortor sed purus bibendum placerat. Nunc dapibus interdum urna, ac sagittis lectus sagittis vitae.'
+        },
+        {
+            'name': 'DGM 1063 Image Editing',
+            'desc': 'Aenean et ornare risus, id ultricies justo. Quisque auctor mauris sed nulla semper, mattis maximus ex laoreet. Sed malesuada erat eu erat posuere volutpat. Cras bibendum non nulla sit amet imperdiet. Nunc quis laoreet justo. Proin sed molestie risus. Aliquam auctor dignissim mollis. Mauris at diam commodo, consectetur odio a, porttitor lacus. Praesent malesuada tortor sed purus bibendum placerat. Nunc dapibus interdum urna, ac sagittis lectus sagittis vitae.'
+        },
+        {
+            'name': 'DGM 340R Advanced Topics in Digital Audio',
+            'desc': 'Aenean et ornare risus, id ultricies justo. Quisque auctor mauris sed nulla semper, mattis maximus ex laoreet. Sed malesuada erat eu erat posuere volutpat. Cras bibendum non nulla sit amet imperdiet. Nunc quis laoreet justo. Proin sed molestie risus. Aliquam auctor dignissim mollis. Mauris at diam commodo, consectetur odio a, porttitor lacus. Praesent malesuada tortor sed purus bibendum placerat. Nunc dapibus interdum urna, ac sagittis lectus sagittis vitae.'
+        },
+        {
+            'name': 'DGM 3540 Cinematography 2',
+            'desc': 'Aenean et ornare risus, id ultricies justo. Quisque auctor mauris sed nulla semper, mattis maximus ex laoreet. Sed malesuada erat eu erat posuere volutpat. Cras bibendum non nulla sit amet imperdiet. Nunc quis laoreet justo. Proin sed molestie risus. Aliquam auctor dignissim mollis. Mauris at diam commodo, consectetur odio a, porttitor lacus. Praesent malesuada tortor sed purus bibendum placerat. Nunc dapibus interdum urna, ac sagittis lectus sagittis vitae.'
+        },
+        {
+            'name': 'DGM 3560 Post Production',
+            'desc': 'Aenean et ornare risus, id ultricies justo. Quisque auctor mauris sed nulla semper, mattis maximus ex laoreet. Sed malesuada erat eu erat posuere volutpat. Cras bibendum non nulla sit amet imperdiet. Nunc quis laoreet justo. Proin sed molestie risus. Aliquam auctor dignissim mollis. Mauris at diam commodo, consectetur odio a, porttitor lacus. Praesent malesuada tortor sed purus bibendum placerat. Nunc dapibus interdum urna, ac sagittis lectus sagittis vitae.'
+        }
+    ];
+    $scope.favoriteSkills = [
+        {
+            'name': 'Prototyping',
+            'desc': 'Aenean et ornare risus, id ultricies justo. Quisque auctor mauris sed nulla semper, mattis maximus ex laoreet. Sed malesuada erat eu erat posuere volutpat. Cras bibendum non nulla sit amet imperdiet. Nunc quis laoreet justo. Proin sed molestie risus. Aliquam auctor dignissim mollis. Mauris at diam commodo, consectetur odio a, porttitor lacus. Praesent malesuada tortor sed purus bibendum placerat. Nunc dapibus interdum urna, ac sagittis lectus sagittis vitae.'
+        },
+        {
+            'name': '3-D Packages',
+            'desc': 'Aenean et ornare risus, id ultricies justo. Quisque auctor mauris sed nulla semper, mattis maximus ex laoreet. Sed malesuada erat eu erat posuere volutpat. Cras bibendum non nulla sit amet imperdiet. Nunc quis laoreet justo. Proin sed molestie risus. Aliquam auctor dignissim mollis. Mauris at diam commodo, consectetur odio a, porttitor lacus. Praesent malesuada tortor sed purus bibendum placerat. Nunc dapibus interdum urna, ac sagittis lectus sagittis vitae.'
+        },
+        {
+            'name': 'Character Modeling',
+            'desc': 'Aenean et ornare risus, id ultricies justo. Quisque auctor mauris sed nulla semper, mattis maximus ex laoreet. Sed malesuada erat eu erat posuere volutpat. Cras bibendum non nulla sit amet imperdiet. Nunc quis laoreet justo. Proin sed molestie risus. Aliquam auctor dignissim mollis. Mauris at diam commodo, consectetur odio a, porttitor lacus. Praesent malesuada tortor sed purus bibendum placerat. Nunc dapibus interdum urna, ac sagittis lectus sagittis vitae.'
+        },
+        {
+            'name': 'Rendering Skills',
+            'desc': 'Aenean et ornare risus, id ultricies justo. Quisque auctor mauris sed nulla semper, mattis maximus ex laoreet. Sed malesuada erat eu erat posuere volutpat. Cras bibendum non nulla sit amet imperdiet. Nunc quis laoreet justo. Proin sed molestie risus. Aliquam auctor dignissim mollis. Mauris at diam commodo, consectetur odio a, porttitor lacus. Praesent malesuada tortor sed purus bibendum placerat. Nunc dapibus interdum urna, ac sagittis lectus sagittis vitae.'
+        },
+        {
+            'name': 'Identifying Art Problems',
+            'desc': 'Aenean et ornare risus, id ultricies justo. Quisque auctor mauris sed nulla semper, mattis maximus ex laoreet. Sed malesuada erat eu erat posuere volutpat. Cras bibendum non nulla sit amet imperdiet. Nunc quis laoreet justo. Proin sed molestie risus. Aliquam auctor dignissim mollis. Mauris at diam commodo, consectetur odio a, porttitor lacus. Praesent malesuada tortor sed purus bibendum placerat. Nunc dapibus interdum urna, ac sagittis lectus sagittis vitae.'
+        },
+        {
+            'name': 'Game Scripting',
+            'desc': 'Aenean et ornare risus, id ultricies justo. Quisque auctor mauris sed nulla semper, mattis maximus ex laoreet. Sed malesuada erat eu erat posuere volutpat. Cras bibendum non nulla sit amet imperdiet. Nunc quis laoreet justo. Proin sed molestie risus. Aliquam auctor dignissim mollis. Mauris at diam commodo, consectetur odio a, porttitor lacus. Praesent malesuada tortor sed purus bibendum placerat. Nunc dapibus interdum urna, ac sagittis lectus sagittis vitae.'
+        }
+    ];
+    
 })
 
 
