@@ -1,11 +1,9 @@
 module.exports = {
   browserSync: {
     dev: {
-      bsFiles: {
-        src : 'app/**/*'
-      },
+      files: '/app/*.html',
       options: {
-        proxy: 'localhost:8080'
+        proxy: 'http://localhost:8080/'
       }
     }
   }
