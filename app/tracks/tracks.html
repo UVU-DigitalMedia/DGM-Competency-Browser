@@ -70,9 +70,9 @@
 
     <ul>
         <li ng-repeat="track in tracks | filter:trackFilter | filter:search | orderBy:orderProp">
-
+          <div class="contentSet">
             <div class="titleContainer" data-toggle="collapse" data-target="#collapseSkills" aria-expanded="false" aria-controls="collapseSkills">
-                <h4 class="setTitle" ng-click="isCollapsed = !isCollapsed">{{track.semester}}</span><i class="fa fa-caret-down"></i></h4>
+                <h4 class="setTitle" ng-click="isCollapsed = !isCollapsed">{{track.semester}}</span><span style="float: right;">{{track.classes.length}}  Courses<i class="fa fa-caret-down" style="padding-left: 10px;"></i></span></h4>
             </div><!--end .setTitle-->
 
             <div collapse="!isCollapsed">
@@ -131,6 +131,7 @@
 
 
             </div><!-- end.collapse #collapseSemester -->
+          </div>
         </li>
     </ul>
 

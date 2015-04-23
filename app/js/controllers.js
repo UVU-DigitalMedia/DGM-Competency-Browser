@@ -227,15 +227,6 @@ angular.module('CompBrowserControllers', ['ui.bootstrap', 'CompBrowser.services'
                     'prereq': 'None',
                     'recommended': true,
                     'crdesc': 'Teaches basic scripting for games.'
-                },
-                {
-                    'crnum': 'DGM 1090',
-                    'crtitle': 'Game Languages 1',
-                    'fav': true,
-                    'crhours': 3,
-                    'prereq': 'None',
-                    'recommended': true,
-                    'crdesc': 'Teaches basic scripting for games.'
                 }
                 ]
             },
@@ -279,6 +270,15 @@ angular.module('CompBrowserControllers', ['ui.bootstrap', 'CompBrowser.services'
                         'prereq': 'None',
                         'recommended': true,
                         'crdesc': 'Teaches basic scripting for games.'
+                    },
+                    {
+                        'crnum': 'DGM 1090',
+                        'crtitle': 'Game Languages 1',
+                        'fav': true,
+                        'crhours': 3,
+                        'prereq': 'None',
+                        'recommended': true,
+                        'crdesc': 'Teaches basic scripting for games.'
                     }
                 ]
             },
@@ -287,24 +287,6 @@ angular.module('CompBrowserControllers', ['ui.bootstrap', 'CompBrowser.services'
                 'order': 3,
                 'track':'custom1',
                 'classes' :[
-                    {
-                        'crnum': 'DGM 1090',
-                        'crtitle': 'Game Languages 1',
-                        'fav': true,
-                        'crhours': 3,
-                        'prereq': 'None',
-                        'recommended': true,
-                        'crdesc': 'Teaches basic scripting for games.'
-                    },
-                    {
-                        'crnum': 'DGM 1090',
-                        'crtitle': 'Game Languages 1',
-                        'fav': true,
-                        'crhours': 3,
-                        'prereq': 'None',
-                        'recommended': true,
-                        'crdesc': 'Teaches basic scripting for games.'
-                    },
                     {
                         'crnum': 'DGM 1090',
                         'crtitle': 'Game Languages 1',
@@ -381,33 +363,6 @@ angular.module('CompBrowserControllers', ['ui.bootstrap', 'CompBrowser.services'
                         'prereq': 'None',
                         'recommended': true,
                         'crdesc': 'Teaches basic scripting for games.'
-                    },
-                    {
-                        'crnum': 'DGM 1090',
-                        'crtitle': 'Game Languages 1',
-                        'fav': true,
-                        'crhours': 3,
-                        'prereq': 'None',
-                        'recommended': true,
-                        'crdesc': 'Teaches basic scripting for games.'
-                    },
-                    {
-                        'crnum': 'DGM 1090',
-                        'crtitle': 'Game Languages 1',
-                        'fav': true,
-                        'crhours': 3,
-                        'prereq': 'None',
-                        'recommended': true,
-                        'crdesc': 'Teaches basic scripting for games.'
-                    },
-                    {
-                        'crnum': 'DGM 1090',
-                        'crtitle': 'Game Languages 1',
-                        'fav': true,
-                        'crhours': 3,
-                        'prereq': 'None',
-                        'recommended': true,
-                        'crdesc': 'Teaches basic scripting for games.'
                     }
                 ]
             },
@@ -416,6 +371,24 @@ angular.module('CompBrowserControllers', ['ui.bootstrap', 'CompBrowser.services'
                 'order': 6,
                 'track':'custom2',
                 'classes' :[
+                    {
+                        'crnum': 'DGM 1090',
+                        'crtitle': 'Game Languages 1',
+                        'fav': true,
+                        'crhours': 3,
+                        'prereq': 'None',
+                        'recommended': true,
+                        'crdesc': 'Teaches basic scripting for games.'
+                    },
+                    {
+                        'crnum': 'DGM 1090',
+                        'crtitle': 'Game Languages 1',
+                        'fav': true,
+                        'crhours': 3,
+                        'prereq': 'None',
+                        'recommended': true,
+                        'crdesc': 'Teaches basic scripting for games.'
+                    },
                     {
                         'crnum': 'DGM 1090',
                         'crtitle': 'Game Languages 1',
