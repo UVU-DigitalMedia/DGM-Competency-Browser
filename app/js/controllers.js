@@ -559,7 +559,7 @@ angular.module('CompBrowserControllers', ['ui.bootstrap', 'CompBrowser.services'
     $scope.studentID = '10538395';
     $scope.phoneNumber = '801-532-3567';
     $scope.emailAddress = 'john.smith@student.com';
-    $scope.bio = 'Etiam vestibulum luctus risus eget ultricies. Nullam commodo, eros id bibendum efficitur, est elit feugiat ex, non ornare justo turpis interdum libero. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nunc vel faucibus nisi.'
+    $scope.bio = 'Etiam vestibulum luctus risus eget ultricies. Nullam commodo, eros id bibendum efficitur, est elit feugiat ex, non ornare justo turpis interdum libero. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nunc vel faucibus nisi.';
     
 })
 
