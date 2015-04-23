@@ -9,5 +9,10 @@ module.exports = {
     'concat',
     'uglify',
     'usemin'
+  ],
+  'start':[
+    'sass',
+    'browser-sync',
+    'nodemon'
   ]
 };

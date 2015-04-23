@@ -3,7 +3,7 @@
 var express    = require('express');
 var app        = express();
 var bodyParser = require('body-parser');
-
+ 
 // connect to database
 var mongoose   = require('mongoose');
 mongoose.connect('mongodb://localhost/Competency-Browser');
@@ -349,7 +349,7 @@ router.route('/courses')
 					course.lecture = req.body.lecture;
 					course.lab = req.body.lab;
 					course.catalog_offered = req.body.catalog_offered;
-					course.description = req.body.description; 
+					course.description = req.body.description;
 
 					// save the course and check for errors
 					course.save(function(err) {
