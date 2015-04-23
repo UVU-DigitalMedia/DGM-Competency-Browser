@@ -21,7 +21,6 @@ CompBrowser.factory('randomColor', function(){
 // User Authentication Service
 CompBrowser.factory('userAuth', function($firebase, FBURL, $window, $http){
 
-
     return {
             checkSession: function() {
               var authRef = new Firebase(FBURL);
