@@ -1,7 +1,7 @@
 /* --------------------------------------
     Digital Media Competency Browser
 -------------------------------------- */
-
+//
 /* Reset & Bootstrap */
 @import "partials/reset";
 @import "partials/bootstrap/mixins";
@@ -33,3 +33,7 @@
 @import "partials/footer";
 @import "partials/skills";
 @import "partials/profile";
+@import "partials/editProfile";
+@import "partials/favorites";
+@import "partials/dashboard";
+@import "partials/courses";

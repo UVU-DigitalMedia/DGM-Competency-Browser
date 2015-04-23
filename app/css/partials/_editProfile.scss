@@ -1,0 +1,42 @@
+/* --------------------------------------
+    Edit Profile Styles
+-------------------------------------- */
+
+.editProfile {
+    
+    // Section
+    .section {
+        
+        // Base
+        padding: 10px;
+        border: 1px solid $gray-mid;
+        margin: 0px 0px 20px 0px;
+        @include radius();
+        
+        // Input
+        input, textarea {
+            
+            // Base
+            display: block;
+            width: 100%;
+            border: 1px solid darken($gray-high, 5%);
+            background: darken($gray-high, 5%);
+            margin-bottom: 10px;
+            padding: 5px 10px;
+            @include radius();
+            @include animate(200ms);
+            
+            // Focus
+            &:focus {
+                
+                // Base
+                outline: none;
+                border-color: $red;
+                
+            }
+            
+        }
+        
+    }
+    
+}
