@@ -31,7 +31,6 @@ CompBrowser.factory('userAuth', function($firebase, FBURL, $window, $http){
               var isLoggedIn;
 
               if (authData) {
-                  //Allow app access
 
                   //Grab the user ID from the DB
                   userId = authData.uid;
@@ -41,6 +40,7 @@ CompBrowser.factory('userAuth', function($firebase, FBURL, $window, $http){
                   var userAuthToken = authData.token;
                   console.log(userAuthToken);
 
+                  //Allow app access
                   isLoggedIn = true;
                   return isLoggedIn;
               } else {
