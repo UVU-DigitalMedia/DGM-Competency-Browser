@@ -1,0 +1,55 @@
+<!-- Spotlight -->
+<div class="spotlight" ng-class="randomColor">
+
+  <!-- Container -->
+  <div class="container-fluid">
+
+      <!-- Row -->
+      <div class="row">
+
+          <!-- Column -->
+          <div class="col-xs-12">
+
+              <!-- Header -->
+              <h1>{{header}}</h1>
+              
+              <!-- Text -->
+              <p>{{message}}</p>
+
+          </div>
+
+      </div>
+
+  </div>
+
+</div>
+
+<div class="container-fluid editProfile">
+    <div class="row">
+        <div class="col-xs-12">
+            <form action="" method="">
+                <div class="section">
+                    <h1>Information</h1>
+                    <input type="text" placeholder="First Name" value="{{firstName}}" name="firstName" />
+                    <input type="text" placeholder="Last Name" value="{{lastName}}" name="lastName" />
+                    <input type="text" placeholder="Student ID" value="{{studentID}}" name="studentId" />
+                </div>
+                <div class="section">
+                    <h1>Contact Information</h1>
+                    <input type="text" placeholder="Phone Number" value="{{phoneNumber}}" name="phoneNumber" />
+                    <input type="text" placeholder="Email Address" value="{{emailAddress}}" name="emailAddress" />
+                    <input type="text" placeholder="Confirm Email Address" name="confirmEmailAddress" />
+                </div>
+                <div class="section">
+                    <h1>Biography</h1>
+                    <textarea placeholder="About Me..." name="biography">{{bio}}</textarea>
+                </div>
+                <div class="section">
+                    <h1>Password</h1>
+                    <input type="password" placeholder="Password" name="password" />
+                    <input type="password" placeholder="Confirm Password" name="confirmPassword" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

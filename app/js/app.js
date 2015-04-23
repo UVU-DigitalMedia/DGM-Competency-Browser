@@ -108,6 +108,12 @@ angular.module('CompBrowser', ['common.services',
         controller: 'ProfileCtrl',
         ncyBreadcrumb: {label: 'My Profile'}
     })
+    .state('editProfile', {
+        url: '/editProfile',
+        templateUrl: 'templates/editProfile.html',
+        controller: 'editProfileCtrl',
+        ncyBreadcrumb: {label: 'Edit Profile'}
+    })
     .state('favorites', {
         url: '/favorites',
         templateUrl: 'templates/favorites.html',

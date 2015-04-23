@@ -1,0 +1,126 @@
+/* ---------------------------------------- Favorite Styles */
+
+.userFavorites {
+    
+    // Main Title
+    .titleContainer {
+        
+        // Base
+        background: $green-mid;
+        padding: 2px 15px;
+        cursor: pointer;
+        position: relative;
+        @include radius(10px);
+        @include animate(200ms);
+        
+        // Hover
+        &:hover {
+            
+            // Base
+            background: $green;
+            
+        }
+        
+        // Header
+        h4 {
+            
+            // Base
+            @include typography(20px, 1px, 200);
+            color: white;
+            margin: 0px;  
+            
+        }
+        
+        // Icon
+        i.fa {
+            
+            // Base
+            position: absolute;
+            top: 50%;
+            margin-top: -10px;
+            right: 20px;
+            color: white;
+            font-size: 22px;
+            
+        }
+        
+    }
+    
+    // List
+    ul.list {
+        
+        // Base
+        margin: 15px 0px 0px 0px;
+        
+        // Items
+        li {
+            
+            // Base
+            padding: 5px 20px;
+            background: white;
+            margin-bottom: 10px;
+            position: relative;
+            cursor: pointer;
+            @include radius(10px);
+            @include animate(200ms);
+            
+            // Hover
+            &:hover {
+                
+                // Base
+                background: $gray-high;
+                border: 1px solid $gray-mid;
+                
+            }
+            
+            // Last Child
+            &:last-child {margin-bottom: 0px;}
+            
+            // Icon
+            i.fa {
+                
+                // Base
+                position: absolute;
+                top: 50%;
+                margin-top: -10px;
+                right: 20px;
+                
+            }
+            
+            // Favorite
+            &.favFav {
+                
+                // Icon
+                i.fa {
+                    
+                    // Base
+                    color: $red;
+                    
+                }
+                
+            }
+            
+            // Description
+            span {
+                
+                // Base
+                display: block;
+                padding: 10px 20px 10px 0px;
+                max-height: 300px;
+                @include animate(200ms);
+                
+                // Hide
+                &.ng-hide {
+                    
+                    // Base
+                    max-height: 0px;
+                    
+                } 
+                
+            }
+            
+        }
+        
+    }
+    
+}
