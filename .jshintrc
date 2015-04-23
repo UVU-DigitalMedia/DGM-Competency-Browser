@@ -17,7 +17,7 @@
   "maxerr"        : 50,       // maximum number of errors jshint will report before giving up
   "maxlen"        : 130,       // maximum line length
   "maxparams"     : 6,        // forces functions to have a maximum number of parameters
-  "maxstatements" : 12,       // maximum number of statements in a function
+  "maxstatements" : 20,       // maximum number of statements in a function
   "newcap"        : true,     // must use capitalized constructors with the `new` keyword
   "noarg"         : true,     // mustn't use `arguments.callee` or `arguments.caller`
   "nocomma"       : false,    // commas are allowed, but you shouldn't do comma first
