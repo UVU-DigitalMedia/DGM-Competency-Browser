@@ -9,58 +9,69 @@
             {
                 "employerId": 1,
                 "name": "Adobe",
-                "skill": [
-                    "2-D Packages",
-                    "3-D Packages",
-                    "Integrating Game Assets",
-                    "Requirements Gathering",
-                    "Identifying Art Problems"
-                ]
+                "skill": {
+                    "skillName": [
+                        "2-D Packages",
+                        "3-D Packages",
+                        "Integrating Game Assets",
+                        "Requirements Gathering",
+                        "Identifying Art Problems"
+                    ],
+                    "skillDescription": [
+                        "Description of skill goes here. Isn't it going to be cool."
+                    ]
+                }
             },
             {
                 "employerId": 2,
                 "name": "At Task",
-                "skill": [
-                    "Game Scripting",
-                    "Advanced Game Scripting",
-                    "Identifying Art Problems"
-                ]
+                "skill": {
+                    "skillName": [
+                        "Game Scripting",
+                        "Advanced Game Scripting",
+                        "Identifying Art Problems"
+                    ],
+                    "skillDescription": [
+                        "This is the Description"
+                    ]
+                }
             },
             {
                 "employerId": 3,
                 "name": "Domo",
-                "skill": [
-                    "Advanced Game Scripting",
-                    "3-D Packages"
-                ]
+                "skill": {
+                    "skillName": [
+                        "Advanced Game Stuff",
+                        "4-D Packing"
+                    ],
+                    "skillDescription": [
+                        "Description of Skill"
+                    ]
+                }
             },
             {
                 "employerId": 4,
                 "name": "LDS Church",
-                "skill": [
-                    "Character Development",
-                    "Character Modeling",
-                    "Rendering Skills",
-                    "Prototyping",
-                    "Identifying Art Problems"
-                ]
+                "skill": {
+                    "skillName": [
+                        "Character Development",
+                        "Character Modeling",
+                        "Rendering Skills",
+                        "Prototyping",
+                        "Identifying Art Problems"
+                    ],
+                    "skillDescription": [
+                        "Description 1"
+                    ]
+                }
             }
         ];
-
-        // Test structure
-        // "skill": {
-        //     "skillInfo": [
-        //         { "id": "2-D Packages", "desc": "This is the skill desc." },
-        //         { "id": "3-D Packages", "desc": "This is the skill desc2." },
-        //         { "id": "Integrating Game Assets", "desc": "This is the skill desc3." },
-        //         { "id": "Identifying Art Problems", "desc": "This is the skill desc4." }
 
         var employerUrl = '/api/employers';
         $httpBackend.whenGET(employerUrl).respond(employers);
 
         // Pass through any requests for other files
         $httpBackend.whenGET(/.*/).passThrough();
-
 
     })
 }());
