@@ -24,24 +24,28 @@
 
 </div>
 
-<!-- List Favorites -->
+<!-- User Favorites -->
 <div class="container-fluid userFavorites">
-    <div class="favoriteClasses row">
+    <div class="row">
         <div class="col-xs-12">
             <div class="contentSet">
-                <div class="titleContainer" data-toggle="collapse" data-target="#collapseFavoriteClasses" area-expand="false" aria-controls="collapseFavoriteClasses">
-                    <h4 class="setTitle" ng-click="isCollapsed = !isCollapsed">Favorite Classes</h4><i class="fa fa-angle-down"></i>
+                <div class="titleContainer" data-toggle="collapse" data-target="#collapseFavorites" area-expand="false" aria-controls="collapseFavorites">
+                    <h4 class="setTitle" ng-click="isCollapsed = !isCollapsed">Favorite Classes<i class="fa fa-angle-down"></i></h4>
                 </div>
-                <div collapse="isCollapsed" class="classes">
+                <div collapse="isCollapsed" class="items">
                     <div class="padding">
-                        <ul class="list">
-                            <li ng-repeat="fav in favoriteClasses" data-ng-class="{favFav : toggle}" 
-                                data-ng-click="toggle = !toggle" data-ng-init="toggle = true"
-                                ng-mouseover="descOpen = true" ng-mouseleave="descOpen = false">
-                                <strong>{{fav.name}}</strong> <i class="fa fa-heart"></i>
-                                <span ng-show="descOpen === true">{{fav.desc}}</span>
-                            </li>
-                        </ul>
+                        <div class="contentSet" ng-repeat="fav in favoriteClasses">
+                            <div class="titleContainer" data-toggle="collapse" data-target="#collapseDesc" area-expand="false" aria-controls="collapseDesc">
+                                <h4 class="setTitle" ng-click="isCollapsed2 = !isCollapsed2">{{fav.name}}
+                                    <i class="fa fa-heart" data-ng-class="{favFav : toggle}" data-ng-click="toggle = !toggle" data-ng-init="toggle = true"></i>
+                                </h4>
+                            </div>
+                            <div collapse="!isCollapsed2" class="sub-items-desc">
+                                <div class="padding">
+                                    <p>{{fav.desc}}</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -49,22 +53,26 @@
     </div>
 </div>
 <div class="container-fluid userFavorites">
-    <div class="favorite Skills row">
+    <div class="row">
         <div class="col-xs-12">
             <div class="contentSet">
-                <div class="titleContainer" data-toggle="collapse" data-target="#collapseFavoriteSkills" area-expand="false" aria-controls="collapseFavoriteSkills">
-                    <h4 class="setTitle" ng-click="isCollapsed2 = !isCollapsed2">Favorite Skills</h4><i class="fa fa-angle-down"></i>
+                <div class="titleContainer" data-toggle="collapse" data-target="#collapseFavorites" area-expand="false" aria-controls="collapseFavorites">
+                    <h4 class="setTitle" ng-click="isCollapsed3 = !isCollapsed3">Favorite Skills<i class="fa fa-angle-down"></i></h4>
                 </div>
-                <div collapse="isCollapsed2" class="classes">
+                <div collapse="isCollapsed3" class="items">
                     <div class="padding">
-                        <ul class="list">
-                            <li ng-repeat="fav in favoriteSkills" data-ng-class="{favFav : toggle}" 
-                                data-ng-click="toggle = !toggle" data-ng-init="toggle = true"
-                                ng-mouseover="descOpen = true" ng-mouseleave="descOpen = false">
-                                <strong>{{fav.name}}</strong> <i class="fa fa-heart"></i>
-                                <span ng-show="descOpen === true">{{fav.desc}}</span>
-                            </li>
-                        </ul>
+                        <div class="contentSet" ng-repeat="fav in favoriteSkills">
+                            <div class="titleContainer" data-toggle="collapse" data-target="#collapseDesc" area-expand="false" aria-controls="collapseDesc">
+                                <h4 class="setTitle" ng-click="isCollapsed4 = !isCollapsed4">{{fav.name}}
+                                    <i class="fa fa-heart" data-ng-class="{favFav : toggle}" data-ng-click="toggle = !toggle" data-ng-init="toggle = true"></i>
+                                </h4>
+                            </div>
+                            <div collapse="!isCollapsed4" class="sub-items-desc">
+                                <div class="padding">
+                                    <p>{{fav.desc}}</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
