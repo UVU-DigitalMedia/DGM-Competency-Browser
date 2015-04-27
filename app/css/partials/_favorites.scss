@@ -6,75 +6,22 @@
     .titleContainer {
         
         // Base
-        background: $green-mid;
-        padding: 2px 15px;
+        background: $green-high;
+        padding: 5px 20px;
+        border-bottom: 5px solid $green-mid;
         cursor: pointer;
         position: relative;
-        @include radius(10px);
         @include animate(200ms);
+        @include radius(10px);
         
-        // Hover
-        &:hover {
+        // Title
+        .setTitle {
             
             // Base
-            background: $green;
-            
-        }
-        
-        // Header
-        h4 {
-            
-            // Base
-            @include typography(20px, 1px, 200);
+            @include typography(25px, 1.5px, 500);
             color: white;
-            margin: 0px;  
-            
-        }
-        
-        // Icon
-        i.fa {
-            
-            // Base
-            position: absolute;
-            top: 50%;
-            margin-top: -10px;
-            right: 20px;
-            color: white;
-            font-size: 22px;
-            
-        }
-        
-    }
-    
-    // List
-    ul.list {
-        
-        // Base
-        margin: 15px 0px 0px 0px;
-        
-        // Items
-        li {
-            
-            // Base
-            padding: 5px 20px;
-            background: white;
-            margin-bottom: 10px;
-            position: relative;
-            cursor: pointer;
-            @include radius(10px);
-            @include animate(200ms);
-            
-            // Hover
-            &:hover {
-                
-                // Base
-                background: $gray-high;
-                border: 1px solid $gray-mid;
-                
-            }
-            
-            // Last Child
-            &:last-child {margin-bottom: 0px;}
+            text-transform: uppercase;
+            margin: 0px;
             
             // Icon
             i.fa {
@@ -84,40 +31,54 @@
                 top: 50%;
                 margin-top: -10px;
                 right: 20px;
+                z-index: 20;
                 
             }
             
-            // Favorite
-            &.favFav {
-                
-                // Icon
-                i.fa {
-                    
-                    // Base
-                    color: $red;
-                    
-                }
-                
-            }
+        }
+        
+        // Hover
+        &:hover {background: $green; border-color: $green;}
+        
+    }
+    
+    // Sub Items
+    .items {
+        
+        // Base
+        margin-top: 25px;
+        
+        // Sub Titles
+        .titleContainer {
             
-            // Description
-            span {
+            // Base
+            background: white;
+            margin-bottom: 10px;
+            border-color: $gray-mid;
+            
+            // Title
+            .setTitle {
                 
                 // Base
-                display: block;
-                padding: 10px 20px 10px 0px;
-                max-height: 300px;
-                @include animate(200ms);
+                @include typography(20px, 1.5px, 300);
                 
-                // Hide
-                &.ng-hide {
-                    
-                    // Base
-                    max-height: 0px;
-                    
-                } 
+                // Icon
+                i.fa.favFav {color: $red;}
                 
             }
+            
+        }
+
+        // Description
+        .sub-items-desc p {
+            
+            // Base
+            margin: 20px 0px;
+            background: $blue;
+            color: white;
+            padding: 20px;
+            @include radius(10px);
+            
             
         }
         
