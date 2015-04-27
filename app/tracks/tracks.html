@@ -27,7 +27,7 @@
 
 
 <!-- Container -->
-<div class="container-fluid listTemp">
+<div class="container-fluid listTemp compTracks">
     
     <!-- Row -->
     <div class="row">
@@ -35,106 +35,125 @@
         <!-- Column -->
         <div class="col-xs-12">
 
-<div class="starter-template">
-    <h1>Tracks</h1>
-    <p class="lead">See all your tracks here.</p>
+            <div class="starter-template">
 
-    Search: <input ng-model="search"> <br />
-
-    <!-- Add New Semester modal -->
-    <div ng-controller="newSemester">
-        <script type="text/ng-template" id="addNewSemester.html">
-            <div class="modal-header">
-                <h3 class="modal-title">Add New Semester</h3>
-            </div>
-            <div class="modal-body">
-                Semester Name: <input type="text" placeholder="Fall 2014" required /><br />
-                Track: <input type="text" placeholder="Recommended" required /><br />
-                Note: <input type="text" placeholder="Upper Division Classes" required /><br />
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-primary" ng-click="ok()">Add</button>
-                <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
-            </div>
-        </script>
-        <button type="button" class="btn btn-success btn-lg" ng-click="open()">
-            Add New Semester
-        </button><br />
-    </div>
-
-    Filter By Tracks:<br />
-    <input type="checkbox" ng-click="includesTracks('recommended')"/> Recommended</br/>
-    <input type="checkbox" ng-click="includesTracks('custom1')"/> Custom 1</br/>
-    <input type="checkbox" ng-click="includesTracks('custom2')"/> Custom 2</br/>
-
-
-    <ul>
-        <li ng-repeat="track in tracks | filter:trackFilter | filter:search | orderBy:orderProp">
-          <div class="contentSet">
-            <div class="titleContainer" data-toggle="collapse" data-target="#collapseSkills" aria-expanded="false" aria-controls="collapseSkills">
-                <h4 class="setTitle" ng-click="isCollapsed = !isCollapsed">{{track.semester}}</span><span style="float: right;">{{track.classes.length}}  Courses<i class="fa fa-caret-down" style="padding-left: 10px;"></i></span></h4>
-            </div><!--end .setTitle-->
-
-            <div collapse="!isCollapsed">
-                <div id="{{track.order}}">
-                    <div class="row" ng-repeat="classes in track.classes">
-                        <div class="recomended col-xs-12">
-                            <div class="c-head row">
-                                <div class="arrow col-xs-1">
-
-                                </div>
-                                <div class="col-xs-10">
-                                    {{classes.crnum}} {{classes.crtitle}}
-                                </div>
-                                <div class="star col-xs-1">
-
-                                </div>
-                            </div>
-                            <div class="row details">
-                                <div class="col-xs-6 text-green">{{classes.crhours}} Credits</div><div class="col-xs-6 text-right text-green"><span ng-if="course.fallsem"> Fall</span><span ng-if="course.springsem"> Spring</span><span ng-if="course.summersem"> Summer</span></div>
-                                <div class="col-xs-12">
-                                    <p><span class="text-green">Prerequisites:</span>
-                                        <br>{{classes.prereq}}</p>
-                                </div>
-                                <div class="col-xs-12">
-                                    <p><span class="text-green">Description:</span>
-                                        <br>{{classes.crdesc}}</p>
-                                </div>
-                            </div>
-
-                        </div>
-                      </div>
-                </div>
+                Search: <input ng-model="search">
 
                 <!-- Add New Semester modal -->
-                <div ng-controller="newClass">
-                    <script type="text/ng-template" id="addNewCourse.html">
+                <div ng-controller="newSemester">
+                    <script type="text/ng-template" id="addNewSemester.html">
                         <div class="modal-header">
-                            <h3 class="modal-title">Add New Course</h3>
+                            <h3 class="modal-title">Add New Semester</h3>
                         </div>
                         <div class="modal-body">
-                            Course Name: <input type="text" placeholder="DGM 3790" required /><br />
-                            CRN Number: <input type="text" placeholder="234587" required /><br />
+                            Semester Name: <input type="text" placeholder="Fall 2014" required /><br />
+                            Track: <input type="text" placeholder="Recommended" required /><br />
+                            Note: <input type="text" placeholder="Upper Division Classes" required /><br />
                         </div>
                         <div class="modal-footer">
                             <button class="btn btn-primary" ng-click="ok()">Add</button>
                             <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
                         </div>
                     </script>
-                    <button type="button" class="btn btn-warning btn-lg" ng-click="open()">
-                        Add New Course
+                    <button type="button" class="btn btn-success btn-lg" ng-click="open()">
+                        Add New Semester
                     </button><br />
                 </div>
 
-                <p>{{track.note}}</p>
+                <div class="filters row">
+                    <div class="col-xs-12">
+                        <div class="contentSet">
+                            <div class="titleContainer" data-toggle="collapse" data-target="#collapseSkills" aria-expanded="false" aria-controls="collapseSkills">
+                                <h4 class="setTitle" ng-click="isCollapsed = !isCollapsed">Filter Tracks<i class="fa fa-caret-down"></i></h4>
+                            </div><!--end .titleContainer-->
+                            <div collapse="isCollapsed" class="variables">
+                                <div class="padding">
+                                    <div class="title">
+                                        <h4>Employers</h4>
+                                    </div>
+                                    <div class="labelContainer">
+                                        <label><input type="checkbox" ng-click="includesTracks('recommended')"/><span> Recommended</span></label>
+                                    </div><!--end .labelContainer-->
+                                    <div class="labelContainer">
+                                        <label><input type="checkbox" ng-click="includesTracks('custom1')"/><span>Custom 1</span></label>
+                                    </div><!--end .labelContainer-->
+                                    <div class="labelcontainer">
+                                        <label><input type="checkbox" ng-click="includesTracks('custom2')"/><span>Custom 2</span></LABEL>
+                                    </div><!--end .labelContainer-->
+                                </div><!--end .padding-->
+                            </div><!--end variables-->
+                        </div><!--end .contentSet-->
+                    </div><!--end .col -->
+                </div><!--end .filters-->
+
+
+                <ul>
+                    <li ng-repeat="track in tracks | filter:trackFilter | filter:search | orderBy:orderProp">
+                      <div class="contentSet">
+                        <div class="titleContainer" data-toggle="collapse" data-target="#collapseSkills" aria-expanded="false" aria-controls="collapseSkills">
+                            <h4 class="setTitle" ng-click="isCollapsed = !isCollapsed">{{track.semester}}</span><span style="float: right;">{{track.classes.length}}  Courses<i class="fa fa-caret-down" style="padding-left: 10px;"></i></span></h4>
+                        </div><!--end .setTitle-->
+
+                        <div collapse="!isCollapsed">
+                            <div id="{{track.order}}">
+                                <div class="row" ng-repeat="classes in track.classes">
+                                    <div class="recomended col-xs-12">
+                                        <div class="c-head row">
+                                            <div class="arrow col-xs-1">
+
+                                            </div>
+                                            <div class="col-xs-10">
+                                                {{classes.crnum}} {{classes.crtitle}}
+                                            </div>
+                                            <div class="star col-xs-1">
+
+                                            </div>
+                                        </div>
+                                        <div class="row details">
+                                            <div class="col-xs-6 text-green">{{classes.crhours}} Credits</div><div class="col-xs-6 text-right text-green"><span ng-if="course.fallsem"> Fall</span><span ng-if="course.springsem"> Spring</span><span ng-if="course.summersem"> Summer</span></div>
+                                            <div class="col-xs-12">
+                                                <p><span class="text-green">Prerequisites:</span>
+                                                    <br>{{classes.prereq}}</p>
+                                            </div>
+                                            <div class="col-xs-12">
+                                                <p><span class="text-green">Description:</span>
+                                                    <br>{{classes.crdesc}}</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                  </div>
+                            </div>
+
+                            <!-- Add New Semester modal -->
+                            <div ng-controller="newClass">
+                                <script type="text/ng-template" id="addNewCourse.html">
+                                    <div class="modal-header">
+                                        <h3 class="modal-title">Add New Course</h3>
+                                    </div>
+                                    <div class="modal-body">
+                                        Course Name: <input type="text" placeholder="DGM 3790" required /><br />
+                                        CRN Number: <input type="text" placeholder="234587" required /><br />
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button class="btn btn-primary" ng-click="ok()">Add</button>
+                                        <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+                                    </div>
+                                </script>
+                                <button type="button" class="btn btn-warning btn-lg" ng-click="open()">
+                                    Add New Course
+                                </button><br />
+                            </div>
+
+                            <p>{{track.note}}</p>
 
 
 
-            </div><!-- end.collapse #collapseSemester -->
-          </div>
-        </li>
-    </ul>
-
+                        </div><!-- end.collapse #collapseSemester -->
+                      </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </div>
-
-        </div></div></div>
