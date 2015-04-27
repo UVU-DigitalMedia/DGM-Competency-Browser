@@ -14,22 +14,24 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-xs-12">
-            <div class="contentSet">
+            <div class="contentSet courseFilters">
                 <div class="titleContainer" data-toggle="collapse" data-target="#collapseFilter" aria-expanded="false" aria-controls="collapseFilter">
                     <h4 class="setTitle" ng-click="isCollapsed = !isCollapsed">Filters<i class="fa fa-caret-down"></i></h4>
                 </div><!-- end .titleContainer-->
 
                 <div class="filters" collapse="!isCollapsed">
-                    <label>Sort by:
-                        <select ng-model="courseSort">
-                            <option value="number">Course Number</option>
-                            <option value="name">Course Name</option>
-                            <option value="credits">Credit Hours</option>
-                        </select>
-                    </label>
-                    <label>Search:
-                      <input type="text" ng-model="search.$" />
-                    </label>
+                    <div class="padding">
+                        <label>Sort by:
+                            <select ng-model="courseSort">
+                                <option value="number">Course Number</option>
+                                <option value="name">Course Name</option>
+                                <option value="credits">Credit Hours</option>
+                            </select>
+                        </label>
+                        <label>Search:
+                          <input type="text" ng-model="search.$" />
+                        </label>
+                    </div>
                 </div><!-- end .filters-->
             </div><!--end .contentSet-->
 
@@ -42,18 +44,19 @@
                     <div class="course" ng-repeat="course in courses | orderBy:courseSort | filter:search">
 
                             <div class="row">
-                              <div class="courseTitle col-xs-11" ng-click="isCollapsedCourse = !isCollapsedCourse" data-toggle="collapse" data-target="#collapseCourse" aria-expanded="false" aria-controls="collapseCourse">
+                              <div class="col-xs-1"
+                                   data-ng-class="{favoriteCourse : toggle}"
+                                   data-ng-click="toggle = !toggle"
+                                   data-ng-init="toggle = false">
+                                        <span class="menu"><i class="fa fa-heart"></i></span>
+                              </div>
+                                <div class="courseTitle col-xs-11" ng-click="isCollapsedCourse = !isCollapsedCourse" data-toggle="collapse" data-target="#collapseCourse" aria-expanded="false" aria-controls="collapseCourse">
                                   <h6 class="col-xs-10">{{course.number}} - {{course.name}}</h6>
                                   <div class="col-xs-2">
                                     <i class="fa fa-caret-down"></i>
                                   </div><!--end .col-->
                               </div><!-- end .courseTitle-->
-                              <div class="col-xs-1 text-right"
-                                   data-ng-class="{favoriteCourse : toggle}"
-                                   data-ng-click="toggle = !toggle"
-                                   data-ng-init="toggle = false">
-                                        <span class="menu"><i class="fa fa-heart"></i></span>
-                              </div><!--end .text-right-->
+                              
                             </div><!--end row-->
 
                             <div class="details" collapse="!isCollapsedCourse">
